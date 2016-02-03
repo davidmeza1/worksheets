@@ -89,6 +89,24 @@ Create your own comparisons between numeric values. See if you can create a comp
 
 ```
 
+R has a special kind of value: the missing value. This is represented by `NA`.
+
+```{r}
+NA
+```
+
+Try adding `2 + NA`.
+
+```{r}
+
+```
+
+Does that answer make sense? Why or why not?
+
+> 
+
+We will come back to missing values.
+
 ## Variables
 
 We wouldn't be able to get very far if we only used values. We also need a place to store them, a way of writing them to the computer's memory. We can do that by *assignment* to a variable. Assignment has three parts: it has the name of a variable (which cannot contain spaces), an assignment operator, and a value that will be assigned. Most programming languages use a rinky-dink `=` for assignment, which works in R too. But R is awesome because the assignment operator is `<-`, a lovely little arrow which tells you that the value goes into the variable. For example:
@@ -159,18 +177,100 @@ Predict your answer, then run the code. What is the value stored in `a` by the e
 
 ## Vectors
 
-c
+Variables are better than just values, but we still need to be able to store multiple values. If we have to store each value in its own variable, then we are going to need a lot of variables. R is a beautiful language because every value is actually a vector. That means it can store more more than one value.
 
-vector recycling
+Notice the funny output here:
+
+```{r}
+"Some words"
+```
+
+What does the `[1]` in the output mean? It means that the value has one item inside it. We can test that with the `length()` function
+
+```{r}
+length("Some words")
+```
+
+Sure enough, the length is `1`: R is counting the number of items, not the number of words or characters. 
+
+That would seem to imply that we can add multiple items (or values) inside a vector. R lets us do that with the `c()` (for "combine") function.
+
+```{r}
+many <- c(1, 5, 2, 3, 7)
+many
+```
+
+What is the length of the vector stored in `many`?
+
+```{r}
+
+```
+
+Let's try multiplying `many` by `2`:
+
+```{r}
+many * 2
+```
+
+What happened?
+
+> 
+
+What happens when you add `2` to `many`?
+
+```{r}
+
+```
+
+> 
+
+Can you create a variable containing several names as a character vectors?
+
+```{r}
+
+```
+
+Hard question: what is happening here? Why does R give you a warning message?
+
+```{r}
+c(1, 2, 3, 4, 5) + c(10, 20)
+```
+
+> 
 
 ## Built-in functions
 
-sum, mean, median
+Wouldn't it be nice to be able to do something with data? Let's take some made up data: the price of books that you or I have bought recently.
 
-class
-str
-print
+```{r}
+book_prices <- c(19.99, 25.78, 5.33, 45.00, 22.45, 21.23)
+```
 
+We can find the total amount that I spent using the sum function.
+
+```{r}
+sum(book_prices)
+```
+
+Try finding the average price of the books (using `mean()`) and the median price of the books (using `median()`).
+
+```{r}
+
+```
+
+Can you figure out how to find the most expensive book (hint: the book with the maximum price) and the least expensive book (hint: the book with the minimum price)?
+
+```{r}
+
+```
+
+Hard question: what is happening here?
+
+```{r}
+book_prices >= mean(book_prices)
+```
+
+>
 
 ## Using the documentation
 

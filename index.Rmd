@@ -10,3 +10,7 @@ You can also get these worksheets from [a GitHub repository](https://github.com/
 ```
 git clone https://github.com/lmullen/worksheets.git
 ```
+
+## Assumptions
+
+I'm going to assume that you have the most recent version of R installed on your computer. I'm also going to assume that you are using [RStudio](https://www.rstudio.com/products/rstudio/), though you could use R on the command line without RStudio just fine.

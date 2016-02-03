@@ -274,28 +274,126 @@ book_prices >= mean(book_prices)
 
 ## Using the documentation
 
-?help
+Let's try a different set of book prices. This time, we have a vector of book prices, but there are some books for which we don't know how much we paid. Those are the `NA` values.
 
-## Data frames
+```{r}
+more_books <- c(19.99, NA, 25.78, 5.33, NA, 45.00, 22.45, NA, 21.23)
+```
 
-load a package
+How many books did we buy? (Hint: what is the length of the vector.)
 
-$, [
+```{r}
 
+```
 
+Let's try finding the total using `sum()`.
 
-## Writing your own function
+```{r}
+sum(more_books)
+```
+
+That wasn't very helpful. Why did R give us an answer of `NA`?
+
+>
+
+We need to find a way to get the value of the books that we know about. This is an option to the `sum()` function. If you know the name of a function, you can search for it by typing a question mark followed without a space by the name of the function. For example, `?sum`. Look up the `sum()` function's documentation. Read at least the "Arguments" and the "Examples" section. How can you get the sum for the values which aren't missing?
+
+```{r}
+
+```
+
+Look up the documentation for `?mean`, `?max`, `?min` and see if you can use those functions on a vector with missing values.
+
+```{r}
+
+```
+
+## Data frames and loading packages
+
+We are historians, and we want to work with complex data. Another reason R is awesome is that it includes a kind of data structure called *data frames*. Think of a data frame as basically a spreadsheet. It is tabular data, and the columns can contain any kind of data available in R, such as character vectors, numeric vectors, or logical vectors. R has some sample data built in, but let's use some historical data from the [historydata](https://github.com/ropensci/historydata/) package.
+
+You can load a package like this:
+
+```{r}
+library(historydata)
+```
+
+The [dplyr package](https://cran.r-project.org/package=dplyr) is very helpful. Let's try loading it for practice. Load the package `dplyr`.
+
+```{r}
+
+```
+
+You might get an error message if you don't have either package installed. If you need to install it, run `install.packages("historydata")` at the R console.
+
+We don't know what is in the historydata package, so let's look at it's help. Run this command: `help(package = "historydata")`.
+
+Let's use the data in the `paulist_missions` data frame. According to the package documentation, what is in this data frame?
+
+>
+
+We can print it by using the name of the variable
+
+```{r}
+paulist_missions
+```
+
+That showed us some of the data but not all. The `str()` function is helpful. Look up the documentation for it, and then run it on `paulist_missions`.
+
+```{r}
+
+```
+
+Also try the `glimpse()` function.
+
+```{r}
+
+```
+
+Bonus: where does the `glimpse()` function come from?
+
+We will get into subsetting data in more detail later. But for now, notice that we can get just one of the colums using the `$` operator. For example:
+
+```{r}
+head(paulist_missions$city, 20)
+```
+
+(The `head()` function just gives us the first number of items in the vector.)
+
+Can you print the first 20 numbers of converts? of confessions?
+
+```{r}
+
+```
+
+What was the mean number of converts? the maximum? How about for confessions?
+
+```{r}
+
+```
+
+Bonus: what was the ratio between confessions and conversions?
+
+```{r}
+
+```
 
 
 ## Plots
 
-Plot, title
+And for fun, let's make a scatter plot of the number of confessions versus the number of conversions.
 
+```{r}
+plot(paulist_missions$confessions, paulist_missions$converts)
+title("Confessions versus conversions")
+```
 
-## Download and load a CSV
+What might you be able to learn from this plot?
 
-download.file
+>
 
-read.csv
+There are other datasets in historydata. Can you make a plot from one or more of them?
 
-read_csv
+```{r}
+
+```

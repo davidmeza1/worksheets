@@ -27,18 +27,18 @@ p code {
 .list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
-  background-color: #cc5200;
-  border-color: #cc5200;
+  background-color: #7BB567;
+  border-color: #7BB567;
 }
 
 .navbar-nav li:hover,
 .navbar-nav li a:hover{
-  background-color: #993d00 !important;
-  border-color: #993d00 !important;
+  background-color: #466B3A !important;
+  border-color: #466B3A !important;
 }
 
 a {
-  color: #cc5200;
+  color: #7BB567;
 }
 
 .figure, iframe, .html-widget-static-bound {

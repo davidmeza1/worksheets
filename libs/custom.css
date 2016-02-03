@@ -73,6 +73,7 @@ p a, li a {
 blockquote {
   font-size: 14px;
   margin-left: 4rem;
+  border-color: orange;
 }
 
 #htmlwidget-4686 .leaflet-tile {

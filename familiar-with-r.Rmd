@@ -318,7 +318,7 @@ You can load a package like this:
 library(historydata)
 ```
 
-The [dplyr package](https://cran.r-project.org/package=dplyr) is very helpful. Let's try loading it for practice. Load the package `dplyr`.
+The [dplyr package](https://cran.r-project.org/package=dplyr) is very helpful. Try loading it as well.
 
 ```{r}
 
@@ -335,8 +335,10 @@ Let's use the data in the `paulist_missions` data frame. According to the packag
 We can print it by using the name of the variable
 
 ```{r}
-paulist_missions
+head(paulist_missions, 10)
 ```
+
+(The `head()` function just gives us the first number of items in the vector.)
 
 That showed us some of the data but not all. The `str()` function is helpful. Look up the documentation for it, and then run it on `paulist_missions`.
 
@@ -357,8 +359,6 @@ We will get into subsetting data in more detail later. But for now, notice that 
 ```{r}
 head(paulist_missions$city, 20)
 ```
-
-(The `head()` function just gives us the first number of items in the vector.)
 
 Can you print the first 20 numbers of converts? of confessions?
 

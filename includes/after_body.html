@@ -15,4 +15,8 @@
     var img = $(v);
     img.wrap("<a href='" + img.attr("src") + "'>");
   })
+
+  if (window.location.toString() === "http://lincolnmullen.com/projects/worksheets/") {
+    $("#download-link").remove();
+  }
 </script>

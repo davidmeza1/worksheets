@@ -42,3 +42,7 @@ produces this output:
 > So is this.
 
 Once you are done with the assignment, you should knit the document and turn in the resulting HTML file wherever I have asked you to do so. Don't forget to fill in your name in the `author: ""` field at the top of the document.
+
+## Getting stuck
+
+If you get stuck, ask for help. And always try to do as much of the worksheet as possible. If code doesn't work, comment it out, but keep it in the file so that I can see what you were trying to do.

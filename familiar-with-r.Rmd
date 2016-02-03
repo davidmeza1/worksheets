@@ -1,4 +1,201 @@
 ---
 title: Getting familiar with R
+author: ""
 ---
 
+## Aim of this worksheet
+  
+After completing this worksheet, you should feel comfortable typing commands into the R console (or, [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) and into an [R Markdown](http://rmarkdown.rstudio.com/) document. In particular, you should know how to use values, variables, and functions, how to install and load packages, and how to use the built-in help for R and its packages.
+
+## Values
+
+R lets you store several different kinds of *values*. These values are the information that we actually want to do something with. 
+
+One kind of value is a number. Notice that typing this number, either in an R Markdown document or at the console, produces an identical output
+
+```{r}
+42
+```
+
+Create a numeric value that has a decimal point:
+
+```{r}
+
+```
+
+Of course numbers can be added together (with `+`), subtracted (with `-`), multiplied (with `*`), and divided (with `/`), along with other arithmetical operations. Let's add two numbers, which will produce a new number.
+
+```{r}
+2 + 2
+```
+
+Add two lines, one that multiplies two numbers, and another that subtracts two numbers.
+
+Another important kind of value is a character vector. (Most other programming languages would call these strings.) These contain text. To create a string, include some characters in between quotation marks `""`. (Single quotation marks work too, but in general use double-quotation marks as a matter of style.) For instance:
+
+```{r}
+"Hello, beginning R programmer"
+```
+
+Create a string with a message to your instructor.
+
+```{r}
+
+```
+
+Character vectors can't be added together with `+`. But they can be joined together with the `paste()` function.
+
+```{r}
+paste("Hello", "everybody")
+```
+
+Mimic the example above and paste three strings together.
+
+```{r}
+
+```
+
+Now explain in a sentence what happened.
+
+> 
+
+Another very important kind of value are logical values. There are only two of them: `TRUE` and `FALSE`.
+
+```{r}
+# This is true
+TRUE
+
+# This is false
+FALSE
+```
+
+Notice that in the block above, the `#` character starts a *comment*. That means that from that point on, R will ignore whatever is on that line until a new line begins.
+
+Logical values aren't very exciting, but they are useful when we compare other values to one another. For instance, we can compare two numbers to one another.
+
+```{r}
+2 < 3
+2 > 3
+2 == 3
+```
+
+What do each of those comparison operators do? (Note the double equal sign: `==`.)
+
+>
+
+Create your own comparisons between numeric values. See if you can create a comparison between character vectors.
+
+```{r}
+
+```
+
+## Variables
+
+We wouldn't be able to get very far if we only used values. We also need a place to store them, a way of writing them to the computer's memory. We can do that by *assignment* to a variable. Assignment has three parts: it has the name of a variable (which cannot contain spaces), an assignment operator, and a value that will be assigned. Most programming languages use a rinky-dink `=` for assignment, which works in R too. But R is awesome because the assignment operator is `<-`, a lovely little arrow which tells you that the value goes into the variable. For example:
+
+```{r}
+number <- 42
+```
+
+Notice that nothing was printed as output when we did that. But now we can just type `a` and get the value which is stored in the variable.
+
+```{r}
+number
+```
+
+It works with character vectors too.
+
+```{r}
+computer_name <- "HAL 9000"
+```
+
+No output, but this works.
+
+```{r}
+computer_name
+```
+
+In the assignment above, what is the name of the variable? What is the assignment operator? What is the value assigned to the variable?
+
+>
+
+Notice that we can use variables any place that we used to use values. For example:
+
+```{r}
+x <- 2
+y <- 5
+x * y
+x + 9
+```
+
+Explain in your own words what just happened.
+
+> 
+
+Now create two assignments. Assign a number to a variable and a character vector to a different variable.
+
+```{r}
+
+```
+
+Now create a third variable with a numeric value and, using the variable with a numeric value from earlier, add them together.
+
+```{r}
+
+```
+
+Can you predict what the result of running this code will be? (That is, what value is stored in `a`?)
+
+```{r, eval=FALSE}
+a <- 10
+b <- 20
+a <- b
+a
+```
+
+Predict your answer, then run the code. What is the value stored in `a` by the end? Explain why you were right or wrong.
+
+>
+
+## Vectors
+
+c
+
+vector recycling
+
+## Built-in functions
+
+sum, mean, median
+
+class
+str
+print
+
+
+## Using the documentation
+
+?help
+
+## Data frames
+
+load a package
+
+$, [
+
+
+
+## Writing your own function
+
+
+## Plots
+
+Plot, title
+
+
+## Download and load a CSV
+
+download.file
+
+read.csv
+
+read_csv

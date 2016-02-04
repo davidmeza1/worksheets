@@ -326,7 +326,7 @@ The [dplyr package](https://cran.r-project.org/package=dplyr) is very helpful. T
 
 You might get an error message if you don't have either package installed. If you need to install it, run `install.packages("historydata")` at the R console.
 
-We don't know what is in the historydata package, so let's look at it's help. Run this command: `help(package = "historydata")`.
+We don't know what is in the historydata package, so let's look at its help. Run this command: `help(package = "historydata")`.
 
 Let's use the data in the `paulist_missions` data frame. According to the package documentation, what is in this data frame?
 

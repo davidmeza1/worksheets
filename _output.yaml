@@ -13,7 +13,7 @@ html_document:
     "--smart"
   ]
   css:
-    - libs/custom.css
+    - custom.css
   includes:
     in_header: includes/in_header.html
     before_body: includes/before_body.html

@@ -15,4 +15,5 @@ deploy :
 .PHONY : clean
 clean :
 	rm -f $(RMD_FILES)
+	rm -rf libs/*
 

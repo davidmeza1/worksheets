@@ -79,3 +79,13 @@ blockquote {
 #htmlwidget-4686 .leaflet-tile {
   border: 1px solid black;
 }
+
+.example {
+  list-style-type: none !important;
+  padding-left: 0;
+}
+
+.example li::before {
+  content: "Exercise: ";
+  font-weight: bold;
+}

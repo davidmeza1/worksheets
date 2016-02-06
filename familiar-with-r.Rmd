@@ -17,7 +17,7 @@ One kind of value is a number. Notice that typing this number, either in an R Ma
 42
 ```
 
-Create a numeric value that has a decimal point:
+(@) Create a numeric value that has a decimal point:
 
 ```{r}
 
@@ -29,7 +29,12 @@ Of course numbers can be added together (with `+`), subtracted (with `-`), multi
 2 + 2
 ```
 
-Add two lines, one that multiplies two numbers, and another that subtracts two numbers.
+(@) Add two lines, one that multiplies two numbers, and another that subtracts two numbers.
+
+```{r}
+
+```
+
 
 Another important kind of value is a character vector. (Most other programming languages would call these strings.) These contain text. To create a string, include some characters in between quotation marks `""`. (Single quotation marks work too, but in general use double-quotation marks as a matter of style.) For instance:
 
@@ -37,7 +42,7 @@ Another important kind of value is a character vector. (Most other programming l
 "Hello, beginning R programmer"
 ```
 
-Create a string with a message to your instructor.
+(@) Create a string with a message to your instructor.
 
 ```{r}
 
@@ -49,13 +54,13 @@ Character vectors can't be added together with `+`. But they can be joined toget
 paste("Hello", "everybody")
 ```
 
-Mimic the example above and paste three strings together.
+(@) Mimic the example above and paste three strings together.
 
 ```{r}
 
 ```
 
-Now explain in a sentence what happened.
+(@) Now explain in a sentence what happened.
 
 > 
 
@@ -79,11 +84,11 @@ Logical values aren't very exciting, but they are useful when we compare other v
 2 == 3
 ```
 
-What do each of those comparison operators do? (Note the double equal sign: `==`.)
+(@) What do each of those comparison operators do? (Note the double equal sign: `==`.)
 
 >
 
-Create your own comparisons between numeric values. See if you can create a comparison between character vectors.
+(@) Create your own comparisons between numeric values. See if you can create a comparison between character vectors.
 
 ```{r}
 
@@ -101,7 +106,7 @@ Try adding `2 + NA`.
 
 ```
 
-Does that answer make sense? Why or why not?
+(@) Does that answer make sense? Why or why not?
 
 > 
 
@@ -115,7 +120,7 @@ We wouldn't be able to get very far if we only used values. We also need a place
 number <- 42
 ```
 
-Notice that nothing was printed as output when we did that. But now we can just type `a` and get the value which is stored in the variable.
+Notice that nothing was printed as output when we did that. But now we can just type `nummber` and get the value which is stored in the variable.
 
 ```{r}
 number
@@ -127,13 +132,13 @@ It works with character vectors too.
 computer_name <- "HAL 9000"
 ```
 
-No output, but this works.
+No output, but this prints the value stored in the variable.
 
 ```{r}
 computer_name
 ```
 
-In the assignment above, what is the name of the variable? What is the assignment operator? What is the value assigned to the variable?
+(@) In the assignment above, what is the name of the variable? What is the assignment operator? What is the value assigned to the variable?
 
 >
 
@@ -146,17 +151,17 @@ x * y
 x + 9
 ```
 
-Explain in your own words what just happened.
+(@) Explain in your own words what just happened.
 
 > 
 
-Now create two assignments. Assign a number to a variable and a character vector to a different variable.
+(@) Now create two assignments. Assign a number to a variable and a character vector to a different variable.
 
 ```{r}
 
 ```
 
-Now create a third variable with a numeric value and, using the variable with a numeric value from earlier, add them together.
+(@) Now create a third variable with a numeric value and, using the variable with a numeric value from earlier, add them together.
 
 ```{r}
 
@@ -171,7 +176,7 @@ a <- b
 a
 ```
 
-Predict your answer, then run the code. What is the value stored in `a` by the end? Explain why you were right or wrong.
+(@) Predict your answer, then run the code. What is the value stored in `a` by the end? Explain why you were right or wrong.
 
 >
 
@@ -200,7 +205,7 @@ many <- c(1, 5, 2, 3, 7)
 many
 ```
 
-What is the length of the vector stored in `many`?
+(@) What is the length of the vector stored in `many`?
 
 ```{r}
 
@@ -212,11 +217,11 @@ Let's try multiplying `many` by `2`:
 many * 2
 ```
 
-What happened?
+(@) What happened?
 
 > 
 
-What happens when you add `2` to `many`?
+(@) What happens when you add `2` to `many`?
 
 ```{r}
 
@@ -224,13 +229,13 @@ What happens when you add `2` to `many`?
 
 > 
 
-Can you create a variable containing several names as a character vectors?
+(@) Can you create a variable containing several names as a character vectors?
 
 ```{r}
 
 ```
 
-Hard question: what is happening here? Why does R give you a warning message?
+(@) Hard question: what is happening here? Why does R give you a warning message?
 
 ```{r}
 c(1, 2, 3, 4, 5) + c(10, 20)
@@ -252,19 +257,19 @@ We can find the total amount that I spent using the sum function.
 sum(book_prices)
 ```
 
-Try finding the average price of the books (using `mean()`) and the median price of the books (using `median()`).
+(@) Try finding the average price of the books (using `mean()`) and the median price of the books (using `median()`).
 
 ```{r}
 
 ```
 
-Can you figure out how to find the most expensive book (hint: the book with the maximum price) and the least expensive book (hint: the book with the minimum price)?
+(@) Can you figure out how to find the most expensive book (hint: the book with the maximum price) and the least expensive book (hint: the book with the minimum price)?
 
 ```{r}
 
 ```
 
-Hard question: what is happening here?
+(@) Hard question: what is happening here?
 
 ```{r}
 book_prices >= mean(book_prices)
@@ -280,7 +285,7 @@ Let's try a different set of book prices. This time, we have a vector of book pr
 more_books <- c(19.99, NA, 25.78, 5.33, NA, 45.00, 22.45, NA, 21.23)
 ```
 
-How many books did we buy? (Hint: what is the length of the vector.)
+(@) How many books did we buy? (Hint: what is the length of the vector.)
 
 ```{r}
 
@@ -292,17 +297,21 @@ Let's try finding the total using `sum()`.
 sum(more_books)
 ```
 
-That wasn't very helpful. Why did R give us an answer of `NA`?
+(@) That wasn't very helpful. Why did R give us an answer of `NA`?
 
 >
 
-We need to find a way to get the value of the books that we know about. This is an option to the `sum()` function. If you know the name of a function, you can search for it by typing a question mark followed without a space by the name of the function. For example, `?sum`. Look up the `sum()` function's documentation. Read at least the "Arguments" and the "Examples" section. How can you get the sum for the values which aren't missing?
+We need to find a way to get the value of the books that we know about. This is an option to the `sum()` function. If you know the name of a function, you can search for it by typing a question mark followed without a space by the name of the function. For example, `?sum`. Look up the `sum()` function's documentation. Read at least the "Arguments" and the "Examples" section.
+
+(@) How can you get the sum for the values which aren't missing?
 
 ```{r}
 
 ```
 
-Look up the documentation for `?mean`, `?max`, `?min` and see if you can use those functions on a vector with missing values.
+Look up the documentation for `?mean`, `?max`, `?min`. 
+
+(@) Use those functions on the vector with missing values.
 
 ```{r}
 
@@ -318,7 +327,7 @@ You can load a package like this:
 library(historydata)
 ```
 
-The [dplyr package](https://cran.r-project.org/package=dplyr) is very helpful. Try loading it as well.
+(@) The [dplyr package](https://cran.r-project.org/package=dplyr) is very helpful. Try loading it as well.
 
 ```{r}
 
@@ -328,11 +337,11 @@ You might get an error message if you don't have either package installed. If yo
 
 We don't know what is in the historydata package, so let's look at its help. Run this command: `help(package = "historydata")`.
 
-Let's use the data in the `paulist_missions` data frame. According to the package documentation, what is in this data frame?
+(@) Let's use the data in the `paulist_missions` data frame. According to the package documentation, what is in this data frame?
 
 >
 
-We can print it by using the name of the variable
+We can print it by using the name of the variable.
 
 ```{r}
 head(paulist_missions, 10)
@@ -340,19 +349,21 @@ head(paulist_missions, 10)
 
 (The `head()` function just gives us the first number of items in the vector.)
 
-That showed us some of the data but not all. The `str()` function is helpful. Look up the documentation for it, and then run it on `paulist_missions`.
+(@) That showed us some of the data but not all. The `str()` function is helpful. Look up the documentation for it, and then run it on `paulist_missions`.
 
 ```{r}
 
 ```
 
-Also try the `glimpse()` function.
+(@) Also try the `glimpse()` function.
 
 ```{r}
 
 ```
 
-Bonus: where does the `glimpse()` function come from?
+(@) Bonus: where does the `glimpse()` function come from?
+
+> 
 
 We will get into subsetting data in more detail later. But for now, notice that we can get just one of the colums using the `$` operator. For example:
 
@@ -360,24 +371,23 @@ We will get into subsetting data in more detail later. But for now, notice that 
 head(paulist_missions$city, 20)
 ```
 
-Can you print the first 20 numbers of converts? of confessions?
+(@) Can you print the first 20 numbers of converts? of confessions?
 
 ```{r}
 
 ```
 
-What was the mean number of converts? the maximum? How about for confessions?
+(@) What was the mean number of converts? the maximum? How about for confessions?
 
 ```{r}
 
 ```
 
-Bonus: what was the ratio between confessions and conversions?
+(@) Bonus: what was the ratio between confessions and conversions?
 
 ```{r}
 
 ```
-
 
 ## Plots
 
@@ -388,11 +398,11 @@ plot(paulist_missions$confessions, paulist_missions$converts)
 title("Confessions versus conversions")
 ```
 
-What might you be able to learn from this plot?
+(@) What might you be able to learn from this plot?
 
 >
 
-There are other datasets in historydata. Can you make a plot from one or more of them?
+(@) There are other datasets in historydata. Can you make a plot from one or more of them?
 
 ```{r}
 

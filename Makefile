@@ -16,4 +16,5 @@ deploy :
 clean :
 	rm -f $(RMD_FILES)
 	rm -rf libs/*
+	rm -rf *_files/
 

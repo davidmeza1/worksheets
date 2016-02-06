@@ -66,7 +66,7 @@ p a, li a {
   text-decoration: underline;
 }
 
-.footnoteRef, nav a {
+.footnoteRef, nav a, .btn {
   text-decoration: none;
 }
 

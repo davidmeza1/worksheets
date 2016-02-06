@@ -134,7 +134,11 @@ img {
     </script>
   </div>
   <div class="col-sm-9 content-body">
-    <p><a id="download-link" download class="btn btn-warning" onclick="window.location = window.location.toString().replace('.html','.Rmd');">Download this worksheet as a .Rmd</a></p>
+    <p>
+      <a id="download-link" download class="btn btn-warning">
+        Download this worksheet as a .Rmd
+      </a>
+    </p>
 
 <div id="header">
 <h1 class="title">About these worksheets</h1>
@@ -192,8 +196,11 @@ img {
     img.wrap("<a href='" + img.attr("src") + "'>");
   })
 
-  if (window.location.toString() === "http://lincolnmullen.com/projects/worksheets/") {
+  url = window.location.toString();
+  if (url === "http://lincolnmullen.com/projects/worksheets/") {
     $("#download-link").remove();
+  } else {
+    $("#download-link").attr("href", url.replace('.html', '.Rmd'));
   }
 </script>
 

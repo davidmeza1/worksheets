@@ -16,7 +16,10 @@
     img.wrap("<a href='" + img.attr("src") + "'>");
   })
 
-  if (window.location.toString() === "http://lincolnmullen.com/projects/worksheets/") {
+  url = window.location.toString();
+  if (url === "http://lincolnmullen.com/projects/worksheets/") {
     $("#download-link").remove();
+  } else {
+    $("#download-link").attr("href", url.replace('.html', '.Rmd'));
   }
 </script>

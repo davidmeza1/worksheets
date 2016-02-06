@@ -27,7 +27,7 @@ You can run those code chunks by choosing "run current chunk" or using a keyboar
 plot(mtcars)
 ```
 
-You will have two kinds of tasks to do in these worksheets. First, you will have to fill in the code chunks as indicated with code that solves the problem I have given you. Second, you may have to write some prose to explain what you are doing. If I've asked you to write something, prefix each paragraph with a `>`, which will give your answer a blockquote styling.  For instance, this paragraph
+You will have two kinds of tasks to do in these worksheets. First, you will have to fill in the code chunks as indicated with code that solves the problem I have given you.  Second, you may have to write some prose to explain what you are doing. If I've asked you to write something, prefix each paragraph with a `>`, which will give your answer a blockquote styling.  For instance, this paragraph
 
 ```
 > This is a blockquote.
@@ -40,6 +40,12 @@ produces this output:
 > This is a blockquote.
 > 
 > So is this.
+
+Both kinds of questions will be marked with the word **Exercise** on this website. In the R Markdown documents, you will find the exercises prefixed like this:
+
+```
+(@) Calculate the mean of the sample data.
+```
 
 Once you are done with the assignment, you should knit the document and turn in the resulting HTML file wherever I have asked you to do so. Don't forget to fill in your name in the `author: ""` field at the top of the document.
 

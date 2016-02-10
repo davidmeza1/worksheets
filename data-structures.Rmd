@@ -354,3 +354,5 @@ head(first_gen, 10)
 ```{r}
 
 ```
+
+(@) Can you get the promotions from 1800? (Hint: you will first have to make the date column a date object.)

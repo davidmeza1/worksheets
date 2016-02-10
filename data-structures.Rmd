@@ -3,15 +3,11 @@ title: "Data Structures and Subsetting"
 author: ""
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ## Aim of this worksheet
 
-After completing this worksheet, you should have a basic familiarity with the most useful types of data structures in R (lists, data frames, and matrices). You should also be able to subset any of these data structures using the common subsetting operators (`[`, `[[`, and `$`). And you should be able to use functions and the understand the basics of the `*apply` family of functionals.
+After completing this worksheet, you should have a basic familiarity with the most useful types of data structures in R (lists, data frames, and matrices). You should also be able to subset any of these data structures using the common subsetting operators (`[`, `[[`, and `$`). 
 
-You may find the chapters on [data structures](http://adv-r.had.co.nz/Data-structures.html), [subsetting](http://adv-r.had.co.nz/Subsetting.html), and [functions](http://adv-r.had.co.nz/Functions.html) from Hadley Wickham's *[Advanced R](http://adv-r.had.co.nz/) book to be helpful.
+You may find the chapters on [data structures](http://adv-r.had.co.nz/Data-structures.html) and [subsetting](http://adv-r.had.co.nz/Subsetting.html) from Hadley Wickham's *[Advanced R](http://adv-r.had.co.nz/)* book to be helpful.
 
 ## Subsetting vectors
 

@@ -5,11 +5,11 @@ author: ""
 
 ## Aims of this worksheet
 
-After completing this worksheet you should be able to use functions and the understand the basics of the `*apply` family of functionals.
+After completing this worksheet you should be able to use functions and write your own.
 
 You may find the chapter on [functions](http://adv-r.had.co.nz/Functions.html) from Hadley Wickham's *[Advanced R](http://adv-r.had.co.nz/)* book helpful.
 
-## Basics of functions
+## Explanation of functions
 
 Functions are one of the most powerful pieces of R. A function is basically a way of taking input and producing output. For instance, we can take the numbers 1, 2, and 3 (the input) run them through the `sum()` function and produce 6 (the output).
 
@@ -27,7 +27,7 @@ x < 10
 
 The second reason that this is powerful is that functions are thoughts. The function `sum()` instantiates the idea of summing up values. Functions are like legos. They are small and insignificant in themselves, but because of the way that they connect to each other, you can use a lot of small ideas to build up a big idea in a rigorous, stable way.
 
-### Function calls
+## Function calls
 
 A function call has two basic parts: the name of the function, and the arguments. The name of the function comes before the parentheses which marks a function call.
 
@@ -37,7 +37,7 @@ paste(c("First", "Second", "Third"), collapse = " -> ")
 
 (@) What function is being called above? What are the two arguments to the function? What do those arguments do?
 
-### Function definition
+## Function definition
 
 A function definition has three parts: the name of the function (which is the same as the name of any variable), the arguments to the function, and the body of the function that does the work. Let's define a basic function. It will be called `hello`; it will take a person's name as an input, and it will produce the output "Hello, person's name."
 
@@ -90,5 +90,3 @@ all(output == rescale(input))
 ```{r}
 
 ```
-
-

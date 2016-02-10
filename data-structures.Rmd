@@ -1,5 +1,5 @@
 ---
-title: "Data Structures and Functions"
+title: "Data Structures and Subsetting"
 author: ""
 ---
 
@@ -242,3 +242,115 @@ unique(c(1, 1, 1, 2, 3))
 
 We will work much, much more with data frames.
 
+## Lists
+
+Another very useful kind of data structure is the list. A list can hold values of any type, including vectors, data frames, and even other lists. For instance, we can create a list that holds several different kinds of information:
+
+```{r}
+our_class <- list(
+  title = "Intro to R",
+  year = 2016,
+  books = c("Basics of R", "Get Awesome at R"),
+  students = c("Adam", "Betsy", "Cynthia", "David")
+)
+str(our_class)
+```
+
+We can get just part of the list using the `[` function that we've become used to. For instance, to get just the title:
+
+```{r}
+our_class["title"]
+```
+
+But notice that the returned value is a list, not a character vector
+
+```{r}
+is.list(our_class["title"])
+is.character(our_class["title"])
+```
+
+R has another subset operator, `[[`. The single bracket (`[`) gives us what we asked for inside a list; the double bracket (`[[`) simplifies the list to give us the vector (or whatever) we asked for.
+
+```{r}
+our_class[["title"]]
+is.list(our_class[["title"]])
+is.character(our_class[["title"]])
+```
+
+(@) Using the `our_class` list, get just the year (as a list). Get it as a numeric vector.
+
+```{r}
+
+```
+
+(@) Using the `our_class` list, get the class title, the book list, and the year (as a list). (Hint: remember the different kinds of subsetting we did with `[`.)
+
+```{r}
+
+```
+
+R also lets us use the `$` operator we used to get columns of a data frame.
+
+```{r}
+our_class$title
+```
+
+(@) Get the students vector from `our_class`:
+
+```{r}
+
+```
+
+(@) Is the `$` equivalent to `[` or `[[`?
+
+> 
+
+(@) Create a list that models a historic event. What parts of the event are worth keeping track of? Also extract certain parts of that list.
+
+```{r}
+
+```
+
+(@) You can use `$`, `[`, and `[[` on both data frames and lists. What is the relationship between a data frame and a list? (Hint: use `is.list()` and `is.data.frame()` on a list and a data frame.)
+
+## Subsetting with logical vectors
+
+We have done subsetting above using numeric and character vectors. We can also do subsetting using logical vectors. Let's create a sample dataset of the heights of soldiers. 
+
+```{r}
+set.seed(3929)
+heights <- rnorm(20, mean = 69)
+names(heights) <- letters[1:20]
+heights
+```
+
+We can find all the soldiers who are taller than average like this. First let's compare all the heights to the mean height.
+
+```{r}
+heights > mean(heights)
+```
+
+Notice that we get a logical vector as a result. We can use that within the `[` operator to get just the soldiers who are taller than average.
+
+```{r}
+heights[heights > mean(heights)]
+```
+
+(@) Which soldiers are taller than 70 inches?
+
+```{r}
+
+```
+
+This kind of subsetting also works for data frames. Here we get all the officers from the first generation. (Notice the comma.)
+
+```{r}
+first_gen <- naval_promotions[naval_promotions$generation == 1, ]
+head(first_gen, 10)
+```
+
+(@) Can you get just the promotions to captain?
+
+```{r}
+
+```

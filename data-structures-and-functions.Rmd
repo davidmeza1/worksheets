@@ -166,3 +166,79 @@ city_distances["B", "D"]
 
 ```
 
+## Data frames
+
+The most useful data structure in R is the data frame. Think of a data frame like a spreadsheet that holds any kind of tabular data. It is two dimensional, like a matrix; unlike a matrix, it is homogenous in that the columns can hold different kinds of data.  While other langauges have add on libraries that allow for data structures like this, in R data frames are a first class citizen.
+
+Let's get a data frame from the historydata package. (If we also load dplyr, we will get nicer printing.)
+
+```{r}
+library(historydata)
+library(dplyr)
+naval_promotions
+```
+
+We can use `str()` to get a different look at the data.
+
+```{r}
+str(naval_promotions)
+```
+
+(@) How many rows and columns does the data frame have? What are the different types of vectors contained in it?
+
+> 
+
+We can use the `[` subset function to get access to rows and columns, just like we did with matrices. For instance, here we ask for just the first row and the columned named `"name"`:
+
+```{r}
+naval_promotions[1, "name"]
+```
+
+We can also ask for the entire first row (note the comma):
+
+```{r}
+naval_promotions[1, ]
+```
+
+(@) What is the name of the person in the tenth row? What was the date he became that rank?
+
+```{r}
+
+```
+
+Because data frames are organized by column, it is possible to extract an entire column using the `$` function. Here, let's get just the names of the people. (We'll limit it using `head()` so we don't print out all of them.)
+
+```{r}
+head(naval_promotions$name, 10)
+```
+
+The function `unique()` gives you, well, all the unique values in a vector. For instance:
+
+```{r}
+unique(c(1, 1, 1, 2, 3))
+```
+
+(@) What are all the different ranks contained in the `naval_promotions` dataset? (Hint: use `unique()`.)
+
+```{r}
+
+```
+
+(@) How many different people are contained in the `naval_promotions` dataset?
+
+```{r}
+
+```
+
+(@) Why is that number different than the number of rows?
+
+> 
+
+(@) What is the earliest and latest date in the dataset? (Hint: you may find some combination of `sort()`, `head()`, `tail()`, `range()`, and `as.Date()` to be useful. Don't forget about `na.rm = TRUE` as appropriate.)
+
+```{r}
+
+```
+
+We will work much, much more with data frames.
+

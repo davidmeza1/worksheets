@@ -143,3 +143,4 @@ Notice that we chained the data manipulation functions using the pipe (`%>%`). T
 
 ```
 
+(@) Bonus: We neglected the column `members_indian` above, which should be counted in the `members_total` column. However, for some years the values of that column are `NA`, and in other years they have a numeric value. The difference is that the years where the value is `NA`, that column does not appear in the data because it was not tracked. How can you add that column to the total without running into problems with the missing values? (Hints: One way to do this is to use the `ifelse()` function to conditionally assign a value to `members_total`. Another way to do this is to group the data frame using `rowwise()` and use `sum()` with the `na.rm = TRUE` argument. A third, less elegant way, would be to split the data frame manually based on whether the value is `NA` or not, then recombine them.)

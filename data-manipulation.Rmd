@@ -144,3 +144,31 @@ Notice that we chained the data manipulation functions using the pipe (`%>%`). T
 ```
 
 (@) Bonus: We neglected the column `members_indian` above, which should be counted in the `members_total` column. However, for some years the values of that column are `NA`, and in other years they have a numeric value. The difference is that the years where the value is `NA`, that column does not appear in the data because it was not tracked. How can you add that column to the total without running into problems with the missing values? (Hints: One way to do this is to use the `ifelse()` function to conditionally assign a value to `members_total`. Another way to do this is to group the data frame using `rowwise()` and use `sum()` with the `na.rm = TRUE` argument. A third, less elegant way, would be to split the data frame manually based on whether the value is `NA` or not, then recombine them.)
+
+## Sorting columns (`arrange()`)
+
+Often we want to sort a data frame by one of its columns. This can be done with the verb `arrange()`. By default `arrange()` will sort from least to greatest; we can use the function `desc()` to sort from greatest to least. In this example, we sort the data frame to get the circuits with the highest number of white members.
+
+```{r}
+methodists %>% 
+  arrange(desc(members_white))
+```
+
+(@) Which circuits had the highest number of black members? Be sure to select only the necessary columns so that the results print in a meaningful way.
+
+```{r}
+
+```
+
+(@) Which circuits had the most members overall? Keep in mind that you will have to use your code from above to calculate the total members for years where that value is `NA` because only the number of white and black members is supplied?
+
+```{r}
+
+```
+
+(@) Which circuits had the high percentage of black members without being entirely black?
+
+```{r}
+
+```
+

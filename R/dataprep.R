@@ -16,5 +16,9 @@ methodists %>%
                                   0, members_colored)) %>%
   mutate(members_indian  = ifelse(minutes_year >= 1824 & is.na(members_indian),
                                   0, members_indian)) %>%
+  mutate(members_white   = ifelse(members_white == 0 & members_colored == 0,
+                                  NA, members_white)) %>%
+  mutate(members_colored = ifelse(members_white == 0 & members_colored == 0,
+                                  NA, members_colored)) %>%
   write_csv("data/methodists.csv")
 

@@ -274,7 +274,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1786,NA,NA,Long Island,NA,NA,146,8,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=34
 1786,NA,NA,Newark,NA,NA,50,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=34
 1786,NA,NA,Nova Scotia,NA,NA,510,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=34
-1786,NA,NA,Antigus,NA,NA,0,1000,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=34
+1786,NA,NA,Antigua,NA,NA,0,1000,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=34
 1787,NA,NA,Bladen,NA,NA,0,30,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=36
 1787,NA,NA,Halifax,NA,NA,403,23,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=36
 1787,NA,NA,Mecklenburg,NA,NA,828,76,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=36
@@ -384,7 +384,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1788,NA,NA,Calvert,NA,NA,505,842,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=39
 1788,NA,NA,Annapolis,NA,NA,60,70,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=39
 1788,NA,NA,Baltimore,NA,NA,950,269,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=39
-1788,NA,NA,Cecil,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=39
+1788,NA,NA,Cecil,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=39
 1788,NA,NA,Kent,NA,NA,840,760,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=39
 1788,NA,NA,Talbot,NA,NA,1077,524,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=39
 1788,NA,NA,Dorchester,NA,NA,721,254,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=39
@@ -887,7 +887,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1793,NA,NA,Alleghany,NA,NA,382,20,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=59
 1793,NA,NA,Winchester,NA,NA,55,28,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=59
 1793,NA,NA,Alexandria,NA,NA,58,40,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=59
-1793,NA,NA,Amherst,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=59
+1793,NA,NA,Amherst,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=59
 1793,NA,NA,Orange,NA,NA,520,62,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=59
 1793,NA,NA,Hanover,NA,NA,477,62,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=59
 1793,NA,NA,Gloucester,NA,NA,677,63,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=59
@@ -1273,7 +1273,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1795,NA,NA,Tioga,NA,NA,137,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=69
 1795,NA,NA,Seneca,NA,NA,133,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=69
 1795,NA,NA,Nova Scotia,NA,NA,1000,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=69
-1796,NA,NA,Bath,Maine,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
+1796,NA,NA,Bath,Maine,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Penobscot,Maine,NA,73,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Portland,Maine,NA,80,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Readfield,Maine,NA,204,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
@@ -1293,12 +1293,12 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1796,NA,NA,Pomfret,Connecticut,NA,180,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Redding,Connecticut,NA,142,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Tolland,Connecticut,NA,122,2,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
-1796,NA,NA,Vershire,Vermont,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
+1796,NA,NA,Vershire,Vermont,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Albany,New York,NA,328,9,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Brooklyn,New York,NA,24,15,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Cambridge,New York,NA,326,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Columbia,New York,NA,243,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
-1796,NA,NA,Croton,New York,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
+1796,NA,NA,Croton,New York,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Delaware,New York,NA,314,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Dutchess,New York,NA,391,6,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Herkimer,New York,NA,301,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
@@ -1307,7 +1307,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1796,NA,NA,New Rochelle,New York,NA,375,18,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,New York,New York,NA,641,145,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Saratoga,New York,NA,246,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
-1796,NA,NA,Staten Island,New York,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
+1796,NA,NA,Staten Island,New York,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Bethel,New Jersey,NA,340,8,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Burlington,New Jersey,NA,354,28,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
 1796,NA,NA,Elizabethtown,New Jersey,NA,260,5,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=76
@@ -2011,7 +2011,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1800,NA,NA,Granville,Massachusetts,NA,300,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=100
 1800,NA,NA,Lynn,Massachusetts,NA,94,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=100
 1800,NA,NA,Marblehead,Massachusetts,NA,26,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=100
-1800,NA,NA,Martha's Vineyard,Massachusetts,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=100
+1800,NA,NA,Martha's Vineyard,Massachusetts,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=100
 1800,NA,NA,Merrimack,Massachusetts,NA,65,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=100
 1800,NA,NA,Needham,Massachusetts,NA,153,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=100
 1800,NA,NA,Nantucket,Massachusetts,NA,65,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=100
@@ -2356,7 +2356,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1802,New York,New York,Dutchess and Columbia,NA,NA,432,12,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=111
 1802,New York,Pittsfield,Plattsburg,NA,NA,325,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=111
 1802,New York,Pittsfield,Cambridge,NA,NA,523,3,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=111
-1802,New York,Pittsfield,Grand Isle,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=111
+1802,New York,Pittsfield,Grand Isle,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=111
 1802,New York,New York,Redding,NA,NA,227,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=111
 1802,New York,New York,Litchfield,NA,NA,307,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=111
 1802,New York,New York,Middletown,NA,NA,314,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=111
@@ -2583,9 +2583,9 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1803,New York,Pittsfield,Fletcher,NA,NA,382,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=118
 1803,New York,Pittsfield,Grand Isle,NA,NA,102,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=118
 1803,New York,Pittsfield,Plattsburg,NA,NA,350,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=118
-1803,New York,Pittsfield,Quebec,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=118
+1803,New York,Pittsfield,Quebec,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=118
 1803,New York,Pittsfield,Montreal,NA,NA,7,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=118
-1803,New York,Pittsfield,St. John's and Sorielle,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=118
+1803,New York,Pittsfield,St. John's and Sorielle,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=118
 1803,New York,Pittsfield,Ottawha,NA,NA,73,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=118
 1803,New York,New London,New London,NA,NA,365,15,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=118
 1803,New York,New London,Pomfret,NA,NA,248,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=118
@@ -2929,7 +2929,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1805,Baltimore,Susquehannah,Huntingdon,NA,NA,271,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
 1805,Baltimore,Susquehannah,Lyttleton,NA,NA,418,4,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
 1805,Baltimore,Susquehannah,Juniatta,NA,NA,50,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
-1805,Baltimore,Susquehannah,Tioga,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
+1805,Baltimore,Susquehannah,Tioga,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
 1805,Baltimore,Monongahela,Redstone,NA,NA,555,21,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
 1805,Baltimore,Monongahela,Shenango,NA,NA,206,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
 1805,Baltimore,Monongahela,Erie,NA,NA,349,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
@@ -2942,7 +2942,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1805,Baltimore,Greenbrier,Bottetourt,NA,NA,358,83,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
 1805,Baltimore,Greenbrier,Greenbrier,NA,NA,873,41,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
 1805,Baltimore,Greenbrier,Rockingham,NA,NA,850,102,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
-1805,Baltimore,Greenbrier,Monroe,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
+1805,Baltimore,Greenbrier,Monroe,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
 1805,Baltimore,Greenbrier,Allegheny,NA,NA,655,79,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
 1805,Baltimore,Greenbrier,Pendleton,NA,NA,385,12,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
 1805,Philadelphia,Chesapeake,Philadelphia,NA,NA,950,738,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=138
@@ -3084,7 +3084,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1806,Western,Ohio,Muskingum and Little Kanawha,NA,NA,210,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=145
 1806,Western,Ohio,Guyandott,NA,NA,150,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=145
 1806,Western,Mississippi,Natchez,NA,NA,132,72,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=145
-1806,Western,Mississippi,"Wilkinson, Claiborne, and New Orleans, no return",NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=145
+1806,Western,Mississippi,"Wilkinson, Claiborne, and New Orleans, no return",NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=145
 1806,South Carolina,Oconee,Appalachee,NA,NA,646,52,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=145
 1806,South Carolina,Oconee,Sparta,NA,NA,938,295,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=145
 1806,South Carolina,Oconee,St. Mary's,NA,NA,125,17,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=145
@@ -3689,7 +3689,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1808,Baltimore,Greenbrier,Bottetourt,NA,NA,501,117,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=167
 1808,Baltimore,Greenbrier,Greenbrier,NA,NA,460,38,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=167
 1808,Baltimore,Greenbrier,Monroe,NA,NA,388,12,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=167
-1808,Baltimore,Greenbrier,New River,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=167
+1808,Baltimore,Greenbrier,New River,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=167
 1808,Baltimore,Greenbrier,Randolph,NA,NA,278,8,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=167
 1808,Baltimore,Greenbrier,Alleghany,NA,NA,724,93,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=167
 1808,Baltimore,Greenbrier,Pendleton,NA,NA,333,70,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=167
@@ -4111,7 +4111,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1809,New England,Boston,Bristol,NA,NA,80,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=178
 1809,New England,Boston,Rhode Island,NA,NA,77,2,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=178
 1809,New England,Boston,Warren,NA,NA,40,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=178
-1809,New England,Boston,Norton and Easton,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=178
+1809,New England,Boston,Norton and Easton,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=178
 1809,New England,Boston,Portsmouth circuit,NA,NA,220,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=178
 1809,New England,New London,New London,NA,NA,521,19,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=178
 1809,New England,New London,Tolland,NA,NA,294,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=178
@@ -5527,7 +5527,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1813,New England,Vermont,Vershire,NA,NA,210,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=236
 1813,New England,Vermont,Barre,NA,NA,330,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=236
 1813,New England,Vermont,Danville,NA,NA,268,3,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=236
-1813,New England,Vermont,Stanstead,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=236
+1813,New England,Vermont,Stanstead,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=236
 1813,New England,New Hampshire,Grantham,NA,NA,250,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=236
 1813,New England,New Hampshire,Landaff,NA,NA,393,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=236
 1813,New England,New Hampshire,Lunenburg,NA,NA,220,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=236
@@ -6207,7 +6207,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1815,Baltimore,Monongahela,Monogahela,NA,NA,676,19,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=267
 1815,Baltimore,Monongahela,Randolph,NA,NA,340,5,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=267
 1815,Baltimore,Monongahela,Mahonin,NA,NA,148,4,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=267
-1815,Philadelphia,Schuylkill,Philadelphia,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=267
+1815,Philadelphia,Schuylkill,Philadelphia,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=267
 1815,Philadelphia,Schuylkill,St. George's,NA,NA,1208,1371,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=267
 1815,Philadelphia,Schuylkill,Union,NA,NA,367,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=267
 1815,Philadelphia,Schuylkill,Kensington,NA,NA,150,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=267
@@ -6373,7 +6373,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1815,Genesee,Chenango,Scipio,NA,NA,600,5,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=268
 1815,Genesee,Chenango,Cayuga,NA,NA,583,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=268
 1815,Genesee,Chenango,Lebanon,NA,NA,343,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=268
-1815,Genesee,Chenango,Onondaga,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=268
+1815,Genesee,Chenango,Onondaga,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=268
 1815,Genesee,Chenango,Broome,NA,NA,502,11,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=268
 1815,Genesee,Susquehannah,Lycoming,NA,NA,824,4,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=268
 1815,Genesee,Susquehannah,Shamokin,NA,NA,152,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=268
@@ -6482,7 +6482,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1816,Tennessee,Missouri,Bellevue,NA,NA,150,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=288
 1816,Tennessee,Missouri,Cold Water,NA,NA,145,17,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=288
 1816,Tennessee,Missouri,Missouri,NA,NA,93,5,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=288
-1816,Tennessee,Missouri,Boonslick,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=288
+1816,Tennessee,Missouri,Boonslick,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=288
 1816,Tennessee,Mississippi,Claiborne and Natchez,NA,NA,291,219,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=288
 1816,Tennessee,Mississippi,Wilkinson,NA,NA,500,100,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=288
 1816,Tennessee,Mississippi,Amit,NA,NA,358,53,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=288
@@ -6910,7 +6910,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1817,Mississippi,Mississippi,Chickasaw,NA,NA,132,17,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
 1817,Mississippi,Mississippi,Attakapas,NA,NA,70,8,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
 1817,Mississippi,Mississippi,Rapids,NA,NA,40,15,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
-1817,Mississippi,Mississippi,Washataw,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
+1817,Mississippi,Mississippi,Washataw,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
 1817,South Carolina,Oconee,Sparta cir.,NA,NA,576,337,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
 1817,South Carolina,Oconee,Oakmulgee,NA,NA,582,80,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
 1817,South Carolina,Oconee,Alcovi,NA,NA,955,157,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
@@ -6964,7 +6964,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1817,Virginia,Roanoke,Caswell,NA,NA,730,117,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
 1817,Virginia,Roanoke,Haw River,NA,NA,410,168,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
 1817,Virginia,Roanoke,Washington and Swift Creek,NA,NA,217,153,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
-1817,Virginia,Roanoke,Albemarle,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
+1817,Virginia,Roanoke,Albemarle,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
 1817,Virginia,Roanoke,Sound,NA,NA,162,10,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
 1817,Virginia,Roanoke,Roanoke,NA,NA,450,283,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
 1817,Virginia,Roanoke,Tar River,NA,NA,746,228,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=303
@@ -7868,7 +7868,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1819,Virginia,Norfolk,Bertie,NA,NA,611,129,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=337
 1819,Virginia,Norfolk,Sussex,NA,NA,528,107,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=337
 1819,Virginia,Norfolk,Washington and Swift Creek,NA,NA,184,100,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=337
-1819,Virginia,Norfolk,Albemarle,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=337
+1819,Virginia,Norfolk,Albemarle,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=337
 1819,Virginia,Norfolk,Sound,NA,NA,134,10,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=337
 1819,Virginia,Meherrin,Greensville,NA,NA,504,187,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=337
 1819,Virginia,Meherrin,Mecklenburg,NA,NA,320,39,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=337
@@ -7962,7 +7962,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1819,Philadelphia,New Jersey,Gloucester,NA,NA,812,8,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=338
 1819,Philadelphia,New Jersey,Cumberland,NA,NA,781,23,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=338
 1819,Philadelphia,New Jersey,Salem,NA,NA,941,84,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=338
-1819,Philadelphia,New Jersey,New Brunswick,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=338
+1819,Philadelphia,New Jersey,New Brunswick,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=338
 1819,Philadelphia,New Jersey,New Mills,NA,NA,681,21,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=338
 1819,Philadelphia,New Jersey,Freehold,NA,NA,590,30,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=338
 1819,Philadelphia,New Jersey,Essex and Staten Island,NA,NA,495,22,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=338
@@ -8348,7 +8348,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1820,Virginia,Norfolk,Camden and Edenton,NA,NA,646,727,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=352
 1820,Virginia,Norfolk,Bertie,NA,NA,527,118,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=352
 1820,Virginia,Norfolk,Sussex,NA,NA,640,78,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=352
-1820,Virginia,Norfolk,"Washington, Swift Creek and Albemarle",NA,NA,0,0,NA,NA
+1820,Virginia,Norfolk,"Washington, Swift Creek and Albemarle",NA,NA,NA,NA,NA,NA
 1820,Virginia,Norfolk,Sound,NA,NA,330,100,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=352
 1820,Virginia,Meherrin,Greensville,NA,NA,594,312,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=352
 1820,Virginia,Meherrin,Mecklenburg,NA,NA,313,34,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=352
@@ -8717,14 +8717,14 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1821,Missouri,Black River,Hot Spring,NA,NA,133,6,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Missouri,Black River,Mount Prairie,NA,NA,180,12,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Missouri,Black River,Peccon Point,NA,NA,25,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
-1821,Tennessee,Kenhawa,Middle Island,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
+1821,Tennessee,Kenhawa,Middle Island,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Tennessee,Kenhawa,Big Kenhawa,NA,NA,600,15,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
-1821,Tennessee,Kenhawa,Greenbrier,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
-1821,Tennessee,Kenhawa,Monroe,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
+1821,Tennessee,Kenhawa,Greenbrier,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
+1821,Tennessee,Kenhawa,Monroe,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Tennessee,Kenhawa,Guyandotte,NA,NA,438,42,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Tennessee,Kenhawa,Little Sandy,NA,NA,335,45,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Tennessee,Kenhawa,John's Creek,NA,NA,170,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
-1821,Tennessee,Kenhawa,Little Kenhawa,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
+1821,Tennessee,Kenhawa,Little Kenhawa,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Tennessee,Kentucky,Limestone,NA,NA,783,103,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Tennessee,Kentucky,Fleming,NA,NA,866,55,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Tennessee,Kentucky,Mount Sterling,NA,NA,545,105,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
@@ -8733,7 +8733,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1821,Tennessee,Kentucky,Newport,NA,NA,433,13,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Tennessee,Kentucky,Lexington and Georgetown,NA,NA,108,52,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Tennessee,Kentucky,Lexington cir.,NA,NA,783,211,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
-1821,Tennessee,Kentucky,Maysville,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
+1821,Tennessee,Kentucky,Maysville,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Tennessee,Nashville,Nashville,NA,NA,72,32,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Tennessee,Nashville,Nashville cir.,NA,NA,967,199,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
 1821,Tennessee,Nashville,Lebanon,NA,NA,1034,88,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=369
@@ -9078,7 +9078,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1821,New England,New Hampshire,Newmarket and Kingston,NA,NA,145,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=371
 1821,New England,New Hampshire,Poplin,NA,NA,324,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=371
 1821,New England,New Hampshire,Rochester,NA,NA,250,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=371
-1821,New England,New Hampshire,Rochester circuit,NA,NA,0,0,NA,NA
+1821,New England,New Hampshire,Rochester circuit,NA,NA,NA,NA,NA,NA
 1821,New England,New Hampshire,Tuftonborough,NA,NA,119,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=371
 1821,New England,New Hampshire,Sandwich,NA,NA,130,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=371
 1821,New England,New Hampshire,Pembroke,NA,NA,209,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=371
@@ -9175,7 +9175,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1821,Genesee,Upper Canada,Niagara,NA,NA,424,2,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=372
 1821,Genesee,Upper Canada,Lyons Creek,NA,NA,123,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=372
 1821,Genesee,Upper Canada,Young Street,NA,NA,277,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=372
-1821,Genesee,Lower Canada,Ottawha,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=372
+1821,Genesee,Lower Canada,Ottawha,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=372
 1821,Genesee,Lower Canada,Cornwall,NA,NA,142,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=372
 1821,Genesee,Lower Canada,Augusta,NA,NA,620,3,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=372
 1821,Genesee,Lower Canada,Rideau,NA,NA,213,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=372
@@ -9227,7 +9227,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1822,Ohio,Lebanon,Paint Creek,NA,NA,600,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=387
 1822,Ohio,Lebanon,London,NA,NA,579,2,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=387
 1822,Ohio,Lebanon,Detriot,NA,NA,20,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=387
-1822,Ohio,Lebanon,Indian M.,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=387
+1822,Ohio,Lebanon,Indian M.,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=387
 1822,Ohio,Miami,Cincinnati,NA,NA,540,33,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=387
 1822,Ohio,Miami,Greenville,NA,NA,340,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=387
 1822,Ohio,Miami,Oxford,NA,NA,936,9,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=387
@@ -9437,7 +9437,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1822,Virginia,Roanoke,Swift Creek,NA,NA,100,102,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=389
 1822,Virginia,Roanoke,Mattamuskeet,NA,NA,80,37,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=389
 1822,Virginia,Roanoke,Banks and Islands,NA,NA,200,38,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=389
-1822,Virginia,Roanoke,Albemarle,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=389
+1822,Virginia,Roanoke,Albemarle,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=389
 1822,Virginia,Roanoke,Sound,NA,NA,168,22,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=389
 1822,Virginia,Meherrin,Greensville,NA,NA,645,214,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=389
 1822,Virginia,Meherrin,Mecklenburg,NA,NA,330,34,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=389
@@ -10060,7 +10060,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1823,Virginia,Roanoke,Roanoke,NA,NA,659,192,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=413
 1823,Virginia,Roanoke,Washington,NA,NA,32,254,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=413
 1823,Virginia,Roanoke,Swift Creek,NA,NA,80,65,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=413
-1823,Virginia,Roanoke,Washington and Albemarle,NA,NA,0,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=413
+1823,Virginia,Roanoke,Washington and Albemarle,NA,NA,NA,NA,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=413
 1823,Virginia,Roanoke,Sound,NA,NA,212,42,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=413
 1823,Virginia,Roanoke,Mattamuskeet,NA,NA,79,34,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=413
 1823,Virginia,Roanoke,Banks and Islands,NA,NA,187,36,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=413
@@ -10396,7 +10396,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1824,Ohio,Ohio,Mercer,NA,NA,538,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=426
 1824,Ohio,Ohio,Grand River,NA,NA,530,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=426
 1824,Ohio,Ohio,Youngstown,NA,NA,777,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=426
-1824,Ohio,Ohio,Deerfield,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=426
+1824,Ohio,Ohio,Deerfield,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=426
 1824,Ohio,Ohio,Hudson,NA,NA,415,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=426
 1824,Ohio,Ohio,Brunswick,NA,NA,440,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=426
 1824,Ohio,Ohio,Beaver,NA,NA,729,27,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=426
@@ -10700,7 +10700,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1824,Virginia,Roanoke,Swift Creek,NA,NA,80,65,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=439
 1824,Virginia,Roanoke,Mattamuskeet,NA,NA,84,30,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=439
 1824,Virginia,Roanoke,Banks and Islands,NA,NA,167,34,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=439
-1824,Virginia,Roanoke,Albemarle,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=439
+1824,Virginia,Roanoke,Albemarle,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=439
 1824,Virginia,Roanoke,Sound,NA,NA,436,122,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=439
 1824,Virginia,Roanoke,Camden,NA,NA,398,662,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=439
 1824,Virginia,Norfolk,Norfolk,NA,NA,249,272,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=439
@@ -11380,7 +11380,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1825,Virginia,Neuse,Haw River,NA,NA,468,173,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=467
 1825,Virginia,Roanoke,Roanoke,NA,NA,685,153,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=467
 1825,Virginia,Roanoke,Washington,NA,NA,48,250,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=467
-1825,Virginia,Roanoke,Swift Creek and Albemarle,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=467
+1825,Virginia,Roanoke,Swift Creek and Albemarle,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=467
 1825,Virginia,Roanoke,Sound,NA,NA,546,249,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=467
 1825,Virginia,Roanoke,Mattamuskeet,NA,NA,84,30,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=467
 1825,Virginia,Roanoke,Banks and Islands,NA,NA,194,34,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=467
@@ -11646,7 +11646,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1825,Genesee,Ontario,Prattsburg,NA,NA,516,3,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=477
 1825,Genesee,Ontario,Bath and Canisteo,NA,NA,444,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=477
 1825,Genesee,Ontario,Geneva and Canandaigua,NA,NA,385,13,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=477
-1825,Genesee,Ontario,Big Flats,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=477
+1825,Genesee,Ontario,Big Flats,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=477
 1825,Genesee,Oneida,Westmoreland,NA,NA,564,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=477
 1825,Genesee,Oneida,Western,NA,NA,723,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=477
 1825,Genesee,Oneida,Steuben,NA,NA,391,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=477
@@ -11729,20 +11729,20 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1825,Canada,Bay of Quinte,Cornwall,NA,NA,423,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=479
 1825,Canada,Bay of Quinte,Attawa,NA,NA,122,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=479
 1826,Pittsburg,Pittsburg,Pittsburg,NA,NA,775,8,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
-1826,Pittsburg,Pittsburg,Williamsport,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
+1826,Pittsburg,Pittsburg,Williamsport,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Pittsburg,Redstone,NA,NA,556,18,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Pittsburg,Uniontown,NA,NA,177,12,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Pittsburg,Somerset,NA,NA,283,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
-1826,Pittsburg,Pittsburg,Connelsville,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
+1826,Pittsburg,Pittsburg,Connelsville,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Pittsburg,Ohio,NA,NA,530,7,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Monongahela,Washington,NA,NA,221,3,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Monongahela,Greenfield,NA,NA,662,1,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Monongahela,Monongahela,NA,NA,544,42,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
-1826,Pittsburg,Monongahela,Randolph,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
+1826,Pittsburg,Monongahela,Randolph,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Monongahela,Lewis,NA,NA,374,9,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Monongahela,Harrison,NA,NA,875,11,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
-1826,Pittsburg,Monongahela,Clarksburg,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
-1826,Pittsburg,Monongahela,Short Creek,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
+1826,Pittsburg,Monongahela,Clarksburg,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
+1826,Pittsburg,Monongahela,Short Creek,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Monongahela,Wheeling,NA,NA,104,17,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,West Wheeling,Barnesville,NA,NA,1080,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,West Wheeling,West Wheeling,NA,NA,860,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
@@ -11763,13 +11763,13 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1826,Pittsburg,Ohio,Grand River,NA,NA,494,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Ohio,Erie,NA,NA,460,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Ohio,Mercer,NA,NA,624,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
-1826,Pittsburg,Erie,Conewango,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
-1826,Pittsburg,Erie,North East,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
-1826,Pittsburg,Erie,Chetanque,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
-1826,Pittsburg,Erie,Lake,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
-1826,Pittsburg,Erie,French Creek,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
-1826,Pittsburg,Erie,Mahoning,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
-1826,Pittsburg,Erie,Butler,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
+1826,Pittsburg,Erie,Conewango,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
+1826,Pittsburg,Erie,North East,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
+1826,Pittsburg,Erie,Chetanque,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
+1826,Pittsburg,Erie,Lake,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
+1826,Pittsburg,Erie,French Creek,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
+1826,Pittsburg,Erie,Mahoning,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
+1826,Pittsburg,Erie,Butler,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Erie,Erie,NA,NA,339,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Pittsburg,Erie,Mercer,NA,NA,558,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=483
 1826,Ohio,Miami,Cincinnati,NA,NA,827,74,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=485
@@ -11900,7 +11900,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1826,Missouri,Cape Girardeau,Spring River and White River,NA,NA,248,40,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=489
 1826,Missouri,Cape Girardeau,Cape Girardeau,NA,NA,396,23,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=489
 1826,Missouri,Cape Girardeau,New Madrid,NA,NA,170,7,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=489
-1826,Missouri,Arkansas,Arkansas cir.,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=489
+1826,Missouri,Arkansas,Arkansas cir.,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=489
 1826,Missouri,Arkansas,Hot Springs,NA,NA,58,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=489
 1826,Missouri,Arkansas,Mt. Prairie,NA,NA,204,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=489
 1826,Missouri,Arkansas,Peccon Point,NA,NA,100,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=489
@@ -11916,7 +11916,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1826,Holston,Abingdon,Holston,NA,NA,2049,95,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=490
 1826,Holston,Knoxville,Knox,NA,NA,861,121,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=490
 1826,Holston,Knoxville,Powell's Valley,NA,NA,410,41,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=490
-1826,Holston,Knoxville,Cumberland Round,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=490
+1826,Holston,Knoxville,Cumberland Round,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=490
 1826,Holston,Knoxville,Kingston,NA,NA,463,58,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=490
 1826,Holston,Knoxville,Washington,NA,NA,240,28,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=490
 1826,Holston,Knoxville,Sequache,NA,NA,438,17,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=490
@@ -11960,7 +11960,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1826,Tennessee,Hunstville,Paint Rock,NA,NA,297,66,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=492
 1826,Tennessee,Hunstville,Franklin,NA,NA,420,50,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=492
 1826,Tennessee,Hunstville,Lawrence,NA,NA,718,120,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=492
-1826,Tennessee,Cherokee,Cherokee mission,NA,NA,0,0,88,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=492
+1826,Tennessee,Cherokee,Cherokee mission,NA,NA,NA,NA,88,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=492
 1826,Mississippi,Louisiana,Attakapas,NA,NA,97,50,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=493
 1826,Mississippi,Louisiana,Rapides,NA,NA,62,89,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=493
 1826,Mississippi,Louisiana,Washitta,NA,NA,93,51,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=493
@@ -12098,7 +12098,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1826,Virginia,Neuse,Haw River,NA,NA,468,173,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=497
 1826,Virginia,Roanoke,Roanoke,NA,NA,616,123,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=497
 1826,Virginia,Roanoke,Washington,NA,NA,55,270,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=497
-1826,Virginia,Roanoke,Swift Creek and Albemarle,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=497
+1826,Virginia,Roanoke,Swift Creek and Albemarle,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=497
 1826,Virginia,Roanoke,Sound,NA,NA,545,252,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=497
 1826,Virginia,Roanoke,"Mattamuskeet, Banks, and Islands",NA,NA,194,12,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=497
 1826,Virginia,Roanoke,Camden,NA,NA,523,1065,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=497
@@ -12447,7 +12447,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1826,Canada,Niagara,Yonge Street and York,NA,NA,459,3,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=509
 1826,Canada,Niagara,Toronto,NA,NA,305,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=509
 1826,Canada,Niagara,Grand River mission,NA,NA,36,1,36,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=509
-1826,Canada,Niagara,Credit mission,NA,NA,0,0,110,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=509
+1826,Canada,Niagara,Credit mission,NA,NA,NA,NA,110,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=509
 1826,Canada,Bay Quinte,Bay Quinte and Kingston,NA,NA,930,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=509
 1826,Canada,Bay Quinte,Augusta,NA,NA,666,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=509
 1826,Canada,Bay Quinte,Cornwall,NA,NA,470,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=509
@@ -12816,7 +12816,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1827,Virginia,Norfolk,Edenton and Elizabeth city,NA,NA,223,348,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=531
 1827,Virginia,Roanoke,Roanoke,NA,NA,610,135,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=531
 1827,Virginia,Roanoke,Washington and Plymouth,NA,NA,76,329,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=531
-1827,Virginia,Roanoke,Albemarle,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=531
+1827,Virginia,Roanoke,Albemarle,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=531
 1827,Virginia,Roanoke,Sound,NA,NA,210,73,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=531
 1827,Virginia,Roanoke,Mattamuskeet,NA,NA,181,101,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=531
 1827,Virginia,Roanoke,Banks and Islands,NA,NA,174,28,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=531
@@ -13010,7 +13010,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1827,New York,Hudson River,Newburg,NA,NA,266,5,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=536
 1827,New York,Hudson River,New Paltz,NA,NA,276,6,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=536
 1827,New England,Boston,Boston,NA,NA,565,80,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=538
-1827,New England,Boston,South Boston,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=538
+1827,New England,Boston,South Boston,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=538
 1827,New England,Boston,Dorchester,NA,NA,60,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=538
 1827,New England,Boston,Weymouth and Scituate,NA,NA,114,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=538
 1827,New England,Boston,Easton and Stoughton,NA,NA,120,2,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=538
@@ -13221,7 +13221,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1827,Canada,Bay of Quinte,Whitby,NA,NA,94,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=544
 1827,Canada,Bay of Quinte,Young Street and York,NA,NA,589,1,42,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=544
 1827,Canada,Bay of Quinte,Toronto,NA,NA,356,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=544
-1827,Canada,Bay of Quinte,Credit mission,NA,NA,0,0,118,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=544
+1827,Canada,Bay of Quinte,Credit mission,NA,NA,NA,NA,118,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=544
 1827,Canada,Augusta,Augusta,NA,NA,983,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=544
 1827,Canada,Augusta,Cornwall,NA,NA,442,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=544
 1827,Canada,Augusta,Ottawa,NA,NA,96,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=544
@@ -13616,7 +13616,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1828,Virginia,Neuse,Tar River,NA,NA,657,136,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=564
 1828,Virginia,Neuse,Beaufort and Straits,NA,NA,258,87,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=564
 1828,Virginia,Roanoke,Washington and Plymouth,NA,NA,79,309,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=564
-1828,Virginia,Roanoke,Albemarle,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=564
+1828,Virginia,Roanoke,Albemarle,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=564
 1828,Virginia,Roanoke,Sounds,NA,NA,222,75,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=564
 1828,Virginia,Roanoke,Mattamuskeet,NA,NA,174,113,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=564
 1828,Virginia,Roanoke,Banks and Islands,NA,NA,221,40,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=564
@@ -13774,7 +13774,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1828,New York,Rhinebeck,Wethersfield,NA,NA,222,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=569
 1828,New York,Rhinebeck,Burlington,NA,NA,336,1,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=569
 1828,New York,Rhinebeck,Hampshire mission,NA,NA,223,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=569
-1828,New York,Rhinebeck,Red Hook mission,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=569
+1828,New York,Rhinebeck,Red Hook mission,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=569
 1828,New York,Saratoga,Montgomery,NA,NA,556,8,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=569
 1828,New York,Saratoga,Halfmoon,NA,NA,427,3,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=569
 1828,New York,Saratoga,Saratoga,NA,NA,571,2,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=569
@@ -13817,7 +13817,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1828,New York,Plattsburg,Chazy,NA,NA,417,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=570
 1828,New York,Plattsburg,Grand Isle,NA,NA,190,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=570
 1828,New England,Boston,Boston,NA,NA,678,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=572
-1828,New England,Boston,South Boston,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=572
+1828,New England,Boston,South Boston,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=572
 1828,New England,Boston,Dorchester,NA,NA,75,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=572
 1828,New England,Boston,Weymouth and Scituate,NA,NA,186,1,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=572
 1828,New England,Boston,Pembroke,NA,NA,63,0,0,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=572
@@ -14060,9 +14060,9 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1828,Canada,Bay Quinte,Rice Lake,NA,NA,96,0,194,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=9
 1828,Canada,Bay Quinte,York,NA,NA,176,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=9
 1828,Canada,Bay Quinte,Young Street and Whitby,NA,NA,576,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=9
-1828,Canada,Bay Quinte,Credit Mission,NA,NA,0,0,132,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=9
-1828,Canada,Bay Quinte,Grape Island mission,NA,NA,0,0,118,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=9
-1828,Canada,Bay Quinte,Lake Simcon,NA,NA,0,0,345,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=9
+1828,Canada,Bay Quinte,Credit Mission,NA,NA,NA,NA,132,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=9
+1828,Canada,Bay Quinte,Grape Island mission,NA,NA,NA,NA,118,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=9
+1828,Canada,Bay Quinte,Lake Simcon,NA,NA,NA,NA,345,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=9
 1828,Canada,Bay Quinte,Toronto,NA,NA,400,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=9
 1828,Canada,Augusta,Kingston,NA,NA,427,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=9
 1828,Canada,Augusta,Augusta,NA,NA,789,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=9
@@ -14132,7 +14132,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1829,Ohio,Lebanon,Bellefontaine,NA,NA,479,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=12
 1829,Ohio,Lebanon,Mad River,NA,NA,1406,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=12
 1829,Ohio,Lebanon,London,NA,NA,1020,3,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=12
-1829,Ohio,Lebanon,Sandusky mission,NA,NA,0,0,208,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=12
+1829,Ohio,Lebanon,Sandusky mission,NA,NA,NA,NA,208,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=12
 1829,Ohio,Scioto,Brush Creek,NA,NA,1124,5,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=12
 1829,Ohio,Scioto,Scioto,NA,NA,1244,1,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=12
 1829,Ohio,Scioto,Paint Creek,NA,NA,842,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=12
@@ -14368,7 +14368,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1829,Mississippi,Mississippi,Big Black,NA,NA,326,51,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=21
 1829,Mississippi,Mississippi,Warren,NA,NA,182,16,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=21
 1829,Mississippi,Mississippi,Port Gibson,NA,NA,64,27,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=22
-1829,Mississippi,Mississippi,Chahta nation of Indians,NA,NA,0,0,400,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=22
+1829,Mississippi,Mississippi,Chahta nation of Indians,NA,NA,NA,NA,400,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=22
 1829,South Carolina,Athens,Athens and Lexington,NA,NA,177,104,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=23
 1829,South Carolina,Athens,Appalachee,NA,NA,998,231,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=23
 1829,South Carolina,Athens,Broad River,NA,NA,875,124,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=23
@@ -14450,7 +14450,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1829,South Carolina,Tallahassee,Holmes' Valley,NA,NA,146,40,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=23
 1829,South Carolina,Tallahassee,Pea River,NA,NA,314,55,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=23
 1829,South Carolina,Tallahassee,Pensacola mission,NA,NA,31,22,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=23
-1829,South Carolina,Tallahassee,Lee mission,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=23
+1829,South Carolina,Tallahassee,Lee mission,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=23
 1829,Virginia,James River,Trinity,NA,NA,250,50,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=25
 1829,Virginia,James River,Shockhoe Hill,NA,NA,117,29,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=25
 1829,Virginia,James River,Williamsburg circuit,NA,NA,757,42,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=25
@@ -14481,7 +14481,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1829,Virginia,Roanoke,Roanoke,NA,NA,423,152,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=26
 1829,Virginia,Roanoke,Granville,NA,NA,741,75,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=26
 1829,Virginia,Roanoke,Washington and Plymouth,NA,NA,88,303,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=26
-1829,Virginia,Roanoke,Albemarle,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=26
+1829,Virginia,Roanoke,Albemarle,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=26
 1829,Virginia,Roanoke,Sound,NA,NA,230,81,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=26
 1829,Virginia,Roanoke,Mattamuskeet,NA,NA,384,179,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=26
 1829,Virginia,Roanoke,Banks and Islands,NA,NA,184,21,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=26
@@ -14637,7 +14637,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1829,New York,Rhinebeck,Salisbury,NA,NA,614,4,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=31
 1829,New York,Rhinebeck,Rhinebeck,NA,NA,129,7,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=31
 1829,New York,Rhinebeck,Poughkeepsie,NA,NA,225,10,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=31
-1829,New York,Rhinebeck,Red Hook,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=31
+1829,New York,Rhinebeck,Red Hook,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=31
 1829,New York,Troy,Troy,NA,NA,452,2,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=31
 1829,New York,Troy,Lansingburg and Waterford,NA,NA,135,6,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=31
 1829,New York,Troy,Pittstown,NA,NA,535,7,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=31
@@ -14875,7 +14875,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1829,Oneida,Black River,Cape Vincent,NA,NA,147,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=38
 1829,Oneida,Black River,Victory,NA,NA,420,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=38
 1829,Oneida,Black River,Carthage,NA,NA,215,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=38
-1829,Oneida,Black River,Williamstown,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=38
+1829,Oneida,Black River,Williamstown,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=38
 1829,Oneida,Pottsdamn,Pottsdam,NA,NA,180,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=38
 1829,Oneida,Pottsdamn,Canton,NA,NA,269,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=38
 1829,Oneida,Pottsdamn,Ogdensburg,NA,NA,230,2,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=38
@@ -15194,14 +15194,14 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1830,Tennessee,Hunstville,Winchester,NA,NA,693,75,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
 1830,Tennessee,Hunstville,Courtlandt,NA,NA,86,134,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
 1830,Tennessee,Hunstville,Tuscumbia,NA,NA,122,47,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
-1830,Tennessee,Cherokee,Will's Valley,NA,NA,0,0,288,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
-1830,Tennessee,Cherokee,Coosewatee,NA,NA,0,0,124,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
-1830,Tennessee,Cherokee,Mount Wesley and Asbury,NA,NA,0,0,67,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
-1830,Tennessee,Cherokee,Connesauga,NA,NA,0,0,73,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
-1830,Tennessee,Cherokee,Selawa,NA,NA,0,0,43,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
-1830,Tennessee,Cherokee,Chatauga,NA,NA,0,0,46,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
-1830,Tennessee,Cherokee,Neely's Grove,NA,NA,0,0,80,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
-1830,Tennessee,Cherokee,Valley town,NA,NA,0,0,5,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
+1830,Tennessee,Cherokee,Will's Valley,NA,NA,NA,NA,288,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
+1830,Tennessee,Cherokee,Coosewatee,NA,NA,NA,NA,124,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
+1830,Tennessee,Cherokee,Mount Wesley and Asbury,NA,NA,NA,NA,67,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
+1830,Tennessee,Cherokee,Connesauga,NA,NA,NA,NA,73,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
+1830,Tennessee,Cherokee,Selawa,NA,NA,NA,NA,43,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
+1830,Tennessee,Cherokee,Chatauga,NA,NA,NA,NA,46,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
+1830,Tennessee,Cherokee,Neely's Grove,NA,NA,NA,NA,80,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
+1830,Tennessee,Cherokee,Valley town,NA,NA,NA,NA,5,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=55
 1830,Holston,Abingdon,Abingdon,NA,NA,72,40,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=57
 1830,Holston,Abingdon,Abingdon cir.,NA,NA,706,86,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=57
 1830,Holston,Abingdon,Blountville,NA,NA,741,144,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=57
@@ -15271,7 +15271,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1830,Mississippi,Cahawba,Marion,NA,NA,236,8,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=59
 1830,Mississippi,Cahawba,Oakmulgee,NA,NA,467,104,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=59
 1830,Mississippi,Cahawba,Columbus,NA,NA,283,55,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=59
-1830,Mississippi,Cahawba,Chahta mission,NA,NA,0,0,3243,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=59
+1830,Mississippi,Cahawba,Chahta mission,NA,NA,NA,NA,3243,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=59
 1830,South Carolina,Athens,Athens and Greensborough,NA,NA,187,110,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=60
 1830,South Carolina,Athens,Appalachee,NA,NA,1043,202,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=60
 1830,South Carolina,Athens,Walton,NA,NA,1019,248,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=60
@@ -15409,7 +15409,7 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1830,Virginia,Roanoke,Roanoke cir.,NA,NA,532,90,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=63
 1830,Virginia,Roanoke,Granville,NA,NA,654,61,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=63
 1830,Virginia,Roanoke,Washington and Plymouth,NA,NA,102,285,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=63
-1830,Virginia,Roanoke,Albemarle,NA,NA,0,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=63
+1830,Virginia,Roanoke,Albemarle,NA,NA,NA,NA,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=63
 1830,Virginia,Roanoke,Sound,NA,NA,172,82,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=63
 1830,Virginia,Roanoke,Banks and Islands,NA,NA,273,18,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=63
 1830,Virginia,Roanoke,Portsmouth and Ocracoke,NA,NA,142,33,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=63

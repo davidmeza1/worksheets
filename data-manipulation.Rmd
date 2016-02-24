@@ -1,5 +1,5 @@
 ---
-title: "Data manipulation"
+title: "Basic data manipulation with dplyr"
 author: ""
 ---
 

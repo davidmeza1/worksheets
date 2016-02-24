@@ -218,7 +218,7 @@ We get the same results more concisely and reliably, though the steps of "split-
 
 ```
 
-(@) For eac year since 1786, which church had the biggest percentage of black members without being entirely black?
+(@) For each year since 1786, which church had the biggest percentage of black members without being entirely black?
 
 ```{r}
 
@@ -231,6 +231,65 @@ We get the same results more concisely and reliably, though the steps of "split-
 ```
 
 (@) For each year, what were the three biggest churches in the Baltimore conference?
+
+```{r}
+
+```
+
+## Summarizing or aggregating data (`summarize()`)
+
+In the examples using `top_n()` or `slice()` we performed a very simple kind of data summary, where we took the single row with the biggest value in a given column. This essentially boiled many rows of a data frame down into a single row. We would like to be able to summarize or aggregate a data frame in other ways as well. For instance, we often want to take the sum or the mean of a given column. We can do this using the `summarize()` function in conjunction with the `group_by()` function.
+
+In this example, we group by the year the minutes were taken. Then we find the total number of white members for each year.
+
+```{r}
+methodists %>% 
+  filter(minutes_year >= 1786) %>% 
+  group_by(minutes_year) %>% 
+  summarize(total_members_white = sum(members_white, na.rm = TRUE))
+```
+
+Notice that we get one row in the recombined data frame for each group in the original data frame. The value in the new column is the result of a function (in this case, `sum()`) applied to the columns in each of the split apart data frames.
+
+There is also a special case where we might want to know how many rows were in each of the split apart (or grouped) data frames. We can use the special `n()` function to get that count. (Just like the case of `slice()` and `top_n()`, this is such a common thing to do that dplyr provides the special functions `count()` and `tally()`. You can look up their documentation to see how they work.)
+
+```{r}
+methodists %>% 
+  group_by(minutes_year) %>% 
+  summarize(total_meetings = n())
+```
+
+(@) How many meetings (i.e., churches or circuits) were there in each conference in each year since 1802?
+
+```{r}
+
+```
+
+(@) What is the average number of white, black, and average number of total members for each year since 1786?
+
+```{r}
+
+```
+
+(@) Make a plot of the average percentage of black members over time.
+
+```{r}
+
+```
+
+(@) Make a plot of the average and median number of members over time.
+
+```{r}
+
+```
+
+(@) What was the average number of members in each conference for each year? Can you also make a plot of this?
+
+```{r}
+
+```
+
+(@) What was the average percentage of black members in each conference for each year? Can you also make a plot of this?
 
 ```{r}
 

@@ -7,3 +7,47 @@ author: ""
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Aims of this worksheet
+
+One of the key reasons to use R is to be able to manipulate data with ease. After completing this worksheet you will be able to use the data manipulation verbs provided by the [dplyr](https://cran.rstudio.com/web/packages/dplyr/) and [tidyr](https://cran.rstudio.com/web/packages/tidyr/) packages. In addition, you will learn how to read a CSV file into R, and learn how to use the pipe operator. 
+
+## Loading CSV files
+
+We will begin by loading the necessary packages:
+
+```{r, message=FALSE}
+library(dplyr)
+library(tidyr)
+library(historydata)
+```
+
+So far we have worked almost exclusively with data which is contained in R packages, which we can install and then load. However, most data will come to you outside of an R package, so you must learn how to load that data. 
+
+Often tabular data will come to you in the form of a CSV (comma separated values) file. This is a text file where, as the name indicates, the columns in the data are separated with columns. This is a much better way of receiving data than say, an Excel spreadsheet.
+
+R has a number of functions that can read in data in various formats. We will use one, `read_csv()`, from the [readr](https://cran.rstudio.com/web/packages/readr/) package, which works nicely with dplyr and tidyr. But there is an equivalent function in base R called `read.csv()`. See `?readr::read_csv` or `?read.csv` for details.
+
+Because R is awesome, we can pass it the URL to a file (in addition to the local path to a file) and it will be loaded. (You could also download the file with `download.file()`.)
+
+```{r}
+library(readr)
+methodists <- read_csv("http://lincolnmullen.com/projects/worksheets/data/methodists.csv")
+```
+
+## The pipe (`%>%`)
+
+The packages that we will be working with all take advantage of an operator provided by the [magrittr](https://cran.rstudio.com/web/packages/magrittr/) package. Called the pipe, this operator `%>%` passes the output of one function to the first argument of a second function.
+
+Consider this example from an earlier exercise, where we find the earliest and latest dates from a column in a data frame. 
+
+```{r}
+range(as.Date(naval_promotions$date), na.rm = TRUE)
+```
+
+Here we have to read the expression from the inside out, from the `naval_promotions$date`, to the `as.Date()` function, to the `range()` function. The pipe operator lets us write an equivalent expression which is more legible.
+
+```{r}
+naval_promotions$date %>% 
+  as.Date() %>% 
+  range(na.rm = TRUE)
+```

@@ -9,7 +9,8 @@ methodists <- read_csv("data/methodists-uncleaned.csv")
 methodists %>%
   select(-minutes_location, -minutes_date, -notes) %>%
   filter(minutes_year < 1831,
-         minutes_year != 1785) %>%
+         minutes_year != 1785,
+         minutes_year != 1778) %>%
   mutate(members_white   = ifelse(minutes_year >= 1786 & is.na(members_white),
                                   0, members_white)) %>%
   mutate(members_colored = ifelse(minutes_year >= 1786 & is.na(members_colored),

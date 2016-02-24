@@ -11,6 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 One of the key reasons to use R is to be able to manipulate data with ease. After completing this worksheet you will be able to use the data manipulation verbs provided by the [dplyr](https://cran.rstudio.com/web/packages/dplyr/) and [tidyr](https://cran.rstudio.com/web/packages/tidyr/) packages. In addition, you will learn how to read a CSV file into R, and learn how to use the pipe operator. 
 
+Since these packages were written by Hadley Wickham, you may find his articles on "[Tidy Data](http://www.jstatsoft.org/v59/i10/)" and "[The Split-Apply-Combine Strategy for Data Analysis](http://www.jstatsoft.org/article/view/v040i01)" to be useful. In addition, you should read the package documentation and vignettes for the [dplyr](https://cran.rstudio.com/web/packages/dplyr/) package.
+
 ## Loading CSV files
 
 We will begin by loading the necessary packages:
@@ -172,3 +174,6 @@ methodists %>%
 
 ```
 
+## Split-apply-combine (`group_by()`)
+
+Notice that in the example above the `arrange()` function sorted the entire data frame. So when we looked for the 

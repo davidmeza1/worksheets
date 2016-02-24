@@ -51,3 +51,34 @@ naval_promotions$date %>%
   as.Date() %>% 
   range(na.rm = TRUE)
 ```
+
+## Selecting columns (`select()`)
+
+Now we can begin to use the Methodists data. This data contains membership statistics for different churches, circuits, and class meetings. First can get a sense of what the data looks like.
+
+```{r}
+methodists
+```
+
+The first data manipulation verb that we are going to use is `select()`. This function lets us pass the names of the columns that we want to keep. 
+
+```{r}
+methodists %>% 
+  select(minutes_year, meeting, members_general)
+```
+
+Notice that we have not actually changed the data stored in `methodists` until we assign the changed data back to the variable.
+
+Read the documentation for this function, `?select`.
+
+(@) Select the `minutes_year`, `meeting`, and all the columns that begin with the word `members_`.
+
+```{r}
+
+```
+
+(@) Remove the column `url`.
+
+```{r}
+
+```

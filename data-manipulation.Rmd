@@ -113,3 +113,33 @@ The Methodists gradually kept more detailed records. They began by keeping track
 
 ```
 
+(@) Bonus: some of these Methodist meetings were "missions." Load the `stringr` package and look at the documentation for `?str_detect`. Can you find which rows represent missions?
+
+```{r}
+
+```
+
+## Creating new columns (`mutate()`)
+
+Very often one will want to create a new column based on other columns in the data. For instance, in our Methodist data, there is a column called `minutes_year` for the year that the minutes were kept. But the actual data was for the *previous* year. Here we create a new column called `year`, where each value is one less than in `minutes_year`.
+
+```{r}
+methodists %>% 
+  mutate(year = minutes_year - 1) %>% 
+  select(minutes_year, year, meeting)
+```
+
+Notice that we chained the data manipulation functions using the pipe (`%>%`). This lets us create a pipeline were we can do many different manipulations in a row.
+
+(@) Filter the Methodists data to 1786 and later. All of the `members_total` values for those years are `NA`. Assign the the value of `members_white` plus `members_colored` to the `members_total` column.
+
+```{r}
+
+```
+
+(@) Create two new columns, one with the percentage of white members, and one with the percentage of black members.
+
+```{r}
+
+```
+

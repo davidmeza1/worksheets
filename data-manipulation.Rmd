@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Aims of this worksheet
 
-One of the key reasons to use R is to be able to manipulate data with ease. After completing this worksheet you will be able to use the data manipulation verbs provided by the [dplyr](https://cran.rstudio.com/web/packages/dplyr/) and [tidyr](https://cran.rstudio.com/web/packages/tidyr/) packages. In addition, you will learn how to read a CSV file into R, and learn how to use the pipe operator. 
+One of the key reasons to use R is to be able to manipulate data with ease. After completing this worksheet you will be able to work with the most commonly used data manipulation verbs provided by the [dplyr](https://cran.rstudio.com/web/packages/dplyr/) package. In addition, you will learn how to read a CSV file into R, and learn how to use the pipe operator. 
 
 Since these packages were written by Hadley Wickham, you may find his articles on "[Tidy Data](http://www.jstatsoft.org/v59/i10/)" and "[The Split-Apply-Combine Strategy for Data Analysis](http://www.jstatsoft.org/article/view/v040i01)" to be useful. In addition, you should read the package documentation and vignettes for the [dplyr](https://cran.rstudio.com/web/packages/dplyr/) package.
 
@@ -19,7 +19,6 @@ We will begin by loading the necessary packages:
 
 ```{r, message=FALSE}
 library(dplyr)
-library(tidyr)
 library(historydata)
 ```
 

@@ -54,7 +54,7 @@ naval_promotions$date %>%
 
 ## Selecting columns (`select()`)
 
-Now we can begin to use the Methodists data. This data contains membership statistics for different churches, circuits, and class meetings. First can get a sense of what the data looks like.
+Now we can begin to use the Methodists data. This data contains membership statistics for different churches, circuits, and class meetings. (This data is transcribed from the Methodist annual minutes meeting, and so it uses the racial terminology from those primary sources.) First can get a sense of what the data looks like.
 
 ```{r}
 methodists
@@ -82,3 +82,34 @@ Read the documentation for this function, `?select`.
 ```{r}
 
 ```
+
+## Filtering rows (`filter()`)
+
+The `select()` function lets us pick certain columns. The `filter()` function lets select certain rows based on logical conditions. For example, here we get the only the churches where the total number of members is at greater than 1,000.
+
+```{r}
+methodists %>% 
+  filter(members_general > 1000)
+```
+
+(@) Get just the rows from New York in 1800.
+
+```{r}
+
+```
+
+(@) Which Methodist meetings had only black members?
+
+```{r}
+
+```
+
+
+The Methodists gradually kept more detailed records. They began by keeping track of the total number of members, then the number of white and black members, and eventually the number of white, black, and Indian members. But when they kept track of those racial divisions, they did not report the total number of members.
+
+(@) In which year did the Methodists start keeping track of white and black members? (Hint: use `is.na()` to find when the missing values begin.)
+
+```{r}
+
+```
+

@@ -1,10 +1,14 @@
 RMD_FILES := $(patsubst %.Rmd, %.html, $(wildcard *.Rmd))
 INCLUDE_FILES := $(wildcard includes/*.html)
+DATA := data/methodists.csv
 
-all : $(RMD_FILES)
+all : $(RMD_FILES) $(DATA)
 
-%.html : %.Rmd $(INCLUDE_FILES)
+%.html : %.Rmd $(INCLUDE_FILES) $(DATA)
 	R --slave -e "set.seed(100);rmarkdown::render('$(<F)')"
+
+$(DATA) :
+	Rscript --vanilla R/dataprep.R
 
 .PHONY : deploy
 deploy :
@@ -15,6 +19,7 @@ deploy :
 .PHONY : clean
 clean :
 	rm -f $(RMD_FILES)
+	rm -rf $(DATA)
 	rm -rf libs/*
 	rm -rf *_files/
 

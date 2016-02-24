@@ -176,4 +176,63 @@ methodists %>%
 
 ## Split-apply-combine (`group_by()`)
 
-Notice that in the example above the `arrange()` function sorted the entire data frame. So when we looked for the 
+Notice that in the example above the `arrange()` function sorted the entire data frame. So when we looked for the circuits with the largest number of members, we got rows from 1825, then 1830, then 1829, then 1830, and so on. What if we wanted to get the biggest circuit from each year?
+
+We can solve this kind of problem with what Hadley Wickham calls the "split-apply-combine" pattern of data analysis. Think of it this way. First we can *split* the big data frame into separate data frames, one for each year. Then we can *apply* our logic to get the results we want; in this case, that means sorting the data frame. We might also want to get just the top one row with the biggest number of members. Then we can *combine* those split apart data frames into a new data frame.
+
+Observe how this works. If we want to get circuit with the most black members in each year, we can use the following code:
+
+```{r}
+methodists %>% 
+  filter(minutes_year >= 1786) %>% 
+  select(minutes_year, meeting, starts_with("members")) %>% 
+  group_by(minutes_year) %>% 
+  arrange(desc(members_colored)) %>% 
+  slice(5) 
+```
+
+Let's walk through that logic step by step. 
+
+1. First we get only the years since 1786 with `filter()`, since the data does not keep track of the number of white and black members until that year.
+2. Then we select only the columns that we are interested in, namely, the column for the year, the name of the meeting, and the various values for membership. We do this just so that the results print out in a useful way: in a real analysis we might decide not to throw away the other columns.
+3. The crucial step is when we `group_by()` the `minutes_year`. This creates a new data-frame (the *split* step) for each unique combination of values in the variables. Notice that the printed our result says that there are 45 groups, i.e., one for each year from 1786 to 1830. (Note that you can group by combinations of columns, so, one group for each combination of city and state, for instance.)
+4. Next we *apply* our logic, in this case, sorting by the column `members_colored` in descending order. This puts the rows with the biggest value at the top.
+5. Next we continue to *apply* our logic with `slice()`. This function simply gives us the rows in each of the split-up data frames with that index. So `slice(1)` gives us the first row, `slice(5)` gives us this fifth row, and `slice(1:5)` gives us the first through fifth rows. 
+6. The last step, *combine*, where the split-up data frames are brought back together, is done for us automatically. Note that the data frame is still grouped, however, so any subsequent data manipulation verbs will be applied to the groups rather than the whole data frame. If we wished, we could use `ungroup()`.
+
+This particular operation, getting the top value in a split up data frame is so common that dplyr provides us with a `top_n()` function as a short cut. That function also handles ties better. (What if, for instance, two circuits both have the same biggest value?)
+
+```{r}
+methodists %>% 
+  filter(minutes_year >= 1786) %>% 
+  select(minutes_year, meeting, starts_with("members")) %>% 
+  group_by(minutes_year) %>% 
+  top_n(1, members_colored)
+```
+
+We get the same results more concisely and reliably, though the steps of "split-apply-combine" are perhaps somewhat less easy to see.
+
+(@) For each year, which was the biggest circuit?
+
+```{r}
+
+```
+
+(@) For eac year since 1786, which church had the biggest percentage of black members without being entirely black?
+
+```{r}
+
+```
+
+(@) For the year 1825, what was the biggest meeting in each conference? In each district?
+
+```{r}
+
+```
+
+(@) For each year, what were the three biggest churches in the Baltimore conference?
+
+```{r}
+
+```
+

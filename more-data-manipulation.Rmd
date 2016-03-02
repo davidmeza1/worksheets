@@ -1,5 +1,5 @@
 ---
-title: "Intermediate data manipulation with dplyr and tidy"
+title: "More data manipulation with dplyr and tidy"
 author: ""
 ---
 

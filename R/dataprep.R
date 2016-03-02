@@ -1,4 +1,5 @@
 library(dplyr)
+library(tidyr)
 library(readr)
 
 if (!file.exists("data/methodists-uncleaned.csv"))
@@ -6,7 +7,7 @@ if (!file.exists("data/methodists-uncleaned.csv"))
 
 methodists <- read_csv("data/methodists-uncleaned.csv")
 
-methodists %>%
+methodists_cleaned <- methodists %>%
   select(-minutes_location, -minutes_date, -notes) %>%
   filter(minutes_year < 1831,
          minutes_year != 1785,
@@ -20,6 +21,16 @@ methodists %>%
   mutate(members_white   = ifelse(members_white == 0 & members_colored == 0,
                                   NA, members_white)) %>%
   mutate(members_colored = ifelse(members_white == 0 & members_colored == 0,
-                                  NA, members_colored)) %>%
-  write_csv("data/methodists.csv")
+                                  NA, members_colored))
 
+write_csv(methodists_cleaned, "data/methodists.csv")
+
+va_methodists_wide <- methodists_cleaned %>%
+  filter(minutes_year >= 1812,
+         conference == "Virginia") %>%
+  mutate(members_general = members_white + members_colored) %>%
+  group_by(minutes_year, conference, district) %>%
+  summarize(membership = sum(members_general)) %>%
+  spread(minutes_year, membership)
+
+write_csv(va_methodists_wide, "data/va-methodists-wide.csv")

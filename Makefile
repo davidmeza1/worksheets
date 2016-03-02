@@ -1,6 +1,6 @@
 RMD_FILES := $(patsubst %.Rmd, %.html, $(wildcard *.Rmd))
 INCLUDE_FILES := $(wildcard includes/*.html)
-DATA := data/methodists.csv
+DATA := data/methodists.csv data/va-methodists-wide.csv
 
 all : $(RMD_FILES) $(DATA)
 

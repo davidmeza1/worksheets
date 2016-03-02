@@ -118,6 +118,97 @@ ggplot(methodists_region, aes(x = members_white, y = members_colored)) +
 
 ## Data reshaping (`spread()` and `gather()`)
 
+It can be helpful to think of tabular data as coming in two forms: wide data, and long data. Let's load in a table of data. This data contains total membership figures for the Virginia conference of the Methodist Episcopal Church for the years 1812 to 1830.
+
+```{r}
+va_methodists_wide <- read_csv("http://lincolnmullen.com/projects/worksheets/data/va-methodists-wide.csv")
+va_methodists_wide
+```
+
+The first thing we can notice about this data frame is that it is very wide because it has a column for each of the years. The data is also suitable for reading because it like a table in a publication. We can read from left to right and see when certain districts begin and end and get the values for each year. The difficulties of computing on or plotting the data will also become quickly apparent. How would you make a plot of the change over time in the number of members in each district? Or how would you filter by year, or summarize by year? For that matter, what do the numbers in the table represent, since they are not given an explicit variable name?
+
+The problem with the table is that it is not *tidy data*, because the variables are not in columns and observations in rows. One of the variables is the year, but its values are in the column headers. And another of the variables is total membership, but its values are spread across rows and columns and it is not explicitly named. 
+
+The `gather()` function from the [tidyr](https://cran.rstudio.com/web/packages/tidyr/) package lets us turn wide data into long data. We need to tell the function two kinds of information. First we need to tell it the name of the column to create from the column headers and the name of the implicit variable in the rows. In the example below, we create to new columns `minutes_year` and `total_membership`. Then we also have to tell the function if there are any columns which should remain unchanged. In this case, the `conference` and `district` variables should remain the same, so we remove them from the gathering using the same syntax as the `select()` function.
+
+```{r}
+va_methodists_wide %>% 
+  gather(minutes_year, total_membership, -conference, -district)
+```
+
+We can see the results above. There are two ways that this result is not quite what we want. Because the years were column headers they are treated as character vectors rather than integers. We can manually convert them in a later step, but we can also let `gather()` do the right thing with the `convert =` argument. Then we have a lot of `NA` values which were explicit in the wide table but which can be removed from the long table with `na.rm =`.
+
+```{r}
+va_methodists_long <- va_methodists_wide %>% 
+  gather(minutes_year, total_membership, -conference, -district, 
+         convert = TRUE, na.rm = TRUE)
+
+va_methodists_long
+```
+
+Notice that now we can use the data in ggplot2 without any problem.
+
+```{r}
+ggplot(va_methodists_long, 
+       aes(x = minutes_year, y = total_membership, color = district)) +
+  geom_line() +
+  ggtitle("Membership of districts in the Virginia conference")
+```
+
+The inverse operation of `gather()` is `spread()`. With `spread()` we specify the name of the column which should become the new column headers (in this case `minutes_year`), and then the name of the column to fill in underneath those new column headers (in this case, `total_membership`). We can see the results below.
+
+```{r}
+va_methodists_wide2 <- va_methodists_long %>% 
+  spread(minutes_year, total_membership)
+
+va_methodists_wide2
+```
+
+Just by looking at the data we can see that we got back to where we started, but we can also verify that programmatically.
+
+```{r}
+identical(va_methodists_wide, va_methodists_wide2)
+```
+
+Turning long data into wide is often useful when you want to create a tabular representation of data. (And once you have a data frame that can be a table, the `knitr::kable()` function is quite nice.) And some algorithms, such as clustering algorithms, expect wide data rather than tidy data.
+
+For the exercise, we will use summary statistics of the number of white and black members in the Methodists by year.
+
+```{r}
+methodists_by_year_race <- methodists %>% 
+  filter(minutes_year >= 1786) %>% 
+  group_by(minutes_year) %>% 
+  summarize(white = sum(members_white, na.rm = TRUE),
+            black = sum(members_colored, na.rm = TRUE),
+            indian = sum(as.integer(members_indian), na.rm = TRUE))
+methodists_by_year_race
+```
+
+(@) The data in `methodists_by_year_race` could be tidier still. While `white`, `black`, and `indian` are variables, it is perhaps better to think of them as two different variables. One variable would be `race`, containing the racial descriptions that the Methodists used, and another would be `members`, containing the number of members. Using the `gather()` function, create that data frame.
+
+```{r}
+
+```
+
+(@) Use the data frame you created in the previous step to create a line plot of membership over time, mapping the `race` column to the `color` aesthetic.
+
+```{r}
+
+```
+
+(@) Now use that newly tidied data frame to create a wide data frame, where the years are the column headers and the racial descriptions are the rows.
+
+```{r}
+
+```
+
+(@) Now use the same tidied data to create a wide data frame where the racial descriptions are column headers and the years are rows.
+
+```{r}
+
+```
+
+
 ## Window functions
 
 There are a number of different kinds of window functions in R. We are going to look at two window functions, `lead()` and `lag()` which help us look for change over time. (For a fuller explanation of window functions, see the [related dplyr vignette](https://cran.rstudio.com/web/packages/dplyr/vignettes/window-functions.html).)

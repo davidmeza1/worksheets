@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Basics of ggplot2</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<!-- begin in_header.html -->
+<meta name="description" content="Worksheets for learning historical data analysis with R.">
+<meta name="author" content="Lincoln Mullen">
+<link rel="shortcut icon" href="img/favicon.png">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-25121492-1', 'lincolnmullen.com');
+  ga('send', 'pageview');
+</script>
+<!-- end in_header.html -->
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="libs/navigation-1.0/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+<div class="fluid-row">
+  <div class="col-sm-12">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="./">Worksheets for Historical Data Analysis with R</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://lincolnmullen.com">Lincoln Mullen</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="fluid-row">
+  <div class="col-sm-3">
+    <div class="list-group">
+      <a class="list-group-item" href="./">Home</a>
+      <a class="list-group-item" href="familiar-with-r.html">Getting Familiar with R</a>
+      <a class="list-group-item" href="data-structures.html">Data Structures</a>
+      <a class="list-group-item" href="functions.html">Functions</a>
+      <a class="list-group-item" href="ggplot2.html">Basics of ggplot2</a>
+      <a class="list-group-item" href="data-manipulation.html">Data Manipulation</a>
+      <a class="list-group-item" href="more-data-manipulation.html">More Data Manipulation</a>
+    </div>
+    <script>
+      // manage active state of toc based on current page
+    var href = window.location.pathname;
+    href = href.substr(href.lastIndexOf('/') + 1);
+    if (href === "" || href === "index.html")
+      href = "./";
+    $('a.list-group-item[href="' + href + '"]').addClass('active');
+    </script>
+  </div>
+  <div class="col-sm-9 content-body">
+    <p>
+      <a id="download-link" download class="btn btn-warning">
+        Download this worksheet as a .Rmd
+      </a>
+    </p>
+
+<div class="fluid-row" id="header">
+
+
+<h1 class="title">Basics of ggplot2</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#aim-of-this-worksheet">Aim of this worksheet</a></li>
+<li><a href="#basics-of-using-ggplot2">Basics of using ggplot2</a></li>
+<li><a href="#basic-geoms-in-ggplot2">Basic geoms in ggplot2</a><ul>
+<li><a href="#histogram">Histogram</a></li>
+<li><a href="#lines">Lines</a></li>
+<li><a href="#bar-plots">Bar plots</a></li>
+<li><a href="#faceting">Faceting</a></li>
+</ul></li>
+<li><a href="#create-your-own-plots">Create your own plots</a></li>
+</ul>
+</div>
+
+<div id="aim-of-this-worksheet" class="section level2">
+<h2>Aim of this worksheet</h2>
+<p>After completing this worksheet, you should be able to use the powerful <a href="http://ggplot2.org/">ggplot2</a> to make basic plots using the grammar of graphics. You may find the <a href="http://ggplot2.org/">ggplot2</a> documentation or the <a href="http://shiny.stat.ubc.ca/r-graph-catalog/">R Graph Catalog</a> to be helpful.</p>
+<p>In addition to the ggplot2 package, we will use three packages with sample data, and we will load dplyr to get nice printing of data frames. Let’s load them now, and also bring some of the data frames into the global environment.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(dplyr)
+
+<span class="kw">library</span>(gapminder)</code></pre></div>
+<pre><code>## Warning: package &#39;gapminder&#39; was built under R version 3.2.3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;gapminder&quot;</span>)
+
+<span class="kw">library</span>(historydata)
+<span class="kw">data</span>(<span class="st">&quot;paulist_missions&quot;</span>)
+<span class="kw">data</span>(<span class="st">&quot;naval_promotions&quot;</span>)
+
+<span class="kw">library</span>(europop) <span class="co"># https://github.com/mdlincoln/europop</span>
+<span class="kw">data</span>(<span class="st">&quot;europop&quot;</span>)
+
+<span class="co"># Make the Paulist missions data a little more mangeable</span>
+<span class="kw">library</span>(lubridate)</code></pre></div>
+<pre><code>## Warning: package &#39;lubridate&#39; was built under R version 3.2.3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">weeks &lt;-<span class="st"> </span>function(x) {
+  w &lt;-<span class="st"> </span><span class="kw">ifelse</span>(x &lt;<span class="st"> </span><span class="dv">7</span>, <span class="st">&quot;&lt; 1 weeks&quot;</span>,
+              <span class="kw">ifelse</span>(x &lt;=<span class="st"> </span><span class="dv">14</span>, <span class="st">&quot;1-2 weeks&quot;</span>,
+                     <span class="kw">ifelse</span>(x &lt;=<span class="st"> </span><span class="dv">21</span>, <span class="st">&quot;2-3 weeks&quot;</span>,
+                            <span class="st">&quot;&gt; 3 weeks&quot;</span>)))
+  <span class="kw">factor</span>(w, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;&lt; 1 weeks&quot;</span>, <span class="st">&quot;1-2 weeks&quot;</span>, <span class="st">&quot;2-3 weeks&quot;</span>, <span class="st">&quot;&gt; 3 weeks&quot;</span>),
+         <span class="dt">ordered =</span> <span class="ot">TRUE</span>)
+}
+paulist_missions &lt;-<span class="st"> </span>paulist_missions %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">start_date =</span> <span class="kw">mdy</span>(start_date),
+         <span class="dt">end_date =</span> <span class="kw">mdy</span>(end_date),
+         <span class="dt">year =</span> <span class="kw">year</span>(start_date),
+         <span class="dt">days =</span> <span class="kw">as.numeric</span>(end_date -<span class="st"> </span>start_date) /<span class="st"> </span><span class="dv">24</span> /<span class="st"> </span><span class="dv">60</span> /<span class="st"> </span><span class="dv">60</span>,
+         <span class="dt">duration =</span> <span class="kw">weeks</span>(days)) </code></pre></div>
+<pre><code>## Warning: 1 failed to parse.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">paulists_by_year &lt;-<span class="st"> </span>paulist_missions %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(year) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">converts =</span> <span class="kw">sum</span>(converts, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
+            <span class="dt">confessions =</span> <span class="kw">sum</span>(confessions, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</code></pre></div>
+</div>
+<div id="basics-of-using-ggplot2" class="section level2">
+<h2>Basics of using ggplot2</h2>
+<p>The fundamental insight of the grammar of graphics is the variables in the data can be mapped to aesthetics in the visualization. A variable in a data frame will be found in a column. An aesthetic in ggplot2 can take many forms, depending on the kinds of marks (glyphs) that you are going to make in the plot. But the most common aesthetics are <code>x</code> and <code>y</code> position, <code>size</code>, <code>color</code>, <code>fill</code>, <code>shape</code> and <code>weight</code>. Some less common but still useful are <code>label</code> and <code>linetype</code>. The ggplot2 package lets us explicitly set which variables are mapped to which marks using the <code>aes()</code> function.</p>
+<p>The three basic parts of a call to ggplot2 are these:</p>
+<ol style="list-style-type: decimal">
+<li>The specification of which dataset you are using by passing a variable to the <code>ggplot()</code> function as its first argument.</li>
+<li>The specification of which variables map to which aesthetics, using arguments to the <code>aes()</code> function. The <code>aes()</code> function is normally passed as the second argument to <code>ggplot()</code> (though it can also be specified in the various geoms).</li>
+<li>At least one layer in the plot that makes a mark (or glyph). This is specified by one of the geoms, such as <code>geom_point()</code>.</li>
+</ol>
+<p>Consider this basic plot. First, let’s look at the date.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">paulist_missions</code></pre></div>
+<pre><code>## Source: local data frame [841 x 14]
+## 
+##    mission_number                             church          city state
+##             (int)                              (chr)         (chr) (chr)
+## 1               1                St. Joseph&#39;s Church      New York    NY
+## 2               2               St. Michael&#39;s Church       Loretto    PA
+## 3               3                  St. Mary&#39;s Church Hollidaysburg    PA
+## 4               4      Church of St. John Evangelist     Johnstown    PA
+## 5               5                 St. Peter&#39;s Church      New York    NY
+## 6               6            St. Patrick&#39;s Cathedral      New York    NY
+## 7               7               St. Patrick&#39;s Church          Erie    PA
+## 8               8           St. Philip Benizi Church     Cussewago    PA
+## 9               9 St. Vincent&#39;s Church (Benedictine)    Youngstown    PA
+## 10             10                 St. Peter&#39;s Church      Saratoga    NY
+## ..            ...                                ...           ...   ...
+## Variables not shown: start_date (time), end_date (time), confessions
+##   (int), converts (int), order (chr), lat (dbl), long (dbl), year (dbl),
+##   days (dbl), duration (fctr)</code></pre>
+<p>Now let’s make a scatter plot.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(paulist_missions, <span class="kw">aes</span>(<span class="dt">x =</span> confessions, <span class="dt">y =</span> converts)) +
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre></div>
+<pre><code>## Warning: Removed 6 rows containing missing values (geom_point).</code></pre>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-3-1.png" alt="" /><!-- --></p>
+<ol style="list-style-type: decimal">
+<li>What are the three parts of the plot, as listed above?</li>
+</ol>
+<blockquote>
+
+</blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li>What is the relationship between each row in the dataset and each glyph in the plot?</li>
+</ol>
+<blockquote>
+
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li>Modify that plot so that converts are on the x-axis and confessions are y-axis.</li>
+</ol>
+<p>We can specify more than two variables and aesthetics if we wish. Here we map the duration (notice: a categorical variable) to color.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(paulist_missions, <span class="kw">aes</span>(<span class="dt">x =</span> confessions, <span class="dt">y =</span> converts, 
+                             <span class="dt">color =</span> duration)) +
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre></div>
+<pre><code>## Warning: Removed 6 rows containing missing values (geom_point).</code></pre>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-5-1.png" alt="" /><!-- --></p>
+<p>We can also specify static properties, These can go either in the call to <code>ggplot()</code> if they affect the entire plot, or in a specific layer (one of the <code>geom_*()</code> functions) if they affect just that layer.</p>
+<p>We might notice that our chart suffers from overplotting: the points are on top of each other and we can’t distinguish between them. Let try changing the shape of each point, and try making each point slightly transparent to see if this helps. Notice that in the code below, those properties are specified with static values <em>outside of</em> the <code>aes()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(paulist_missions, <span class="kw">aes</span>(<span class="dt">x =</span> confessions, <span class="dt">y =</span> converts, 
+                             <span class="dt">color =</span> duration)) +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">shape =</span> <span class="dv">1</span>)</code></pre></div>
+<pre><code>## Warning: Removed 6 rows containing missing values (geom_point).</code></pre>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-6-1.png" alt="" /><!-- --></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Make a different plot from any of the above using <code>days</code>, <code>converts</code>, and <code>confessions</code> variables. Try using the <code>x</code>, <code>y</code>, and <code>size</code> properties.</li>
+</ol>
+<p>We can change the labels of the plot using the <code>labs()</code> function as below. (Alternatively, you can use the <code>xlab()</code>, <code>ylab()</code>, and <code>ggtitle()</code> functions.)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(paulist_missions, <span class="kw">aes</span>(<span class="dt">x =</span> confessions, <span class="dt">y =</span> converts, 
+                             <span class="dt">color =</span> duration)) +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">shape =</span> <span class="dv">1</span>) +
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Paulist missions&quot;</span>,
+       <span class="dt">x =</span> <span class="st">&quot;Confessions (= attendance)&quot;</span>,
+       <span class="dt">y =</span> <span class="st">&quot;Converts (to Roman Catholicism)&quot;</span>,
+       <span class="dt">color =</span> <span class="st">&quot;Duration of mission&quot;</span>)</code></pre></div>
+<pre><code>## Warning: Removed 6 rows containing missing values (geom_point).</code></pre>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-8-1.png" alt="" /><!-- --></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Copy your plot above and add informative labels.</li>
+</ol>
+</div>
+<div id="basic-geoms-in-ggplot2" class="section level2">
+<h2>Basic geoms in ggplot2</h2>
+<p>So far we have only used points (with <code>geom_point()</code>) as the meaningful glyphs in our plot. Now we will take a tour of different kinds of glyphs that are available to us in ggplot2. Not every variable is suited to every kind of glyph, and sometimes we have to aggregate our data to make certain kinds of plots. (The data aggregation will be covered in a later worksheet.)</p>
+<div id="histogram" class="section level3">
+<h3>Histogram</h3>
+<p>A <a href="https://en.wikipedia.org/wiki/Histogram">histogram</a> shows the distribution of values in a dataset by “binning” the data: in other words, it takes the domain of the data, splits it into different bins, then counts how many values faall into each bin. One bar is drawn for each bin. Here we count the kinds o</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(paulist_missions, <span class="kw">aes</span>(<span class="dt">x =</span> converts)) +
+<span class="st">  </span><span class="kw">geom_histogram</span>()</code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-10-1.png" alt="" /><!-- --></p>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Create a histogram of the number of confessions.</p></li>
+<li><p>Can you change the number of bins? (Hint: try <code>bins =</code> or <code>binwidth =</code>. See <code>?geom_histogram</code>.)</p></li>
+</ol>
+</div>
+<div id="lines" class="section level3">
+<h3>Lines</h3>
+<p>Lines are good for showing trends.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(paulists_by_year, <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> converts)) +
+<span class="st">  </span><span class="kw">geom_line</span>()</code></pre></div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-12-1.png" alt="" /><!-- --></p>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Create a line chart of the number of confessions. Can you also add a layer of points in addition to the line?</p></li>
+<li><p>Can you create a line chart with a line for the number of converts and a line for the number of confessions? (Hint: you will need two calls to <code>geom_line()</code>. And instead of specifying the <code>y</code> value in the call to <code>ggplot()</code> you will do it in the functons for each layer. For instance: <code>geom_line(aes(y = converts))</code>.)</p></li>
+<li><p>Can you create a plot with a single line for the ratio of converts to confessions? (Hint: the ratio of converts to confessions is given by <code>converts / confessions</code>.)</p></li>
+</ol>
+<p>If you map <code>color =</code> to a categorical value, you will get a different colored line for each category.</p>
+</div>
+<div id="bar-plots" class="section level3">
+<h3>Bar plots</h3>
+<p>Bar plots can be used in much the same way as a line plot if you specify <code>stat = &quot;identity&quot;</code>. That call tells ggplot to use a <code>y</code> value that is present in the data.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(paulists_by_year, <span class="kw">aes</span>(<span class="dt">x =</span> year, <span class="dt">y =</span> converts)) +
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>)</code></pre></div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-16-1.png" alt="" /><!-- --></p>
+<p>But bar plots are better used for counts of categorical variables. Here we count the number of missions done by the Paulists and the Redemptorists.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(paulist_missions, <span class="kw">aes</span>(<span class="dt">x =</span> order)) +
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;count&quot;</span>)</code></pre></div>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-17-1.png" alt="" /><!-- --></p>
+<ol start="11" style="list-style-type: decimal">
+<li>Create a plot with a count of the number of missions in each state.</li>
+</ol>
+</div>
+<div id="faceting" class="section level3">
+<h3>Faceting</h3>
+<p>Faceting is not a geom like the examples above, but it can create a separate panel in a plot for different categories in the data. For instance, in the plot below, we have created a separate panel for each</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(paulist_missions, <span class="kw">aes</span>(<span class="dt">x =</span> converts, <span class="dt">y =</span> confessions)) +
+<span class="st">  </span><span class="kw">geom_count</span>(<span class="dt">shape =</span> <span class="dv">1</span>, <span class="dt">alpha =</span> <span class="fl">0.6</span>) +
+<span class="st">  </span><span class="kw">facet_wrap</span>(~<span class="st"> </span>order)</code></pre></div>
+<pre><code>## Warning: Removed 6 rows containing non-finite values (stat_sum).</code></pre>
+<p><img src="ggplot2_files/figure-html/unnamed-chunk-19-1.png" alt="" /><!-- --></p>
+<ol start="12" style="list-style-type: decimal">
+<li><p>Create a plot with facets for each state.</p></li>
+<li><p>Notice that we are using <code>geom_count()</code>. What does it do? (Hint: <code>?geom_count</code>.)</p></li>
+</ol>
+<blockquote>
+
+</blockquote>
+</div>
+</div>
+<div id="create-your-own-plots" class="section level2">
+<h2>Create your own plots</h2>
+<p>There are a number of data sets available to you. You may try using <code>early_colleges</code>, <code>catholic_dioceses</code>, <code>naval_promotions</code>, <code>quasi_war</code>, <code>sarna</code>, <code>us_national_population</code>, or <code>us_state_populations</code> (all from the historydata package), <code>gapminder</code> (from the gapminder package), or <code>europop</code> (from the europop package).</p>
+<p>Create three plots below, using any one or more than one of those datasets. Your three plots should try to make some kind of historical observation. For each plot, include no more than three sentences explaining what you think the plot means. You should try to make each plot as informative as possible by using different geoms and including as many variables as is reasonable in each plot. Be sure to add good titles and labels.</p>
+<p>You may wish to look at the <a href="http://shiny.stat.ubc.ca/r-graph-catalog/">R Graph Catalog</a> to find examples of what you can do with ggplot along with sample code.</p>
+<ol start="14" style="list-style-type: decimal">
+<li>Plot 1</li>
+</ol>
+<blockquote>
+<p>Explanation of plot 1.</p>
+</blockquote>
+<ol start="15" style="list-style-type: decimal">
+<li>Plot 2</li>
+</ol>
+<blockquote>
+<p>Explanation of plot 2.</p>
+</blockquote>
+<ol start="16" style="list-style-type: decimal">
+<li>Plot 3</li>
+</ol>
+<blockquote>
+<p>Explanation of plot 3.</p>
+</blockquote>
+</div>
+
+<footer>
+  <p>
+    <small>
+      These materials are &copy; 2016 <a href="http://lincolnmullen.com">Lincoln Mullen</a>. Licensed <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; margin-left: 5px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+    </small>
+  </p>
+</footer>
+
+  </div>
+</div>
+
+<script>
+  $.each($("img"), function(i, v) {
+    var img = $(v);
+    img.wrap("<a href='" + img.attr("src") + "'>");
+  })
+
+  url = window.location.toString();
+  if (url === "http://lincolnmullen.com/projects/worksheets/") {
+    $("#download-link").remove();
+  } else {
+    $("#download-link").attr("href", url.replace('.html', '.Rmd'));
+  }
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>More data manipulation with dplyr and tidy</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<!-- begin in_header.html -->
+<meta name="description" content="Worksheets for learning historical data analysis with R.">
+<meta name="author" content="Lincoln Mullen">
+<link rel="shortcut icon" href="img/favicon.png">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-25121492-1', 'lincolnmullen.com');
+  ga('send', 'pageview');
+</script>
+<!-- end in_header.html -->
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="libs/navigation-1.0/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+<div class="fluid-row">
+  <div class="col-sm-12">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="./">Worksheets for Historical Data Analysis with R</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://lincolnmullen.com">Lincoln Mullen</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="fluid-row">
+  <div class="col-sm-3">
+    <div class="list-group">
+      <a class="list-group-item" href="./">Home</a>
+      <a class="list-group-item" href="familiar-with-r.html">Getting Familiar with R</a>
+      <a class="list-group-item" href="data-structures.html">Data Structures</a>
+      <a class="list-group-item" href="functions.html">Functions</a>
+      <a class="list-group-item" href="ggplot2.html">Basics of ggplot2</a>
+      <a class="list-group-item" href="data-manipulation.html">Data Manipulation</a>
+      <a class="list-group-item" href="more-data-manipulation.html">More Data Manipulation</a>
+    </div>
+    <script>
+      // manage active state of toc based on current page
+    var href = window.location.pathname;
+    href = href.substr(href.lastIndexOf('/') + 1);
+    if (href === "" || href === "index.html")
+      href = "./";
+    $('a.list-group-item[href="' + href + '"]').addClass('active');
+    </script>
+  </div>
+  <div class="col-sm-9 content-body">
+    <p>
+      <a id="download-link" download class="btn btn-warning">
+        Download this worksheet as a .Rmd
+      </a>
+    </p>
+
+<div class="fluid-row" id="header">
+
+
+<h1 class="title">More data manipulation with dplyr and tidy</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#aims-of-this-worksheet">Aims of this worksheet</a></li>
+<li><a href="#data-joining-with-two-table-verbs-left_join-et-al.">Data joining with two table verbs (<code>left_join()</code> et al.)</a><ul>
+<li><a href="#data-lookups">Data lookups</a></li>
+</ul></li>
+<li><a href="#data-reshaping-spread-and-gather">Data reshaping (<code>spread()</code> and <code>gather()</code>)</a></li>
+<li><a href="#window-functions">Window functions</a></li>
+</ul>
+</div>
+
+<div id="aims-of-this-worksheet" class="section level2">
+<h2>Aims of this worksheet</h2>
+<p>In an <a href="data-manipulation.html">earlier worksheet</a>, you learned the basic data manipulation verbs from the <a href="https://cran.rstudio.com/web/packages/dplyr/">dplyr</a> package: <code>select()</code>, <code>filter()</code>, <code>mutate()</code>, <code>arrange()</code>, <code>group_by()</code>, and <code>summarize()</code>. In this worksheet you will learn additional data verbs from the <a href="https://cran.rstudio.com/web/packages/dplyr/">dplyr</a> and <a href="https://cran.rstudio.com/web/packages/tidyr/">tidyr</a> packages. These data verbs relate to window functions (<code>lead()</code> and <code>lag()</code>), data table joins (<code>left_join()</code> et al.), and data reshaping (<code>spread()</code> and <code>gather()</code>)</p>
+<p>To begin, we will load the necessary packages, as well as the Methodist data</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(tidyr)</code></pre></div>
+<pre><code>## Warning: package &#39;tidyr&#39; was built under R version 3.2.3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
+<span class="kw">library</span>(historydata)
+<span class="kw">library</span>(ggplot2)
+methodists &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;http://lincolnmullen.com/projects/worksheets/data/methodists.csv&quot;</span>)</code></pre></div>
+</div>
+<div id="data-joining-with-two-table-verbs-left_join-et-al." class="section level2">
+<h2>Data joining with two table verbs (<code>left_join()</code> et al.)</h2>
+<div id="data-lookups" class="section level3">
+<h3>Data lookups</h3>
+<p>It is often the case that we want to use some variable in our data to create a new variable. Consider the Methodist data for the year 1800. Perhaps we are interested in the racial composition of the churches. Do they tend to be all white and all black, or do some churches have both white and black members in varying proportions? The simplest way to get a look at that question is to create a scatter plot of the figures for white and black membership.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methodists_1800 &lt;-<span class="st"> </span>methodists %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(minutes_year ==<span class="st"> </span><span class="dv">1800</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(meeting, state, members_white, members_colored)
+
+<span class="kw">ggplot</span>(methodists_1800, <span class="kw">aes</span>(<span class="dt">x =</span> members_white, <span class="dt">y =</span> members_colored)) +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">shape =</span> <span class="dv">1</span>) </code></pre></div>
+<p><img src="more-data-manipulation_files/figure-html/unnamed-chunk-2-1.png" alt="" /><!-- --></p>
+<p>That scatterplot is interesting as far as it goes, but we might reasonably suspect that the racial composition of methodist meetings varies by region. We could use the <code>state</code> variable to facet the plot by state. However, this has two problems. There are 20 states represented in that year.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methodists_1800$state %&gt;%<span class="st"> </span><span class="kw">unique</span>() %&gt;%<span class="st"> </span><span class="kw">length</span>()</code></pre></div>
+<pre><code>## [1] 20</code></pre>
+<p>Our faceted plot would have 20 panels, which is too many. But more important, by looking at individual states we might be getting <em>too</em> fine grained a look at the data. We have good reason to think that it is regions that matter more than states.</p>
+<p>It is easy enough to describe what we would do to translate states into a new column with regions. We would look at each state name and assign it to a region. Connecticut would be in the Northeast, New York would be in the Mid-Atlantic, and so on. So far when we have created new columns in a data frame we have done so with <code>mutate()</code>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> Another way to think of this problem, though, is to think of looking up the state names in a table where they associated with regions. We can create such a data frame with the code below. In many cases, though, it would make more sense to create a CSV file with the data and read it in as a data frame.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">regions &lt;-<span class="st"> </span><span class="kw">data_frame</span>(
+  <span class="dt">states =</span> <span class="kw">c</span>(<span class="st">&quot;Connecticut&quot;</span>, <span class="st">&quot;Delaware&quot;</span>, <span class="st">&quot;Georgia&quot;</span>, <span class="st">&quot;Kentucky&quot;</span>, <span class="st">&quot;Maine&quot;</span>, 
+             <span class="st">&quot;Maryland&quot;</span>, <span class="st">&quot;Massachusetts&quot;</span>, <span class="st">&quot;Mississippi&quot;</span>, <span class="st">&quot;New Hampshire&quot;</span>, 
+             <span class="st">&quot;New Jersey&quot;</span>, <span class="st">&quot;New York&quot;</span>, <span class="st">&quot;North Carolina&quot;</span>,
+             <span class="st">&quot;Northwestern Territory&quot;</span>, <span class="st">&quot;Pennsylvania&quot;</span>, <span class="st">&quot;Rhode Island&quot;</span>,
+             <span class="st">&quot;South Carolina&quot;</span>, <span class="st">&quot;Tennessee&quot;</span>, <span class="st">&quot;Upper Canada&quot;</span>, <span class="st">&quot;Vermont&quot;</span>,
+             <span class="st">&quot;Virginia&quot;</span>),
+  <span class="dt">region =</span> <span class="kw">c</span>(<span class="st">&quot;Northeast&quot;</span>, <span class="st">&quot;Atlantic South&quot;</span>, <span class="st">&quot;Atlantic South&quot;</span>, <span class="st">&quot;West&quot;</span>,
+             <span class="st">&quot;Northeast&quot;</span>, <span class="st">&quot;Atlantic South&quot;</span>, <span class="st">&quot;Northeast&quot;</span>, <span class="st">&quot;Deep South&quot;</span>, 
+             <span class="st">&quot;Northeast&quot;</span>, <span class="st">&quot;Mid-Atlantic&quot;</span>, <span class="st">&quot;Mid-Atlantic&quot;</span>, <span class="st">&quot;Atlantic South&quot;</span>,
+             <span class="st">&quot;West&quot;</span>, <span class="st">&quot;Mid-Atlantic&quot;</span>, <span class="st">&quot;Northeast&quot;</span>, <span class="st">&quot;Atlantic South&quot;</span>, <span class="st">&quot;West&quot;</span>,
+             <span class="st">&quot;Canada&quot;</span>, <span class="st">&quot;Northeast&quot;</span>, <span class="st">&quot;Atlantic South&quot;</span>)
+)</code></pre></div>
+<p>And now we can inspect the table.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">regions</code></pre></div>
+<pre><code>## Source: local data frame [20 x 2]
+## 
+##                    states         region
+##                     (chr)          (chr)
+## 1             Connecticut      Northeast
+## 2                Delaware Atlantic South
+## 3                 Georgia Atlantic South
+## 4                Kentucky           West
+## 5                   Maine      Northeast
+## 6                Maryland Atlantic South
+## 7           Massachusetts      Northeast
+## 8             Mississippi     Deep South
+## 9           New Hampshire      Northeast
+## 10             New Jersey   Mid-Atlantic
+## 11               New York   Mid-Atlantic
+## 12         North Carolina Atlantic South
+## 13 Northwestern Territory           West
+## 14           Pennsylvania   Mid-Atlantic
+## 15           Rhode Island      Northeast
+## 16         South Carolina Atlantic South
+## 17              Tennessee           West
+## 18           Upper Canada         Canada
+## 19                Vermont      Northeast
+## 20               Virginia Atlantic South</code></pre>
+<p>We can do a look up where we take the <code>state</code> column in the <code>methodists_1800</code> data frame and associate it with the <code>states</code> column in our <code>regions</code> data frame. The result will be a new column <code>region</code>. Notice how we use the <code>by =</code> argument to specify which column in the left hand table matches which column in the right hand table.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methodists_region &lt;-<span class="st"> </span>methodists_1800 %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">left_join</span>(regions, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;state&quot;</span> =<span class="st"> &quot;states&quot;</span>))
+
+methodists_region</code></pre></div>
+<pre><code>## Source: local data frame [169 x 5]
+## 
+##        meeting          state members_white members_colored         region
+##          (chr)          (chr)         (int)           (int)          (chr)
+## 1      Augusta        Georgia            61               9 Atlantic South
+## 2        Burke        Georgia           297              36 Atlantic South
+## 3     Richmond        Georgia           548             115 Atlantic South
+## 4   Washington        Georgia           497              92 Atlantic South
+## 5  Broad River South Carolina           604              62 Atlantic South
+## 6   Bush River South Carolina           328              31 Atlantic South
+## 7   Charleston South Carolina            60             440 Atlantic South
+## 8     Cherokee South Carolina            79               0 Atlantic South
+## 9       Edisto South Carolina           572             126 Atlantic South
+## 10  Georgetown South Carolina            10             223 Atlantic South
+## ..         ...            ...           ...             ...            ...</code></pre>
+<p>Then we can plot the results. As we suspected, there is a huge regional variation.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(methodists_region, <span class="kw">aes</span>(<span class="dt">x =</span> members_white, <span class="dt">y =</span> members_colored)) +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">shape =</span> <span class="dv">1</span>) +
+<span class="st">  </span><span class="kw">facet_wrap</span>(~<span class="st"> </span>region)</code></pre></div>
+<p><img src="more-data-manipulation_files/figure-html/unnamed-chunk-7-1.png" alt="" /><!-- --></p>
+<ol style="list-style-type: decimal">
+<li><p>Beginning in 1802, the Methodist minutes no longer kept track of the state in which a meeting was held. Instead it classified them into different conferences. For the years 1802 and after, create a look up table assigning the different conferences to regions of your choice, and join that table back to the Methodists data.</p></li>
+<li><p>Can you summarize the racial composition of the different regions by year (i.e., a region had <span class="math inline">\(x\)</span> percent white and black members for a given year) and create a plot of the changing racial composition in each region over time?</p></li>
+<li><p>In the <a href="https://github.com/mdlincoln/europop">europop</a> package there are two data frames, <code>europop</code> with the historical populations of European cities, and <code>city_coords</code> which has the latitudes and longitudes of those cities. Load that package and join the two tables together. Can you get the populations of cities north of 48° of latitude?</p></li>
+<li><p>In the historydata package there are two tables, <code>judges_people</code> and <code>judges_appointments</code>. Join them together. What are the names of black judges who were appointed to the Supreme Court?</p></li>
+<li><p>What courts did those justices serve on before the Supreme Court?</p></li>
+</ol>
+</div>
+</div>
+<div id="data-reshaping-spread-and-gather" class="section level2">
+<h2>Data reshaping (<code>spread()</code> and <code>gather()</code>)</h2>
+<p>It can be helpful to think of tabular data as coming in two forms: wide data, and long data. Let’s load in a table of data. This data contains total membership figures for the Virginia conference of the Methodist Episcopal Church for the years 1812 to 1830.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">va_methodists_wide &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;http://lincolnmullen.com/projects/worksheets/data/va-methodists-wide.csv&quot;</span>)
+va_methodists_wide</code></pre></div>
+<pre><code>## Source: local data frame [10 x 21]
+## 
+##    conference    district  1812  1813  1814  1815  1816  1817  1818  1819
+##         (chr)       (chr) (int) (int) (int) (int) (int) (int) (int) (int)
+## 1    Virginia James River  5348  4691  4520  4209  4118  3888  3713  3580
+## 2    Virginia    Meherren  4882  4486  4771  4687  4702    NA    NA    NA
+## 3    Virginia    Meherrin    NA    NA    NA    NA    NA  4435  3964  3860
+## 4    Virginia       Neuse    NA    NA  3474  3475  3448  2702  3340  4667
+## 5    Virginia     Newbern  3511  3558    NA    NA    NA    NA    NA    NA
+## 6    Virginia     Norfolk  4686  6196  6127  6001  5661  6495  6471    NA
+## 7    Virginia     Raleigh  3822  4018    NA    NA    NA    NA    NA    NA
+## 8    Virginia     Roanoke    NA    NA    NA    NA  3049    NA  1507    NA
+## 9    Virginia   Tar River    NA    NA  3834  3466    NA    NA    NA    NA
+## 10   Virginia      Yadkin  3174  3216  3528  3323  3374  3323  4689  4547
+## Variables not shown: 1820 (int), 1821 (int), 1822 (int), 1823 (int), 1824
+##   (int), 1825 (int), 1826 (int), 1827 (int), 1828 (int), 1829 (int), 1830
+##   (int)</code></pre>
+<p>The first thing we can notice about this data frame is that it is very wide because it has a column for each of the years. The data is also suitable for reading because it like a table in a publication. We can read from left to right and see when certain districts begin and end and get the values for each year. The difficulties of computing on or plotting the data will also become quickly apparent. How would you make a plot of the change over time in the number of members in each district? Or how would you filter by year, or summarize by year? For that matter, what do the numbers in the table represent, since they are not given an explicit variable name?</p>
+<p>The problem with the table is that it is not <em>tidy data</em>, because the variables are not in columns and observations in rows. One of the variables is the year, but its values are in the column headers. And another of the variables is total membership, but its values are spread across rows and columns and it is not explicitly named.</p>
+<p>The <code>gather()</code> function from the <a href="https://cran.rstudio.com/web/packages/tidyr/">tidyr</a> package lets us turn wide data into long data. We need to tell the function two kinds of information. First we need to tell it the name of the column to create from the column headers and the name of the implicit variable in the rows. In the example below, we create to new columns <code>minutes_year</code> and <code>total_membership</code>. Then we also have to tell the function if there are any columns which should remain unchanged. In this case, the <code>conference</code> and <code>district</code> variables should remain the same, so we remove them from the gathering using the same syntax as the <code>select()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">va_methodists_wide %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">gather</span>(minutes_year, total_membership, -conference, -district)</code></pre></div>
+<pre><code>## Source: local data frame [190 x 4]
+## 
+##    conference    district minutes_year total_membership
+##         (chr)       (chr)        (chr)            (int)
+## 1    Virginia James River         1812             5348
+## 2    Virginia    Meherren         1812             4882
+## 3    Virginia    Meherrin         1812               NA
+## 4    Virginia       Neuse         1812               NA
+## 5    Virginia     Newbern         1812             3511
+## 6    Virginia     Norfolk         1812             4686
+## 7    Virginia     Raleigh         1812             3822
+## 8    Virginia     Roanoke         1812               NA
+## 9    Virginia   Tar River         1812               NA
+## 10   Virginia      Yadkin         1812             3174
+## ..        ...         ...          ...              ...</code></pre>
+<p>We can see the results above. There are two ways that this result is not quite what we want. Because the years were column headers they are treated as character vectors rather than integers. We can manually convert them in a later step, but we can also let <code>gather()</code> do the right thing with the <code>convert =</code> argument. Then we have a lot of <code>NA</code> values which were explicit in the wide table but which can be removed from the long table with <code>na.rm =</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">va_methodists_long &lt;-<span class="st"> </span>va_methodists_wide %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">gather</span>(minutes_year, total_membership, -conference, -district, 
+         <span class="dt">convert =</span> <span class="ot">TRUE</span>, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
+
+va_methodists_long</code></pre></div>
+<pre><code>## Source: local data frame [100 x 4]
+## 
+##    conference    district minutes_year total_membership
+##         (chr)       (chr)        (int)            (int)
+## 1    Virginia James River         1812             5348
+## 2    Virginia    Meherren         1812             4882
+## 3    Virginia     Newbern         1812             3511
+## 4    Virginia     Norfolk         1812             4686
+## 5    Virginia     Raleigh         1812             3822
+## 6    Virginia      Yadkin         1812             3174
+## 7    Virginia James River         1813             4691
+## 8    Virginia    Meherren         1813             4486
+## 9    Virginia     Newbern         1813             3558
+## 10   Virginia     Norfolk         1813             6196
+## ..        ...         ...          ...              ...</code></pre>
+<p>Notice that now we can use the data in ggplot2 without any problem.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(va_methodists_long, 
+       <span class="kw">aes</span>(<span class="dt">x =</span> minutes_year, <span class="dt">y =</span> total_membership, <span class="dt">color =</span> district)) +
+<span class="st">  </span><span class="kw">geom_line</span>() +
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Membership of districts in the Virginia conference&quot;</span>)</code></pre></div>
+<p><img src="more-data-manipulation_files/figure-html/unnamed-chunk-16-1.png" alt="" /><!-- --></p>
+<p>The inverse operation of <code>gather()</code> is <code>spread()</code>. With <code>spread()</code> we specify the name of the column which should become the new column headers (in this case <code>minutes_year</code>), and then the name of the column to fill in underneath those new column headers (in this case, <code>total_membership</code>). We can see the results below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">va_methodists_wide2 &lt;-<span class="st"> </span>va_methodists_long %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">spread</span>(minutes_year, total_membership)
+
+va_methodists_wide2</code></pre></div>
+<pre><code>## Source: local data frame [10 x 21]
+## 
+##    conference    district  1812  1813  1814  1815  1816  1817  1818  1819
+##         (chr)       (chr) (int) (int) (int) (int) (int) (int) (int) (int)
+## 1    Virginia James River  5348  4691  4520  4209  4118  3888  3713  3580
+## 2    Virginia    Meherren  4882  4486  4771  4687  4702    NA    NA    NA
+## 3    Virginia    Meherrin    NA    NA    NA    NA    NA  4435  3964  3860
+## 4    Virginia       Neuse    NA    NA  3474  3475  3448  2702  3340  4667
+## 5    Virginia     Newbern  3511  3558    NA    NA    NA    NA    NA    NA
+## 6    Virginia     Norfolk  4686  6196  6127  6001  5661  6495  6471    NA
+## 7    Virginia     Raleigh  3822  4018    NA    NA    NA    NA    NA    NA
+## 8    Virginia     Roanoke    NA    NA    NA    NA  3049    NA  1507    NA
+## 9    Virginia   Tar River    NA    NA  3834  3466    NA    NA    NA    NA
+## 10   Virginia      Yadkin  3174  3216  3528  3323  3374  3323  4689  4547
+## Variables not shown: 1820 (int), 1821 (int), 1822 (int), 1823 (int), 1824
+##   (int), 1825 (int), 1826 (int), 1827 (int), 1828 (int), 1829 (int), 1830
+##   (int)</code></pre>
+<p>Just by looking at the data we can see that we got back to where we started, but we can also verify that programmatically.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">identical</span>(va_methodists_wide, va_methodists_wide2)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Turning long data into wide is often useful when you want to create a tabular representation of data. (And once you have a data frame that can be a table, the <code>knitr::kable()</code> function is quite nice.) And some algorithms, such as clustering algorithms, expect wide data rather than tidy data.</p>
+<p>For the exercise, we will use summary statistics of the number of white and black members in the Methodists by year.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methodists_by_year_race &lt;-<span class="st"> </span>methodists %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(minutes_year &gt;=<span class="st"> </span><span class="dv">1786</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(minutes_year) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">white =</span> <span class="kw">sum</span>(members_white, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
+            <span class="dt">black =</span> <span class="kw">sum</span>(members_colored, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
+            <span class="dt">indian =</span> <span class="kw">sum</span>(<span class="kw">as.integer</span>(members_indian), <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))
+methodists_by_year_race</code></pre></div>
+<pre><code>## Source: local data frame [45 x 4]
+## 
+##    minutes_year white black indian
+##           (int) (int) (int)  (int)
+## 1          1786 18291  2890      0
+## 2          1787 21949  3883      0
+## 3          1788 30557  7991      0
+## 4          1789 34425  8840      0
+## 5          1790 45983 11682      0
+## 6          1791 50580 13098      0
+## 7          1792 52079 13871      0
+## 8          1793 51486 14420      0
+## 9          1794 52794 13906      0
+## 10         1795 48121 12171      0
+## ..          ...   ...   ...    ...</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><p>The data in <code>methodists_by_year_race</code> could be tidier still. While <code>white</code>, <code>black</code>, and <code>indian</code> are variables, it is perhaps better to think of them as two different variables. One variable would be <code>race</code>, containing the racial descriptions that the Methodists used, and another would be <code>members</code>, containing the number of members. Using the <code>gather()</code> function, create that data frame.</p></li>
+<li><p>Use the data frame you created in the previous step to create a line plot of membership over time, mapping the <code>race</code> column to the <code>color</code> aesthetic.</p></li>
+<li><p>Now use that newly tidied data frame to create a wide data frame, where the years are the column headers and the racial descriptions are the rows.</p></li>
+<li><p>Now use the same tidied data to create a wide data frame where the racial descriptions are column headers and the years are rows.</p></li>
+</ol>
+</div>
+<div id="window-functions" class="section level2">
+<h2>Window functions</h2>
+<p>There are a number of different kinds of window functions in R. We are going to look at two window functions, <code>lead()</code> and <code>lag()</code> which help us look for change over time. (For a fuller explanation of window functions, see the <a href="https://cran.rstudio.com/web/packages/dplyr/vignettes/window-functions.html">related dplyr vignette</a>.)</p>
+<p>To understand what a window function does, it is helpful to compare it to a transformation function and an aggregation function. Suppose we have a vector with five numeric values.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">original &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">1.1</span>, <span class="fl">2.2</span>, <span class="fl">3.3</span>, <span class="fl">4.4</span>, <span class="fl">5.5</span>)</code></pre></div>
+<p>A transformation function changes each element in the vector and returns a new value for each. In the example below, we round each element in the vector. We have a different result, but it still has five elements.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(original, <span class="dv">0</span>)</code></pre></div>
+<pre><code>## [1] 1 2 3 4 6</code></pre>
+<p>In an aggregation function, we pass in a vector of numbers and get back a single value. In this case, we get the sum of the numbers.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(original)</code></pre></div>
+<pre><code>## [1] 16.5</code></pre>
+<p>Aggregation functions work well with <code>summarize()</code>; transformation functions works well with <code>mutate()</code>.</p>
+<p>A window function gives back a vector of numbers, but a vector which has fewer useable elements than the original. It is like sliding a window over the vector. Consider the case below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lead</span>(original)</code></pre></div>
+<pre><code>## [1] 2.2 3.3 4.4 5.5  NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lag</span>(original)</code></pre></div>
+<pre><code>## [1]  NA 1.1 2.2 3.3 4.4</code></pre>
+<p>The function <code>lead()</code> returns the next element of a vector in place of the original value. At the end of the vector we get an <code>NA</code> because there are no more elements left. The function <code>lag()</code> does the opposite, giving us the previous element in the vector. In that case, the first element of the returned vector is <code>NA</code>.</p>
+<p>The <code>lead()</code> and <code>lag()</code> functions are useful for comparing one value to its previous or successor value. Suppose, for instance, that we have a vector of membership figures for each year. We can calculate the number of new members each year by subtracting the current value from its previous value.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">membership &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">250</span>, <span class="dv">400</span>, <span class="dv">600</span>)
+membership -<span class="st"> </span><span class="kw">lag</span>(membership)</code></pre></div>
+<pre><code>## [1]  NA  50 100 150 200</code></pre>
+<p>Now that we understand those basics, we can apply that to the Methodist annual minutes data that we worked with in a previous lesson. Let’s start by getting just the membership data from Fairfax, Virginia. We will also calculate the <code>members_general</code> value for the years it is missing, and select only the columns we absolutely need.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fairfax &lt;-<span class="st"> </span>methodists %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(meeting ==<span class="st"> &quot;Fairfax&quot;</span>) %&gt;%
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">members_general =</span> <span class="kw">ifelse</span>(<span class="kw">is.na</span>(members_general),
+                                  members_white +<span class="st"> </span>members_colored,
+                                  members_general)) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(minutes_year, meeting, <span class="kw">starts_with</span>(<span class="st">&quot;members&quot;</span>), -members_indian)
+fairfax</code></pre></div>
+<pre><code>## Source: local data frame [54 x 5]
+## 
+##    minutes_year meeting members_general members_white members_colored
+##           (int)   (chr)           (int)         (int)           (int)
+## 1          1775 Fairfax              30            NA              NA
+## 2          1776 Fairfax             350            NA              NA
+## 3          1777 Fairfax             330            NA              NA
+## 4          1779 Fairfax             309            NA              NA
+## 5          1780 Fairfax             361            NA              NA
+## 6          1781 Fairfax             301            NA              NA
+## 7          1782 Fairfax             362            NA              NA
+## 8          1783 Fairfax             310            NA              NA
+## 9          1784 Fairfax             317            NA              NA
+## 10         1786 Fairfax             260           260               0
+## ..          ...     ...             ...           ...             ...</code></pre>
+<p>Now that we have the data, we can add a column for the number of new members added each year.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fairfax %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">growth =</span> members_general -<span class="st"> </span><span class="kw">lag</span>(members_general)) </code></pre></div>
+<pre><code>## Source: local data frame [54 x 6]
+## 
+##    minutes_year meeting members_general members_white members_colored
+##           (int)   (chr)           (int)         (int)           (int)
+## 1          1775 Fairfax              30            NA              NA
+## 2          1776 Fairfax             350            NA              NA
+## 3          1777 Fairfax             330            NA              NA
+## 4          1779 Fairfax             309            NA              NA
+## 5          1780 Fairfax             361            NA              NA
+## 6          1781 Fairfax             301            NA              NA
+## 7          1782 Fairfax             362            NA              NA
+## 8          1783 Fairfax             310            NA              NA
+## 9          1784 Fairfax             317            NA              NA
+## 10         1786 Fairfax             260           260               0
+## ..          ...     ...             ...           ...             ...
+## Variables not shown: growth (int)</code></pre>
+<ol start="10" style="list-style-type: decimal">
+<li><p>In what years did the Methodists grow in Fairfax? In what years did they shrink? Can you plot the growth?</p></li>
+<li><p>How might you use the growth figures to detect errors in the data? Keep in mind that they might have shunk or grown because of the way that they were counted.</p></li>
+</ol>
+<blockquote>
+
+</blockquote>
+<ol start="12" style="list-style-type: decimal">
+<li><p>Find the growth in the number of white and black members in Fairfax, and plot them on the same chart. What is the pattern?</p></li>
+<li><p>Return back to the original <code>methodists</code> data. Beginning in 1802, the Methodists organized the data by conference, district, and meeting. For 1802 and following, calculate the growth for each conference. Which conferences were growing the most in absolute terms? Which were growing the most in relative terms (i.e., growth percentage)? Do you get a clearer picture by looking at the growth in districts? Feel free to plot the data if you wish and to add explanatory text.</p></li>
+</ol>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>And indeed, we could write a function that translates state names into regions.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+<footer>
+  <p>
+    <small>
+      These materials are &copy; 2016 <a href="http://lincolnmullen.com">Lincoln Mullen</a>. Licensed <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; margin-left: 5px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+    </small>
+  </p>
+</footer>
+
+  </div>
+</div>
+
+<script>
+  $.each($("img"), function(i, v) {
+    var img = $(v);
+    img.wrap("<a href='" + img.attr("src") + "'>");
+  })
+
+  url = window.location.toString();
+  if (url === "http://lincolnmullen.com/projects/worksheets/") {
+    $("#download-link").remove();
+  } else {
+    $("#download-link").attr("href", url.replace('.html', '.Rmd'));
+  }
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

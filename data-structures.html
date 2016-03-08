@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Data Structures and Subsetting</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<!-- begin in_header.html -->
+<meta name="description" content="Worksheets for learning historical data analysis with R.">
+<meta name="author" content="Lincoln Mullen">
+<link rel="shortcut icon" href="img/favicon.png">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-25121492-1', 'lincolnmullen.com');
+  ga('send', 'pageview');
+</script>
+<!-- end in_header.html -->
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="libs/navigation-1.0/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+<div class="fluid-row">
+  <div class="col-sm-12">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="./">Worksheets for Historical Data Analysis with R</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://lincolnmullen.com">Lincoln Mullen</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="fluid-row">
+  <div class="col-sm-3">
+    <div class="list-group">
+      <a class="list-group-item" href="./">Home</a>
+      <a class="list-group-item" href="familiar-with-r.html">Getting Familiar with R</a>
+      <a class="list-group-item" href="data-structures.html">Data Structures</a>
+      <a class="list-group-item" href="functions.html">Functions</a>
+      <a class="list-group-item" href="ggplot2.html">Basics of ggplot2</a>
+      <a class="list-group-item" href="data-manipulation.html">Data Manipulation</a>
+      <a class="list-group-item" href="more-data-manipulation.html">More Data Manipulation</a>
+    </div>
+    <script>
+      // manage active state of toc based on current page
+    var href = window.location.pathname;
+    href = href.substr(href.lastIndexOf('/') + 1);
+    if (href === "" || href === "index.html")
+      href = "./";
+    $('a.list-group-item[href="' + href + '"]').addClass('active');
+    </script>
+  </div>
+  <div class="col-sm-9 content-body">
+    <p>
+      <a id="download-link" download class="btn btn-warning">
+        Download this worksheet as a .Rmd
+      </a>
+    </p>
+
+<div class="fluid-row" id="header">
+
+
+<h1 class="title">Data Structures and Subsetting</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#aim-of-this-worksheet">Aim of this worksheet</a></li>
+<li><a href="#subsetting-vectors">Subsetting vectors</a></li>
+<li><a href="#matrices">Matrices</a></li>
+<li><a href="#data-frames">Data frames</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#subsetting-with-logical-vectors">Subsetting with logical vectors</a></li>
+</ul>
+</div>
+
+<div id="aim-of-this-worksheet" class="section level2">
+<h2>Aim of this worksheet</h2>
+<p>After completing this worksheet, you should have a basic familiarity with the most useful types of data structures in R (lists, data frames, and matrices). You should also be able to subset any of these data structures using the common subsetting operators (<code>[</code>, <code>[[</code>, and <code>$</code>).</p>
+<p>You may find the chapters on <a href="http://adv-r.had.co.nz/Data-structures.html">data structures</a> and <a href="http://adv-r.had.co.nz/Subsetting.html">subsetting</a> from Hadley Wickham’s <em><a href="http://adv-r.had.co.nz/">Advanced R</a></em> book to be helpful.</p>
+</div>
+<div id="subsetting-vectors" class="section level2">
+<h2>Subsetting vectors</h2>
+<p>In the <a href="familiar-with-r.html">previous worksheet</a> you learned about vectors. Vectors hold a one-dimensional set of homogenous values. By homogenous we mean that that the values all have to be the same type (integer, numeric, logical, and so on) and you can’t have both, say, numeric and logical values in the same vector. By one-dimensional we mean that there can be more than one element accessed by a single index. For example, R includes a character vector of the letters in the English alphabet, helpfully called, <code>letters</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">letters</code></pre></div>
+<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot;
+## [18] &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+<p>The <code>letters</code> object is a character vector because everything inside of it is a character vector.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(letters)</code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>And it has twenty-six elements:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(letters)</code></pre></div>
+<pre><code>## [1] 26</code></pre>
+<p>We can <strong>subset</strong> a vector using the <code>[</code> operator (actually, it’s a function). For instance, we can get the first element like this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">letters[<span class="dv">1</span>]</code></pre></div>
+<pre><code>## [1] &quot;a&quot;</code></pre>
+<ol style="list-style-type: decimal">
+<li>How would you get the twenty-fifth element?</li>
+</ol>
+<p>We can get a range of values like so. Notice that we can get all the numbers one to five like this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span>:<span class="dv">5</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<p>So, we can get the first five letters like this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">letters[<span class="dv">1</span>:<span class="dv">5</span>]</code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Can you get the tenth through twelfth letters?</li>
+</ol>
+<p>You can get an arbitrary subset by creating a numeric (or integer) vector. Here we get the first, tenth, and twelfth letters.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">letters[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">12</span>)]</code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;j&quot; &quot;l&quot;</code></pre>
+<p>We can also do this by creating a variable and using it to do the subsetting.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">what_i_want &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>)
+letters[what_i_want]</code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;c&quot; &quot;e&quot; &quot;g&quot;</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Create a variable with the even numbers and then subset the <code>letters</code> variable to get the even letters (e.g., the second, fourth, etc.)</p></li>
+<li><p>Bonus: can you use the <code>seq()</code> function (look it up with <code>?seq</code>) to get the even letters in a more clever way?</p></li>
+</ol>
+<p>In addition to values, vectors can also have names. For example, let’s create a variable with the numbers 1 to 5, then give those values some names.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myvar &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">5</span>
+<span class="kw">names</span>(myvar) &lt;-<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv">5</span>]
+myvar</code></pre></div>
+<pre><code>## a b c d e 
+## 1 2 3 4 5</code></pre>
+<p>Now we can also subset the vector based on the names:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myvar[<span class="st">&quot;c&quot;</span>]</code></pre></div>
+<pre><code>## c 
+## 3</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Below is a vector of rankings for songs. Give the numeric vector names, which should be the titles of songs. Finally, subset the vector by the title of one of the songs to retrieve its ranking.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">song_rankings &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="fl">8.4</span>, <span class="dv">6</span>, <span class="fl">8.2</span>, <span class="dv">4</span>)</code></pre></div>
+</div>
+<div id="matrices" class="section level2">
+<h2>Matrices</h2>
+<p>Vectors are one-dimensional and homogeneous. Matrices are two-dimensional and homogenous, so they have the same kind of value, but have rows and columns as well. A matrix can be used for all kinds of problems in digital history. For now, let’s imagine we have four cites, A, B, C, and D, and have measured the distances between them. For instance, the distance from A to B is 2. We can represent those distances as a matrix with 4 columns and 4 rows, where the names of the rows and columns are the cities.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">city_distances &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">6</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">0</span>),
+                         <span class="dt">nrow =</span> <span class="dv">4</span>, <span class="dt">ncol =</span> <span class="dv">4</span>)
+<span class="kw">rownames</span>(city_distances) &lt;-<span class="st"> </span>LETTERS[<span class="dv">1</span>:<span class="dv">4</span>]
+<span class="kw">colnames</span>(city_distances) &lt;-<span class="st"> </span>LETTERS[<span class="dv">1</span>:<span class="dv">4</span>]
+city_distances</code></pre></div>
+<pre><code>##   A B C D
+## A 0 2 8 3
+## B 2 0 6 1
+## C 8 6 0 4
+## D 3 1 4 0</code></pre>
+<p>A matrix can be subsetted in the same way that a vector can be subsetted. (Because it <em>is</em> a vector—just a vector with two dimensions.) For instance, we can get the third element of the matrix.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">city_distances[<span class="dv">3</span>]</code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Now get the fifth element of the matrix.</li>
+</ol>
+<p>But matrices are more useful when we subset them by row and column. For instance, here is the value contained in the cell for the first row and third column.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">city_distances[<span class="dv">1</span>, <span class="dv">3</span>]</code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Now get the value for the third row and the first column.</p></li>
+<li><p>What cities are we getting the distances for when we look for the third row and first column?</p></li>
+</ol>
+<blockquote>
+
+</blockquote>
+<p>If a matrix has row and column names, we can subset the vector by that. For instance, here is the distance between cities B and D.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">city_distances[<span class="st">&quot;B&quot;</span>, <span class="st">&quot;D&quot;</span>]</code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<ol start="9" style="list-style-type: decimal">
+<li><p>What is the distance between cities D and C?</p></li>
+<li><p>What is the distance between city A and cities B, C, and D? (Hint: think back to the kinds of subsetting that we did with vectors.)</p></li>
+</ol>
+</div>
+<div id="data-frames" class="section level2">
+<h2>Data frames</h2>
+<p>The most useful data structure in R is the data frame. Think of a data frame like a spreadsheet that holds any kind of tabular data. It is two dimensional, like a matrix; unlike a matrix, it is homogenous in that the columns can hold different kinds of data. While other langauges have add on libraries that allow for data structures like this, in R data frames are a first class citizen.</p>
+<p>Let’s get a data frame from the historydata package. (If we also load dplyr, we will get nicer printing.)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(historydata)
+<span class="kw">library</span>(dplyr)</code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">naval_promotions</code></pre></div>
+<pre><code>## Source: local data frame [5,705 x 5]
+## 
+##       id                      name generation       rank       date
+##    (int)                     (chr)      (int)     (fctr)      (chr)
+## 1      1               Abbot, Joel          3 midshipman 1812-06-18
+## 2      2            Abbot, Trevett          4 midshipman 1848-10-13
+## 3      3             Abbott, Isaac          4 midshipman 1820-05-10
+## 4      4        Abbott, J. Francis          4 midshipman 1837-12-27
+## 5      5          Abbott, James W.          4 midshipman 1822-05-01
+## 6      6         Abbott, Thomas C.          3 midshipman 1814-12-06
+## 7      7            Abbott, Walter          3 midshipman 1812-01-01
+## 8      8        Abbott, William A.          4 midshipman 1848-10-13
+## 9      9 Abercrombie, Alexander R.          4 midshipman 1841-10-19
+## 10    10         Abercrombie, J.B.          4 midshipman 1817-01-01
+## ..   ...                       ...        ...        ...        ...</code></pre>
+<p>We can use <code>str()</code> to get a different look at the data.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(naval_promotions)</code></pre></div>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    5705 obs. of  5 variables:
+##  $ id        : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ name      : chr  &quot;Abbot, Joel&quot; &quot;Abbot, Trevett&quot; &quot;Abbott, Isaac&quot; &quot;Abbott, J. Francis&quot; ...
+##  $ generation: int  3 4 4 4 4 3 3 4 4 4 ...
+##  $ rank      : Factor w/ 5 levels &quot;midshipman&quot;,&quot;lieutenant&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ date      : chr  &quot;1812-06-18&quot; &quot;1848-10-13&quot; &quot;1820-05-10&quot; &quot;1837-12-27&quot; ...</code></pre>
+<ol start="11" style="list-style-type: decimal">
+<li>How many rows and columns does the data frame have? What are the different types of vectors contained in it?</li>
+</ol>
+<blockquote>
+
+</blockquote>
+<p>We can use the <code>[</code> subset function to get access to rows and columns, just like we did with matrices. For instance, here we ask for just the first row and the columned named <code>&quot;name&quot;</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">naval_promotions[<span class="dv">1</span>, <span class="st">&quot;name&quot;</span>]</code></pre></div>
+<pre><code>## Source: local data frame [1 x 1]
+## 
+##          name
+##         (chr)
+## 1 Abbot, Joel</code></pre>
+<p>We can also ask for the entire first row (note the comma):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">naval_promotions[<span class="dv">1</span>, ]</code></pre></div>
+<pre><code>## Source: local data frame [1 x 5]
+## 
+##      id        name generation       rank       date
+##   (int)       (chr)      (int)     (fctr)      (chr)
+## 1     1 Abbot, Joel          3 midshipman 1812-06-18</code></pre>
+<ol start="12" style="list-style-type: decimal">
+<li>What is the name of the person in the tenth row? What was the date he became that rank?</li>
+</ol>
+<p>Because data frames are organized by column, it is possible to extract an entire column using the <code>$</code> function. Here, let’s get just the names of the people. (We’ll limit it using <code>head()</code> so we don’t print out all of them.)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(naval_promotions$name, <span class="dv">10</span>)</code></pre></div>
+<pre><code>##  [1] &quot;Abbot, Joel&quot;               &quot;Abbot, Trevett&quot;           
+##  [3] &quot;Abbott, Isaac&quot;             &quot;Abbott, J. Francis&quot;       
+##  [5] &quot;Abbott, James W.&quot;          &quot;Abbott, Thomas C.&quot;        
+##  [7] &quot;Abbott, Walter&quot;            &quot;Abbott, William A.&quot;       
+##  [9] &quot;Abercrombie, Alexander R.&quot; &quot;Abercrombie, J.B.&quot;</code></pre>
+<p>The function <code>unique()</code> gives you, well, all the unique values in a vector. For instance:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<ol start="13" style="list-style-type: decimal">
+<li><p>What are all the different ranks contained in the <code>naval_promotions</code> dataset? (Hint: use <code>unique()</code>.)</p></li>
+<li><p>How many different people are contained in the <code>naval_promotions</code> dataset?</p></li>
+<li><p>Why is that number different than the number of rows?</p></li>
+</ol>
+<blockquote>
+
+</blockquote>
+<ol start="16" style="list-style-type: decimal">
+<li>What is the earliest and latest date in the dataset? (Hint: you may find some combination of <code>sort()</code>, <code>head()</code>, <code>tail()</code>, <code>range()</code>, and <code>as.Date()</code> to be useful. Don’t forget about <code>na.rm = TRUE</code> as appropriate.)</li>
+</ol>
+<p>We will work much, much more with data frames.</p>
+</div>
+<div id="lists" class="section level2">
+<h2>Lists</h2>
+<p>Another very useful kind of data structure is the list. A list can hold values of any type, including vectors, data frames, and even other lists. For instance, we can create a list that holds several different kinds of information:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">our_class &lt;-<span class="st"> </span><span class="kw">list</span>(
+  <span class="dt">title =</span> <span class="st">&quot;Intro to R&quot;</span>,
+  <span class="dt">year =</span> <span class="dv">2016</span>,
+  <span class="dt">books =</span> <span class="kw">c</span>(<span class="st">&quot;Basics of R&quot;</span>, <span class="st">&quot;Get Awesome at R&quot;</span>),
+  <span class="dt">students =</span> <span class="kw">c</span>(<span class="st">&quot;Adam&quot;</span>, <span class="st">&quot;Betsy&quot;</span>, <span class="st">&quot;Cynthia&quot;</span>, <span class="st">&quot;David&quot;</span>)
+)
+<span class="kw">str</span>(our_class)</code></pre></div>
+<pre><code>## List of 4
+##  $ title   : chr &quot;Intro to R&quot;
+##  $ year    : num 2016
+##  $ books   : chr [1:2] &quot;Basics of R&quot; &quot;Get Awesome at R&quot;
+##  $ students: chr [1:4] &quot;Adam&quot; &quot;Betsy&quot; &quot;Cynthia&quot; &quot;David&quot;</code></pre>
+<p>We can get just part of the list using the <code>[</code> function that we’ve become used to. For instance, to get just the title:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">our_class[<span class="st">&quot;title&quot;</span>]</code></pre></div>
+<pre><code>## $title
+## [1] &quot;Intro to R&quot;</code></pre>
+<p>But notice that the returned value is a list, not a character vector</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.list</span>(our_class[<span class="st">&quot;title&quot;</span>])</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.character</span>(our_class[<span class="st">&quot;title&quot;</span>])</code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<p>R has another subset operator, <code>[[</code>. The single bracket (<code>[</code>) gives us what we asked for inside a list; the double bracket (<code>[[</code>) simplifies the list to give us the vector (or whatever) we asked for.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">our_class[[<span class="st">&quot;title&quot;</span>]]</code></pre></div>
+<pre><code>## [1] &quot;Intro to R&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.list</span>(our_class[[<span class="st">&quot;title&quot;</span>]])</code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.character</span>(our_class[[<span class="st">&quot;title&quot;</span>]])</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<ol start="17" style="list-style-type: decimal">
+<li><p>Using the <code>our_class</code> list, get just the year (as a list). Get it as a numeric vector.</p></li>
+<li><p>Using the <code>our_class</code> list, get the class title, the book list, and the year (as a list). (Hint: remember the different kinds of subsetting we did with <code>[</code>.)</p></li>
+</ol>
+<p>R also lets us use the <code>$</code> operator we used to get columns of a data frame.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">our_class$title</code></pre></div>
+<pre><code>## [1] &quot;Intro to R&quot;</code></pre>
+<ol start="19" style="list-style-type: decimal">
+<li><p>Get the students vector from <code>our_class</code>:</p></li>
+<li><p>Is the <code>$</code> equivalent to <code>[</code> or <code>[[</code>?</p></li>
+</ol>
+<blockquote>
+
+</blockquote>
+<ol start="21" style="list-style-type: decimal">
+<li><p>Create a list that models a historic event. What parts of the event are worth keeping track of? Also extract certain parts of that list.</p></li>
+<li><p>You can use <code>$</code>, <code>[</code>, and <code>[[</code> on both data frames and lists. What is the relationship between a data frame and a list? (Hint: use <code>is.list()</code> and <code>is.data.frame()</code> on a list and a data frame.)</p></li>
+</ol>
+</div>
+<div id="subsetting-with-logical-vectors" class="section level2">
+<h2>Subsetting with logical vectors</h2>
+<p>We have done subsetting above using numeric and character vectors. We can also do subsetting using logical vectors. Let’s create a sample dataset of the heights of soldiers.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">3929</span>)
+heights &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">69</span>)
+<span class="kw">names</span>(heights) &lt;-<span class="st"> </span>letters[<span class="dv">1</span>:<span class="dv">20</span>]
+heights</code></pre></div>
+<pre><code>##        a        b        c        d        e        f        g        h 
+## 67.82345 69.04801 69.59076 68.86947 68.54834 68.13089 68.82323 67.90888 
+##        i        j        k        l        m        n        o        p 
+## 71.88773 66.51703 68.58429 68.23702 70.36570 68.33046 69.48776 69.86949 
+##        q        r        s        t 
+## 69.78694 68.90278 68.82545 69.47962</code></pre>
+<p>We can find all the soldiers who are taller than average like this. First let’s compare all the heights to the mean height.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">heights &gt;<span class="st"> </span><span class="kw">mean</span>(heights)</code></pre></div>
+<pre><code>##     a     b     c     d     e     f     g     h     i     j     k     l 
+## FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE 
+##     m     n     o     p     q     r     s     t 
+##  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE</code></pre>
+<p>Notice that we get a logical vector as a result. We can use that within the <code>[</code> operator to get just the soldiers who are taller than average.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">heights[heights &gt;<span class="st"> </span><span class="kw">mean</span>(heights)]</code></pre></div>
+<pre><code>##        b        c        i        m        o        p        q        t 
+## 69.04801 69.59076 71.88773 70.36570 69.48776 69.86949 69.78694 69.47962</code></pre>
+<ol start="23" style="list-style-type: decimal">
+<li>Which soldiers are taller than 70 inches?</li>
+</ol>
+<p>This kind of subsetting also works for data frames. Here we get all the officers from the first generation. (Notice the comma.)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">first_gen &lt;-<span class="st"> </span>naval_promotions[naval_promotions$generation ==<span class="st"> </span><span class="dv">1</span>, ]
+<span class="kw">head</span>(first_gen, <span class="dv">10</span>)</code></pre></div>
+<pre><code>## Source: local data frame [10 x 5]
+## 
+##       id                name generation       rank       date
+##    (int)               (chr)      (int)     (fctr)      (chr)
+## 1     76        Archer, John          1 lieutenant 1798-11-08
+## 2    117 Bainbridge, William          1 lieutenant 1798-08-03
+## 3    127       Baker, Thomas          1 lieutenant 1798-05-25
+## 4    141       Ballard, John          1 lieutenant 1798-10-02
+## 5    168       Barron, James          1 lieutenant 1798-03-09
+## 6    180    Barton, Jeremiah          1 lieutenant 1798-06-08
+## 7    259       Blair, George          1 lieutenant 1799-03-13
+## 8    434        Burns, James          1 lieutenant 1798-10-29
+## 9    453       Byrne, Gerald          1 lieutenant 1799-06-17
+## 10   474     Campbell, James          1 lieutenant 1799-09-20</code></pre>
+<ol start="24" style="list-style-type: decimal">
+<li><p>Can you get just the promotions to captain?</p></li>
+<li><p>Can you get the promotions from 1800? (Hint: you will first have to make the date column a date object.)</p></li>
+</ol>
+</div>
+
+<footer>
+  <p>
+    <small>
+      These materials are &copy; 2016 <a href="http://lincolnmullen.com">Lincoln Mullen</a>. Licensed <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; margin-left: 5px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+    </small>
+  </p>
+</footer>
+
+  </div>
+</div>
+
+<script>
+  $.each($("img"), function(i, v) {
+    var img = $(v);
+    img.wrap("<a href='" + img.attr("src") + "'>");
+  })
+
+  url = window.location.toString();
+  if (url === "http://lincolnmullen.com/projects/worksheets/") {
+    $("#download-link").remove();
+  } else {
+    $("#download-link").attr("href", url.replace('.html', '.Rmd'));
+  }
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Data manipulation with dplyr</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<!-- begin in_header.html -->
+<meta name="description" content="Worksheets for learning historical data analysis with R.">
+<meta name="author" content="Lincoln Mullen">
+<link rel="shortcut icon" href="img/favicon.png">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-25121492-1', 'lincolnmullen.com');
+  ga('send', 'pageview');
+</script>
+<!-- end in_header.html -->
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="libs/navigation-1.0/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+<div class="fluid-row">
+  <div class="col-sm-12">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="./">Worksheets for Historical Data Analysis with R</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://lincolnmullen.com">Lincoln Mullen</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="fluid-row">
+  <div class="col-sm-3">
+    <div class="list-group">
+      <a class="list-group-item" href="./">Home</a>
+      <a class="list-group-item" href="familiar-with-r.html">Getting Familiar with R</a>
+      <a class="list-group-item" href="data-structures.html">Data Structures</a>
+      <a class="list-group-item" href="functions.html">Functions</a>
+      <a class="list-group-item" href="ggplot2.html">Basics of ggplot2</a>
+      <a class="list-group-item" href="data-manipulation.html">Data Manipulation</a>
+      <a class="list-group-item" href="more-data-manipulation.html">More Data Manipulation</a>
+    </div>
+    <script>
+      // manage active state of toc based on current page
+    var href = window.location.pathname;
+    href = href.substr(href.lastIndexOf('/') + 1);
+    if (href === "" || href === "index.html")
+      href = "./";
+    $('a.list-group-item[href="' + href + '"]').addClass('active');
+    </script>
+  </div>
+  <div class="col-sm-9 content-body">
+    <p>
+      <a id="download-link" download class="btn btn-warning">
+        Download this worksheet as a .Rmd
+      </a>
+    </p>
+
+<div class="fluid-row" id="header">
+
+
+<h1 class="title">Data manipulation with dplyr</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#aims-of-this-worksheet">Aims of this worksheet</a></li>
+<li><a href="#loading-csv-files">Loading CSV files</a></li>
+<li><a href="#the-pipe">The pipe (<code>%&gt;%</code>)</a></li>
+<li><a href="#selecting-columns-select">Selecting columns (<code>select()</code>)</a></li>
+<li><a href="#filtering-rows-filter">Filtering rows (<code>filter()</code>)</a></li>
+<li><a href="#creating-new-columns-mutate">Creating new columns (<code>mutate()</code>)</a></li>
+<li><a href="#sorting-columns-arrange">Sorting columns (<code>arrange()</code>)</a></li>
+<li><a href="#split-apply-combine-group_by">Split-apply-combine (<code>group_by()</code>)</a></li>
+<li><a href="#summarizing-or-aggregating-data-summarize">Summarizing or aggregating data (<code>summarize()</code>)</a></li>
+</ul>
+</div>
+
+<div id="aims-of-this-worksheet" class="section level2">
+<h2>Aims of this worksheet</h2>
+<p>One of the key reasons to use R is to be able to manipulate data with ease. After completing this worksheet you will be able to work with the most commonly used data manipulation verbs provided by the <a href="https://cran.rstudio.com/web/packages/dplyr/">dplyr</a> package. In addition, you will learn how to read a CSV file into R, and learn how to use the pipe operator.</p>
+<p>Since these packages were written by Hadley Wickham, you may find his articles on “<a href="http://www.jstatsoft.org/v59/i10/">Tidy Data</a>” and “<a href="http://www.jstatsoft.org/article/view/v040i01">The Split-Apply-Combine Strategy for Data Analysis</a>” to be useful. In addition, you should read the package documentation and vignettes for the <a href="https://cran.rstudio.com/web/packages/dplyr/">dplyr</a> package.</p>
+</div>
+<div id="loading-csv-files" class="section level2">
+<h2>Loading CSV files</h2>
+<p>We will begin by loading the necessary packages:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(historydata)</code></pre></div>
+<p>So far we have worked almost exclusively with data which is contained in R packages, which we can install and then load. However, most data will come to you outside of an R package, so you must learn how to load that data.</p>
+<p>Often tabular data will come to you in the form of a CSV (comma separated values) file. This is a text file where, as the name indicates, the columns in the data are separated with columns. This is a much better way of receiving data than say, an Excel spreadsheet.</p>
+<p>R has a number of functions that can read in data in various formats. We will use one, <code>read_csv()</code>, from the <a href="https://cran.rstudio.com/web/packages/readr/">readr</a> package, which works nicely with dplyr and tidyr. But there is an equivalent function in base R called <code>read.csv()</code>. See <code>?readr::read_csv</code> or <code>?read.csv</code> for details.</p>
+<p>Because R is awesome, we can pass it the URL to a file (in addition to the local path to a file) and it will be loaded. (You could also download the file with <code>download.file()</code>.)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
+methodists &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;http://lincolnmullen.com/projects/worksheets/data/methodists.csv&quot;</span>)</code></pre></div>
+</div>
+<div id="the-pipe" class="section level2">
+<h2>The pipe (<code>%&gt;%</code>)</h2>
+<p>The packages that we will be working with all take advantage of an operator provided by the <a href="https://cran.rstudio.com/web/packages/magrittr/">magrittr</a> package. Called the pipe, this operator <code>%&gt;%</code> passes the output of one function to the first argument of a second function.</p>
+<p>Consider this example from an earlier exercise, where we find the earliest and latest dates from a column in a data frame.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">range</span>(<span class="kw">as.Date</span>(naval_promotions$date), <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] &quot;1794-06-04&quot; &quot;1905-02-12&quot;</code></pre>
+<p>Here we have to read the expression from the inside out, from the <code>naval_promotions$date</code>, to the <code>as.Date()</code> function, to the <code>range()</code> function. The pipe operator lets us write an equivalent expression which is more legible.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">naval_promotions$date %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">as.Date</span>() %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">range</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] &quot;1794-06-04&quot; &quot;1905-02-12&quot;</code></pre>
+</div>
+<div id="selecting-columns-select" class="section level2">
+<h2>Selecting columns (<code>select()</code>)</h2>
+<p>Now we can begin to use the Methodists data. This data contains membership statistics for different churches, circuits, and class meetings. (This data is transcribed from the Methodist annual minutes meeting, and so it uses the racial terminology from those primary sources.) First can get a sense of what the data looks like.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methodists</code></pre></div>
+<pre><code>## Source: local data frame [15,887 x 10]
+## 
+##    minutes_year conference district      meeting state members_general
+##           (int)      (chr)    (chr)        (chr) (chr)           (int)
+## 1          1773         NA       NA     New York    NA             180
+## 2          1773         NA       NA Philadelphia    NA             180
+## 3          1773         NA       NA   New Jersey    NA             200
+## 4          1773         NA       NA     Maryland    NA             500
+## 5          1773         NA       NA     Virginia    NA             100
+## 6          1774         NA       NA     New York    NA             222
+## 7          1774         NA       NA Philadelphia    NA             204
+## 8          1774         NA       NA   New Jersey    NA             257
+## 9          1774         NA       NA      Chester    NA              36
+## 10         1774         NA       NA    Baltimore    NA             738
+## ..          ...        ...      ...          ...   ...             ...
+## Variables not shown: members_white (int), members_colored (int),
+##   members_indian (chr), url (chr)</code></pre>
+<p>The first data manipulation verb that we are going to use is <code>select()</code>. This function lets us pass the names of the columns that we want to keep.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methodists %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(minutes_year, meeting, members_general)</code></pre></div>
+<pre><code>## Source: local data frame [15,887 x 3]
+## 
+##    minutes_year      meeting members_general
+##           (int)        (chr)           (int)
+## 1          1773     New York             180
+## 2          1773 Philadelphia             180
+## 3          1773   New Jersey             200
+## 4          1773     Maryland             500
+## 5          1773     Virginia             100
+## 6          1774     New York             222
+## 7          1774 Philadelphia             204
+## 8          1774   New Jersey             257
+## 9          1774      Chester              36
+## 10         1774    Baltimore             738
+## ..          ...          ...             ...</code></pre>
+<p>Notice that we have not actually changed the data stored in <code>methodists</code> until we assign the changed data back to the variable.</p>
+<p>Read the documentation for this function, <code>?select</code>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Select the <code>minutes_year</code>, <code>meeting</code>, and all the columns that begin with the word <code>members_</code>.</p></li>
+<li><p>Remove the column <code>url</code>.</p></li>
+</ol>
+</div>
+<div id="filtering-rows-filter" class="section level2">
+<h2>Filtering rows (<code>filter()</code>)</h2>
+<p>The <code>select()</code> function lets us pick certain columns. The <code>filter()</code> function lets select certain rows based on logical conditions. For example, here we get the only the churches where the total number of members is at greater than 1,000.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methodists %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(members_general &gt;<span class="st"> </span><span class="dv">1000</span>)</code></pre></div>
+<pre><code>## Source: local data frame [4 x 10]
+## 
+##   minutes_year conference district   meeting state members_general
+##          (int)      (chr)    (chr)     (chr) (chr)           (int)
+## 1         1776         NA       NA Brunswick    NA            1611
+## 2         1777         NA       NA Brunswick    NA            1360
+## 3         1781         NA       NA  Delaware    NA            1052
+## 4         1783         NA       NA     Dover    NA            1017
+## Variables not shown: members_white (int), members_colored (int),
+##   members_indian (chr), url (chr)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Get just the rows from New York in 1800.</p></li>
+<li><p>Which Methodist meetings had only black members?</p></li>
+</ol>
+<p>The Methodists gradually kept more detailed records. They began by keeping track of the total number of members, then the number of white and black members, and eventually the number of white, black, and Indian members. But when they kept track of those racial divisions, they did not report the total number of members.</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>In which year did the Methodists start keeping track of white and black members? (Hint: use <code>is.na()</code> to find when the missing values begin.)</p></li>
+<li><p>Bonus: some of these Methodist meetings were “missions.” Load the <code>stringr</code> package and look at the documentation for <code>?str_detect</code>. Can you find which rows represent missions?</p></li>
+</ol>
+</div>
+<div id="creating-new-columns-mutate" class="section level2">
+<h2>Creating new columns (<code>mutate()</code>)</h2>
+<p>Very often one will want to create a new column based on other columns in the data. For instance, in our Methodist data, there is a column called <code>minutes_year</code> for the year that the minutes were kept. But the actual data was for the <em>previous</em> year. Here we create a new column called <code>year</code>, where each value is one less than in <code>minutes_year</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methodists %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">year =</span> minutes_year -<span class="st"> </span><span class="dv">1</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(minutes_year, year, meeting)</code></pre></div>
+<pre><code>## Source: local data frame [15,887 x 3]
+## 
+##    minutes_year  year      meeting
+##           (int) (dbl)        (chr)
+## 1          1773  1772     New York
+## 2          1773  1772 Philadelphia
+## 3          1773  1772   New Jersey
+## 4          1773  1772     Maryland
+## 5          1773  1772     Virginia
+## 6          1774  1773     New York
+## 7          1774  1773 Philadelphia
+## 8          1774  1773   New Jersey
+## 9          1774  1773      Chester
+## 10         1774  1773    Baltimore
+## ..          ...   ...          ...</code></pre>
+<p>Notice that we chained the data manipulation functions using the pipe (<code>%&gt;%</code>). This lets us create a pipeline were we can do many different manipulations in a row.</p>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Filter the Methodists data to 1786 and later. All of the <code>members_total</code> values for those years are <code>NA</code>. Assign the the value of <code>members_white</code> plus <code>members_colored</code> to the <code>members_total</code> column.</p></li>
+<li><p>Create two new columns, one with the percentage of white members, and one with the percentage of black members.</p></li>
+<li><p>Bonus: We neglected the column <code>members_indian</code> above, which should be counted in the <code>members_total</code> column. However, for some years the values of that column are <code>NA</code>, and in other years they have a numeric value. The difference is that the years where the value is <code>NA</code>, that column does not appear in the data because it was not tracked. How can you add that column to the total without running into problems with the missing values? (Hints: One way to do this is to use the <code>ifelse()</code> function to conditionally assign a value to <code>members_total</code>. Another way to do this is to group the data frame using <code>rowwise()</code> and use <code>sum()</code> with the <code>na.rm = TRUE</code> argument. A third, less elegant way, would be to split the data frame manually based on whether the value is <code>NA</code> or not, then recombine them.)</p></li>
+</ol>
+</div>
+<div id="sorting-columns-arrange" class="section level2">
+<h2>Sorting columns (<code>arrange()</code>)</h2>
+<p>Often we want to sort a data frame by one of its columns. This can be done with the verb <code>arrange()</code>. By default <code>arrange()</code> will sort from least to greatest; we can use the function <code>desc()</code> to sort from greatest to least. In this example, we sort the data frame to get the circuits with the highest number of white members.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methodists %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(members_white))</code></pre></div>
+<pre><code>## Source: local data frame [15,887 x 10]
+## 
+##    minutes_year conference  district     meeting state members_general
+##           (int)      (chr)     (chr)       (chr) (chr)           (int)
+## 1          1825       Ohio Lancaster   Muskingum    NA              NA
+## 2          1830   New York  New York    New York    NA              NA
+## 3          1829   New York  New York    New York    NA              NA
+## 4          1828   New York  New York    New York    NA              NA
+## 5          1830  Baltimore Baltimore   Baltimore    NA              NA
+## 6          1825       Ohio Lancaster Hockhocking    NA              NA
+## 7          1827   New York  New York    New York    NA              NA
+## 8          1829  Baltimore Baltimore   Baltimore    NA              NA
+## 9          1828  Baltimore Baltimore   Baltimore    NA              NA
+## 10         1826   New York  New York    New York    NA              NA
+## ..          ...        ...       ...         ...   ...             ...
+## Variables not shown: members_white (int), members_colored (int),
+##   members_indian (chr), url (chr)</code></pre>
+<ol start="10" style="list-style-type: decimal">
+<li><p>Which circuits had the highest number of black members? Be sure to select only the necessary columns so that the results print in a meaningful way.</p></li>
+<li><p>Which circuits had the most members overall? Keep in mind that you will have to use your code from above to calculate the total members for years where that value is <code>NA</code> because only the number of white and black members is supplied?</p></li>
+<li><p>Which circuits had the high percentage of black members without being entirely black?</p></li>
+</ol>
+</div>
+<div id="split-apply-combine-group_by" class="section level2">
+<h2>Split-apply-combine (<code>group_by()</code>)</h2>
+<p>Notice that in the example above the <code>arrange()</code> function sorted the entire data frame. So when we looked for the circuits with the largest number of members, we got rows from 1825, then 1830, then 1829, then 1830, and so on. What if we wanted to get the biggest circuit from each year?</p>
+<p>We can solve this kind of problem with what Hadley Wickham calls the “split-apply-combine” pattern of data analysis. Think of it this way. First we can <em>split</em> the big data frame into separate data frames, one for each year. Then we can <em>apply</em> our logic to get the results we want; in this case, that means sorting the data frame. We might also want to get just the top one row with the biggest number of members. Then we can <em>combine</em> those split apart data frames into a new data frame.</p>
+<p>Observe how this works. If we want to get circuit with the most black members in each year, we can use the following code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methodists %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(minutes_year &gt;=<span class="st"> </span><span class="dv">1786</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(minutes_year, meeting, <span class="kw">starts_with</span>(<span class="st">&quot;members&quot;</span>)) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(minutes_year) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(members_colored)) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">slice</span>(<span class="dv">5</span>) </code></pre></div>
+<pre><code>## Source: local data frame [45 x 6]
+## Groups: minutes_year [45]
+## 
+##    minutes_year        meeting members_general members_white
+##           (int)          (chr)           (int)         (int)
+## 1          1786          Dover              NA           690
+## 2          1787          Dover              NA           654
+## 3          1788         Talbot              NA          1077
+## 4          1789         Sussex              NA          1300
+## 5          1790        Roanoke              NA           834
+## 6          1791 East New River              NA          1160
+## 7          1792          Dover              NA           941
+## 8          1793          Dover              NA           930
+## 9          1794    Queen Ann&#39;s              NA           573
+## 10         1795    Queen Ann&#39;s              NA           529
+## ..          ...            ...             ...           ...
+## Variables not shown: members_colored (int), members_indian (chr)</code></pre>
+<p>Let’s walk through that logic step by step.</p>
+<ol style="list-style-type: decimal">
+<li>First we get only the years since 1786 with <code>filter()</code>, since the data does not keep track of the number of white and black members until that year.</li>
+<li>Then we select only the columns that we are interested in, namely, the column for the year, the name of the meeting, and the various values for membership. We do this just so that the results print out in a useful way: in a real analysis we might decide not to throw away the other columns.</li>
+<li>The crucial step is when we <code>group_by()</code> the <code>minutes_year</code>. This creates a new data-frame (the <em>split</em> step) for each unique combination of values in the variables. Notice that the printed our result says that there are 45 groups, i.e., one for each year from 1786 to 1830. (Note that you can group by combinations of columns, so, one group for each combination of city and state, for instance.)</li>
+<li>Next we <em>apply</em> our logic, in this case, sorting by the column <code>members_colored</code> in descending order. This puts the rows with the biggest value at the top.</li>
+<li>Next we continue to <em>apply</em> our logic with <code>slice()</code>. This function simply gives us the rows in each of the split-up data frames with that index. So <code>slice(1)</code> gives us the first row, <code>slice(5)</code> gives us this fifth row, and <code>slice(1:5)</code> gives us the first through fifth rows.</li>
+<li>The last step, <em>combine</em>, where the split-up data frames are brought back together, is done for us automatically. Note that the data frame is still grouped, however, so any subsequent data manipulation verbs will be applied to the groups rather than the whole data frame. If we wished, we could use <code>ungroup()</code>.</li>
+</ol>
+<p>This particular operation, getting the top value in a split up data frame is so common that dplyr provides us with a <code>top_n()</code> function as a short cut. That function also handles ties better. (What if, for instance, two circuits both have the same biggest value?)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methodists %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(minutes_year &gt;=<span class="st"> </span><span class="dv">1786</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(minutes_year, meeting, <span class="kw">starts_with</span>(<span class="st">&quot;members&quot;</span>)) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(minutes_year) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">top_n</span>(<span class="dv">1</span>, members_colored)</code></pre></div>
+<pre><code>## Source: local data frame [45 x 6]
+## Groups: minutes_year [45]
+## 
+##    minutes_year meeting members_general members_white members_colored
+##           (int)   (chr)           (int)         (int)           (int)
+## 1          1786 Antigua              NA             0            1000
+## 2          1787    Kent              NA           607             604
+## 3          1788 Calvert              NA           505             842
+## 4          1789 Calvert              NA           943             909
+## 5          1790 Calvert              NA           814            1170
+## 6          1791 Calvert              NA           760            1329
+## 7          1792 Calvert              NA           700            1200
+## 8          1793   Surry              NA           814             955
+## 9          1794 Calvert              NA           682            1102
+## 10         1795 Calvert              NA           602             924
+## ..          ...     ...             ...           ...             ...
+## Variables not shown: members_indian (chr)</code></pre>
+<p>We get the same results more concisely and reliably, though the steps of “split-apply-combine” are perhaps somewhat less easy to see.</p>
+<ol start="13" style="list-style-type: decimal">
+<li><p>For each year, which was the biggest circuit?</p></li>
+<li><p>For each year since 1786, which church had the biggest percentage of black members without being entirely black?</p></li>
+<li><p>For the year 1825, what was the biggest meeting in each conference? In each district?</p></li>
+<li><p>For each year, what were the three biggest churches in the Baltimore conference?</p></li>
+</ol>
+</div>
+<div id="summarizing-or-aggregating-data-summarize" class="section level2">
+<h2>Summarizing or aggregating data (<code>summarize()</code>)</h2>
+<p>In the examples using <code>top_n()</code> or <code>slice()</code> we performed a very simple kind of data summary, where we took the single row with the biggest value in a given column. This essentially boiled many rows of a data frame down into a single row. We would like to be able to summarize or aggregate a data frame in other ways as well. For instance, we often want to take the sum or the mean of a given column. We can do this using the <code>summarize()</code> function in conjunction with the <code>group_by()</code> function.</p>
+<p>In this example, we group by the year the minutes were taken. Then we find the total number of white members for each year.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methodists %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(minutes_year &gt;=<span class="st"> </span><span class="dv">1786</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(minutes_year) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">total_members_white =</span> <span class="kw">sum</span>(members_white, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</code></pre></div>
+<pre><code>## Source: local data frame [45 x 2]
+## 
+##    minutes_year total_members_white
+##           (int)               (int)
+## 1          1786               18291
+## 2          1787               21949
+## 3          1788               30557
+## 4          1789               34425
+## 5          1790               45983
+## 6          1791               50580
+## 7          1792               52079
+## 8          1793               51486
+## 9          1794               52794
+## 10         1795               48121
+## ..          ...                 ...</code></pre>
+<p>Notice that we get one row in the recombined data frame for each group in the original data frame. The value in the new column is the result of a function (in this case, <code>sum()</code>) applied to the columns in each of the split apart data frames.</p>
+<p>There is also a special case where we might want to know how many rows were in each of the split apart (or grouped) data frames. We can use the special <code>n()</code> function to get that count. (Just like the case of <code>slice()</code> and <code>top_n()</code>, this is such a common thing to do that dplyr provides the special functions <code>count()</code> and <code>tally()</code>. You can look up their documentation to see how they work.)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methodists %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(minutes_year) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">total_meetings =</span> <span class="kw">n</span>())</code></pre></div>
+<pre><code>## Source: local data frame [56 x 2]
+## 
+##    minutes_year total_meetings
+##           (int)          (int)
+## 1          1773              5
+## 2          1774              9
+## 3          1775             10
+## 4          1776             12
+## 5          1777             15
+## 6          1779             22
+## 7          1780             21
+## 8          1781             24
+## 9          1782             27
+## 10         1783             37
+## ..          ...            ...</code></pre>
+<ol start="17" style="list-style-type: decimal">
+<li><p>How many meetings (i.e., churches or circuits) were there in each conference in each year since 1802?</p></li>
+<li><p>What is the average number of white, black, and average number of total members for each year since 1786?</p></li>
+<li><p>Make a plot of the average percentage of black members over time.</p></li>
+<li><p>Make a plot of the average and median number of members over time.</p></li>
+<li><p>What was the average number of members in each conference for each year? Can you also make a plot of this?</p></li>
+<li><p>What was the average percentage of black members in each conference for each year? Can you also make a plot of this?</p></li>
+</ol>
+</div>
+
+<footer>
+  <p>
+    <small>
+      These materials are &copy; 2016 <a href="http://lincolnmullen.com">Lincoln Mullen</a>. Licensed <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; margin-left: 5px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+    </small>
+  </p>
+</footer>
+
+  </div>
+</div>
+
+<script>
+  $.each($("img"), function(i, v) {
+    var img = $(v);
+    img.wrap("<a href='" + img.attr("src") + "'>");
+  })
+
+  url = window.location.toString();
+  if (url === "http://lincolnmullen.com/projects/worksheets/") {
+    $("#download-link").remove();
+  } else {
+    $("#download-link").attr("href", url.replace('.html', '.Rmd'));
+  }
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

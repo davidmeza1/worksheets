@@ -2744,14 +2744,14 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1804,Philadelphia,Jersey,Gloucester,NA,NA,646,71,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
 1804,Philadelphia,Jersey,Salem,NA,NA,764,81,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
 1804,Philadelphia,Jersey,Cape May,NA,NA,85,5,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
-1804,Philadelphia,Genesse,Chenango,NA,NA,395,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
-1804,Philadelphia,Genesse,Westmoreland,NA,NA,461,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
-1804,Philadelphia,Genesse,Otsego,NA,NA,297,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
-1804,Philadelphia,Genesse,Pompey,NA,NA,174,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
-1804,Philadelphia,Genesse,Cayuga,NA,NA,369,9,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
-1804,Philadelphia,Genesse,Ontario,NA,NA,206,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
-1804,Philadelphia,Genesse,Seneca,NA,NA,209,10,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
-1804,Philadelphia,Genesse,Tioga,NA,NA,362,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
+1804,Philadelphia,Genesee,Chenango,NA,NA,395,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
+1804,Philadelphia,Genesee,Westmoreland,NA,NA,461,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
+1804,Philadelphia,Genesee,Otsego,NA,NA,297,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
+1804,Philadelphia,Genesee,Pompey,NA,NA,174,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
+1804,Philadelphia,Genesee,Cayuga,NA,NA,369,9,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
+1804,Philadelphia,Genesee,Ontario,NA,NA,206,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
+1804,Philadelphia,Genesee,Seneca,NA,NA,209,10,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
+1804,Philadelphia,Genesee,Tioga,NA,NA,362,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
 1804,New York,Albany,Black River,NA,NA,95,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
 1804,New York,Albany,Western,NA,NA,249,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
 1804,New York,Albany,Herkimer,NA,NA,210,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=126
@@ -5952,36 +5952,36 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1814,New England,Kennebeck,Bristol,NA,NA,113,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
 1814,New England,Kennebeck,Penobscot,NA,NA,101,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
 1814,New England,Kennebeck,Union,NA,NA,211,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesee,Genesse,New Amsterdam,NA,NA,115,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Genesse,Caledonia,NA,NA,445,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Genesse,Bloomfield,NA,NA,418,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Genesse,Ontario,NA,NA,558,4,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Genesse,Lyons,NA,NA,755,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Genesse,Seneca,NA,NA,463,4,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Genesse,Cayuga,NA,NA,540,2,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Genesse,Scipio,NA,NA,451,5,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Genesse,Sodus,NA,NA,130,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Susquehannah,Lycoming,NA,NA,480,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Susquehannah,Shamokin,NA,NA,183,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Susquehannah,Northumberland,NA,NA,483,6,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Susquehannah,Wyoming,NA,NA,192,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Susquehannah,Canaan,NA,NA,249,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Susquehannah,Bridgewater,NA,NA,299,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Susquehannah,Lebanon,NA,NA,392,13,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Susquehannah,Chenango,NA,NA,408,5,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Susquehannah,Broome,NA,NA,477,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Susquehannah,Tioga,NA,NA,276,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Susquehannah,Newtown,NA,NA,216,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Oneida,Westmoreland,NA,NA,331,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Oneida,Pompey,NA,NA,519,4,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Oneida,Otsego,NA,NA,429,5,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Oneida,Herkimer,NA,NA,332,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Oneida,Western,NA,NA,242,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Oneida,Tarin,NA,NA,190,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Oneida,St. Lawrence,NA,NA,230,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Oneida,Black River,NA,NA,414,2,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Oneida,Mexico,NA,NA,275,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
-1814,Genesse,Oneida,Utica,NA,NA,524,2,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Genesee,New Amsterdam,NA,NA,115,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Genesee,Caledonia,NA,NA,445,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Genesee,Bloomfield,NA,NA,418,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Genesee,Ontario,NA,NA,558,4,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Genesee,Lyons,NA,NA,755,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Genesee,Seneca,NA,NA,463,4,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Genesee,Cayuga,NA,NA,540,2,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Genesee,Scipio,NA,NA,451,5,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Genesee,Sodus,NA,NA,130,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Susquehannah,Lycoming,NA,NA,480,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Susquehannah,Shamokin,NA,NA,183,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Susquehannah,Northumberland,NA,NA,483,6,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Susquehannah,Wyoming,NA,NA,192,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Susquehannah,Canaan,NA,NA,249,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Susquehannah,Bridgewater,NA,NA,299,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Susquehannah,Lebanon,NA,NA,392,13,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Susquehannah,Chenango,NA,NA,408,5,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Susquehannah,Broome,NA,NA,477,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Susquehannah,Tioga,NA,NA,276,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Susquehannah,Newtown,NA,NA,216,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Oneida,Westmoreland,NA,NA,331,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Oneida,Pompey,NA,NA,519,4,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Oneida,Otsego,NA,NA,429,5,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Oneida,Herkimer,NA,NA,332,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Oneida,Western,NA,NA,242,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Oneida,Tarin,NA,NA,190,1,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Oneida,St. Lawrence,NA,NA,230,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Oneida,Black River,NA,NA,414,2,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Oneida,Mexico,NA,NA,275,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
+1814,Genesee,Oneida,Utica,NA,NA,524,2,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=253
 1815,Ohio,Ohio,Shenango,NA,NA,367,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=265
 1815,Ohio,Ohio,Erie,NA,NA,588,0,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=265
 1815,Ohio,Ohio,Trumbull and Grand River,NA,NA,1100,10,NA,http://hdl.handle.net/2027/nyp.33433069134967?urlappend=%3Bseq=265
@@ -14813,17 +14813,17 @@ minutes_year,conference,district,meeting,state,members_general,members_white,mem
 1829,Genesee,Ontario,Ontario,NA,NA,566,2,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
 1829,Genesee,Ontario,Penn Yan,NA,NA,42,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
 1829,Genesee,Ontario,Crooked Lake,NA,NA,400,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
-1829,Genesee,Genesse,Nunda,NA,NA,455,3,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
-1829,Genesee,Genesse,Prattsburg,NA,NA,481,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
-1829,Genesee,Genesse,Bath,NA,NA,475,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
-1829,Genesee,Genesse,Newtown,NA,NA,110,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
-1829,Genesee,Genesse,Troupsburg,NA,NA,336,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
-1829,Genesee,Genesse,Dansville,NA,NA,391,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
-1829,Genesee,Genesse,Bloomfield,NA,NA,700,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
-1829,Genesee,Genesse,Rochester,NA,NA,374,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
-1829,Genesee,Genesse,Tioga,NA,NA,484,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
-1829,Genesee,Genesse,Wellsborough,NA,NA,149,1,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
-1829,Genesee,Genesse,West Mendon,NA,NA,74,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=37
+1829,Genesee,Genesee,Nunda,NA,NA,455,3,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
+1829,Genesee,Genesee,Prattsburg,NA,NA,481,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
+1829,Genesee,Genesee,Bath,NA,NA,475,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
+1829,Genesee,Genesee,Newtown,NA,NA,110,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
+1829,Genesee,Genesee,Troupsburg,NA,NA,336,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
+1829,Genesee,Genesee,Dansville,NA,NA,391,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
+1829,Genesee,Genesee,Bloomfield,NA,NA,700,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
+1829,Genesee,Genesee,Rochester,NA,NA,374,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
+1829,Genesee,Genesee,Tioga,NA,NA,484,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
+1829,Genesee,Genesee,Wellsborough,NA,NA,149,1,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=36
+1829,Genesee,Genesee,West Mendon,NA,NA,74,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=37
 1829,Genesee,Buffalo,Lewiston and Lockport,NA,NA,435,3,1,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=37
 1829,Genesee,Buffalo,Buffalo and Black Rock,NA,NA,78,2,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=37
 1829,Genesee,Buffalo,"Scottsville, Sweden, and Brockport",NA,NA,695,0,0,http://hdl.handle.net/2027/nyp.33433069134959?urlappend=%3Bseq=37

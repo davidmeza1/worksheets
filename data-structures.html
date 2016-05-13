@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 
 
@@ -21,7 +21,7 @@
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <!-- begin in_header.html -->
 <meta name="description" content="Worksheets for learning historical data analysis with R.">
-<meta name="author" content="Lincoln Mullen">
+<meta name="author" content="David Meza">
 <link rel="shortcut icon" href="img/favicon.png">
 
 <script>
@@ -80,26 +80,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </style>
 
 
-<link rel="stylesheet" href="custom.css" type="text/css" />
-
-</head>
-
-<body>
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-  max-width:100%;
-  height: auto;
-}
+<style type="text/css">
 h1 {
   font-size: 34px;
 }
@@ -120,6 +101,31 @@ h5 {
 }
 h6 {
   font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -155,7 +161,7 @@ $(document).ready(function () {
           <a class="navbar-brand" href="./">Worksheets for Historical Data Analysis with R</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="http://lincolnmullen.com">Lincoln Mullen</a></li>
+          <li><a href="http://davidmeza1.github.io/">David Meza</a></li>
         </ul>
       </div>
     </nav>
@@ -192,7 +198,8 @@ $(document).ready(function () {
 <div class="fluid-row" id="header">
 
 
-<h1 class="title">Data Structures and Subsetting</h1>
+
+<h1 class="title toc-ignore">Data Structures and Subsetting</h1>
 
 </div>
 
@@ -488,7 +495,7 @@ heights</code></pre></div>
 <footer>
   <p>
     <small>
-      These materials are &copy; 2016 <a href="http://lincolnmullen.com">Lincoln Mullen</a>. Licensed <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
+      These materials are &copy; 2016 <a href="http://davidmeza1.github.io">Lincoln Mullen</a>. Licensed <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
       <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; margin-left: 5px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
     </small>
   </p>
@@ -504,7 +511,7 @@ heights</code></pre></div>
   })
 
   url = window.location.toString();
-  if (url === "http://lincolnmullen.com/projects/worksheets/") {
+  if (url === "http://davidmeza1.github.io/worksheets/") {
     $("#download-link").remove();
   } else {
     $("#download-link").attr("href", url.replace('.html', '.Rmd'));
